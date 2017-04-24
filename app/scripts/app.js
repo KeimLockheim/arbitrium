@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
         controllerAs: 'arbitrium'
+      }).when('/training', {
+        templateUrl: 'views/training.html',
+        controller: 'TrainingCtrl',
+        controllerAs: 'training'
       }).when('/quizz', {
         templateUrl: 'views/quizz.html',
         controller: 'QuizzCtrl',
