@@ -23,8 +23,15 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
-      })
-      .otherwise({
+      }).when('/arbitrium', {
+        templateUrl: 'views/arbitrium.html',
+        controller: 'ArbitriumCtrl',
+        controllerAs: 'arbitrium'
+      }).when('/quizz', {
+        templateUrl: 'views/quizz.html',
+        controller: 'QuizzCtrl',
+        controllerAs: 'quizz'
+      }).otherwise({
         redirectTo: '/'
       });
   });
