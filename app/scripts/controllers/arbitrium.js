@@ -15,4 +15,9 @@ angular.module('arbitriumApp')
       'Karma',
       'gajus.swing'
     ];
-  });
+
+    var arbitrium = this;
+
+
+    arbitrium.hello = "bim";
+});
