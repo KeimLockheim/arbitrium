@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'gajus.swing'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -26,7 +27,7 @@ angular
       }).when('/arbitrium', {
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
-        controllerAs: 'arbitrium'
+        controllerAs: 'arbitriumCtrl'
       }).when('/training', {
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
@@ -76,4 +77,6 @@ angular
       }).otherwise({
         redirectTo: '/'
       });
+      // use the HTML5 History API
+        $locationProvider.html5Mode(true);
   });
