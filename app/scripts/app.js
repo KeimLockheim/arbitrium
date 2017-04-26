@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,7 +27,7 @@ angular
       }).when('/arbitrium', {
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
-        controllerAs: 'arbitrium'
+        controllerAs: 'arbitriumCtrl'
       }).when('/quizz', {
         templateUrl: 'views/quizz.html',
         controller: 'QuizzCtrl',

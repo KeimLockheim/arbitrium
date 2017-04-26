@@ -1,10 +1,17 @@
+<link rel="stylesheet" type="text/css" href="bower_components/angular-swing/examples/card-stack/card-stack.css">
 
-  <div id="viewport">
-    <p>{{quizz.text}}</p>
-      <ul class="stack">
-          <li class="clubs">♣</li>
-          <li class="diamonds">♦</li>
-          <li class="hearts">♥</li>
-          <li class="spades">♠</li>
-      </ul>
-  </div>
+<div id="viewport" ng-controller="ArbitriumCtrl as card">
+
+    <ul class="stack" swing-stack swing-options="options">
+        <li swing-card
+            swing-on-throwout="arbitriumCtrl.throwout(eventName, eventObject)"
+            swing-on-throwoutleft="arbitriumCtrl.throwoutleft(eventName, eventObject)"
+            swing-on-throwoutright="arbitriumCtrl.throwoutright(eventName, eventObject)"
+            swing-on-throwin="arbitriumCtrl.throwin(eventName, eventObject)"
+            swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
+            swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
+            swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
+            ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">{{card.symbol}}
+        </li>
+    </ul>
+</div>
