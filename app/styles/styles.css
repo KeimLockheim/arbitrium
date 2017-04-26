@@ -114,6 +114,23 @@ div {
 }
 
 /*----------------------------
+	Training
+-----------------------------*/
+#boutonsChoix form {
+	display: inline-block;
+  width: 45%;
+	height: 40%;
+	margin: 2%;
+}
+
+#boutonsChoix input {
+	font-size: 20px;
+	color: #000;
+	width: 100%;
+	padding: 25px 0;
+}
+
+/*----------------------------
 	The Footer
 -----------------------------*/
 
