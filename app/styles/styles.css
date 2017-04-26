@@ -132,6 +132,40 @@ div {
 }
 
 /*----------------------------
+	Training
+-----------------------------*/
+.wrapper {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.containerVertical:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.containerVertical {
+    display: table-cell;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 50%;
+}
+
+.containerVertical div, .gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.clickedClass {
+  background-color: orange !important;
+}
+
+/*----------------------------
 	Quizz Multimédia
 -----------------------------*/
 
