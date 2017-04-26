@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 /*-------------------------
 	Simple reset
 --------------------------*/
-
 
 *{
 	margin:0;
@@ -25,6 +26,7 @@ body{
 	min-height: 600px;
     padding: 25px 0 0;
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	font-size: 14px;
 }
 
 a, a:visited {
@@ -75,7 +77,6 @@ div {
 	text-align: center;
 	position:absolute;
 	height:43%;
-	width:100%;
 }
 
 #imgKallax {
