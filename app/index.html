@@ -3,6 +3,7 @@
   <head>
     <title>Kallax</title>
     <meta charset="utf-8" />
+    <base href="/">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -28,6 +29,11 @@
 
   </head>
   <body ng-app="arbitriumApp">
+
+    <div id="logos">
+      <div id="logoHeig"><a href="https://heig-vd.ch/" target="_blank"><img src="../images/index/logo-heig-vd.svg"></a></div>
+      <div id="imgMedia"><a href="https://media.heig-vd.ch/" target="_blank"><img src="../images/index/logo-mediaengineering.svg"></a></div>
+    </div>
 
     <div class="container">
     <div ng-view=""></div>
