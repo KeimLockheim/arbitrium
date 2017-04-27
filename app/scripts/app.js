@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'dragularModule',
+    'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,15 +28,27 @@ angular
       }).when('/arbitrium', {
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
-        controllerAs: 'arbitrium'
+        controllerAs: 'arbitriumCtrl'
       }).when('/training', {
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
+      }).when('/business', {
+        templateUrl: 'views/business.html',
+        controller: 'BusinessCtrl',
+        controllerAs: 'business'
       }).when('/quizz', {
         templateUrl: 'views/quizz.html',
         controller: 'QuizzCtrl',
         controllerAs: 'quizz'
+      }).when('/quizzMultimedia', {
+        templateUrl: 'views/quizzMultimedia.html',
+        controller: 'QuizzMultiCtrl',
+        controllerAs: 'quizzMultiCtrl'
+      }).when('/multimediaQ1', {
+        templateUrl: 'views/multimediaQuestion.html',
+        controller: 'QuizzMultiCtrl',
+        controllerAs: 'quizzMultiCtrl'
       }).otherwise({
         redirectTo: '/'
       });
