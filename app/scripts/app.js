@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/quizz.html',
         controller: 'QuizzCtrl',
         controllerAs: 'quizz'
+      }).when('/inscription', {
+        templateUrl: 'views/formInscr.html',
+        controller: 'InscriptionCtrl',
+        controllerAs: 'formInscr'
       }).otherwise({
         redirectTo: '/'
       });
