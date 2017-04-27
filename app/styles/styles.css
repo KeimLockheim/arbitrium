@@ -119,6 +119,95 @@ div {
 }
 
 /*----------------------------
+	Training
+-----------------------------*/
+#boutonsChoix form {
+	display: inline-block;
+  	width: 45%;
+	height: 40%;
+	margin: 2%;
+}
+
+#boutonsChoix input {
+	font-size: 20px;
+	color: #000;
+	width: 100%;
+	padding: 25px 0;
+}
+
+/*----------------------------
+	Training
+-----------------------------*/
+.wrapper {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.containerVertical:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.containerVertical {
+    display: table-cell;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 50%;
+}
+
+.containerVertical div, .gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.clickedClass {
+  background-color: orange !important;
+}
+
+/*----------------------------
+	Quizz Multimédia
+-----------------------------*/
+
+#introMultimedia p {
+	font-size: 17px;
+}
+
+#introMultimedia h2 {
+	font-size: 30px;
+	text-align: center;
+}
+
+#vignettesVideo {
+	margin: 30px;
+}
+
+#vignettesVideo img {
+	width: 100%;
+	height: 100%;
+}
+
+#vignettesVideo button {
+	width: 150px;
+	height: 120px;
+	display: inline-block;
+	color: black;
+	font-size: 15px;
+}
+
+#vignettesVideo input {
+	width: 150px;
+	height: 120px;
+	display: inline-block;
+	color: black;
+	font-size: 15px;
+}
+
+/*----------------------------
 	The Footer
 -----------------------------*/
 
