@@ -1,5 +1,21 @@
 'use strict';
 
+
+angular.module('arbitriumApp').factory('ArbitriumService', function($http, apiUrl) {
+  var service = {};
+
+  service.get = function (checkboxState){
+
+  }
+
+
+  return service;
+
+});
+
+
+
+
 /**
  * @ngdoc function
  * @name arbitriumApp.controller:AbritriumCtrl
@@ -23,6 +39,13 @@ angular.module('arbitriumApp')
         {name: 'hearts', symbol: '♥'},
         {name: 'spades', symbol: '♠'}
     ];
+
+    arbitriumCtrl.remove = function (index) {
+      var cardName = arbitriumCtrl.cards.splice(index, 1)[0].name;
+
+      var htmlDeletedCard = angular.element( document.querySelector( '.'+cardName ) );
+      htmlDeletedCard.remove();
+    }
 
     arbitriumCtrl.throwout = function (eventName, eventObject) {
         console.log('throwout', eventObject);
@@ -49,8 +72,7 @@ angular.module('arbitriumApp')
     };
 
     arbitriumCtrl.dragend = function (eventName, eventObject) {
-      console.log(eventObject);
-        eventObject.destroy();
+      console.log('dragend', eventObject);
     };
 
     arbitriumCtrl.options = {

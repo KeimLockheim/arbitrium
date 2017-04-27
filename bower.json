@@ -11,6 +11,7 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "angular-bootstrap": "^2.5.0",
+    "angular-swing": "*",
     "dragular": "^4.4.0"
   },
   "devDependencies": {

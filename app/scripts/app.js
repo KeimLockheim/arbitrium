@@ -8,6 +8,9 @@
  *
  * Main module of the application.
  */
+
+angular.module('arbitriumApp', ['angular-storage'])
+
 angular
   .module('arbitriumApp', [
     'ngAnimate',
@@ -44,7 +47,11 @@ angular
       }).when('/inscription', {
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
-        controllerAs: 'formInscr'
+        controllerAs: 'inscriptionCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
@@ -57,3 +64,15 @@ angular
         redirectTo: '/'
       });
   });
+
+angular.module('arbitriumApp.auth', ['angular-storage']).run(function(AuthService, $rootScope, $route) {
+
+  $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+
+    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+
+      event.preventDefault();
+      $route.go('login');
+    }
+  });
+});
