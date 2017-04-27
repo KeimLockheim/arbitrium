@@ -16,8 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule',
-    'gajus.swing'
+    'dragularModule'
+    //'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
