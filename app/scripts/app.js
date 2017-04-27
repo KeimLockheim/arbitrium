@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'dragularModule',
-    'gajus.swing'
+    //'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -45,7 +45,7 @@ angular
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-      }).when('/multimediaQ1', {
+      }).when('/multimedia/:Id', {
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'

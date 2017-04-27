@@ -203,6 +203,35 @@ div {
 	font-size: 15px;
 }
 
+.boutonMulti {
+	font-size: 18px;
+	color: black;
+	text-align: center;
+}
+
+.boutonQuizzMultimedia {
+	color: black;
+	margin-top: 20px;
+}
+
+.contentMultimedia {
+	text-align: center;
+}
+
+.titreQuestion {
+	text-align: center;
+}
+
+.questionMultimedia {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.questionMultimedia input[type="radio"] + label {
+	margin-left: 10px;
+} 
+
 /*----------------------------
 	The Footer
 -----------------------------*/
