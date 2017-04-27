@@ -16,8 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule',
-    'gajus.swing'
+    'dragularModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -41,6 +40,14 @@ angular
         templateUrl: 'views/quizz.html',
         controller: 'QuizzCtrl',
         controllerAs: 'quizz'
+      }).when('/inscription', {
+        templateUrl: 'views/formInscr.html',
+        controller: 'InscriptionCtrl',
+        controllerAs: 'formInscr'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginInscr'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
