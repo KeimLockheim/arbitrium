@@ -8,6 +8,9 @@
  *
  * Main module of the application.
  */
+
+angular.module('arbitriumApp', ['angular-storage'])
+
 angular
   .module('arbitriumApp', [
     'ngAnimate',
@@ -16,7 +19,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule'
+    'dragularModule',
+    'gajus.swing',
+    'angular-storage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -51,11 +56,7 @@ angular
       }).when('/inscription', {
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
-        controllerAs: 'formInscr'
-      }).when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'loginInscr'
+        controllerAs: 'inscriptionCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
@@ -64,7 +65,27 @@ angular
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginCtrl'
+      }).when('/kallax', {
+        templateUrl: 'views/kallax.html',
+        controller: 'KallaxCtrl',
+        controllerAs: 'kallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
   });
+
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route) {
+
+  $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+
+    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+
+      event.preventDefault();
+      $location.url('login');
+    }
+  });
+});
