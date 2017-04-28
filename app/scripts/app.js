@@ -9,8 +9,13 @@
  * Main module of the application.
  */
 
+<<<<<<< HEAD
 angular
   .module('arbitriumApp', [
+=======
+
+angular.module('arbitriumApp', [
+>>>>>>> a7850605e247a736807743f782e7702ab08ba074
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -40,10 +45,18 @@ angular
         templateUrl: 'views/business.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
-      }).when('/quizz', {
-        templateUrl: 'views/quizz.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+      }).when('/marketing/', {
+        templateUrl: 'views/marketing.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/quizz/:category', {
+        templateUrl: 'views/marketingQuizz.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/results', {
+        templateUrl: 'views/marketingResultat.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
       }).when('/inscription', {
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
@@ -74,6 +87,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
+
 
       event.preventDefault();
       $location.url('/login');
