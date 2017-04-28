@@ -1,5 +1,5 @@
 angular.module('arbitriumApp')
-  .controller('QuizzMultiCtrl', function ($routeParams) {
+  .controller('QuizzMultiCtrl', function ($routeParams, $scope, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -57,5 +57,56 @@ angular.module('arbitriumApp')
 			quizzMultiCtrl.reponseCorrect = "3";
 		break;
 	}
+
+	// if (!$("input[name='answer']").is(':checked')) {
+ //   		$('.boutonQuizzMultimedia').prop('disabled', true);
+	// }
+	// else {
+	// 	$('.boutonQuizzMultimedia').prop('enable', true);
+	// }
+
+	$(function(){
+	    $("input[type='radio']").change(function(){
+
+	        $("button[type='button']").prop("disabled", false);
+	    });
+	});
+
+
+
+	$scope.valideReponse = function() {
+
+		var answer = document.querySelector('input[name = "answer"]:checked').value;
+		
+		console.log(answer);
+
+		if (quizzMultiCtrl.reponseCorrect == answer) {
+			console.log("YAY");
+			$scope.right = true;
+			
+		}
+
+		else {
+			console.log("caca");
+		}
+
+	};
+
+	  //   $http({
+	  //     method: 'POST',
+	  //     url: apiUrl + '/issues/'+issueId+'/comments',
+	  //     data: $scope.comment
+	  //   }).success(function(comments) {
+	  //     $ionicPopup.alert({
+	  //       title: 'Comment',
+	  //       template: 'Comment posted'
+	  //     });
+
+	  //   }).catch(function() {
+	  //     // If an error occurs, hide the loading message and show an error message.
+	  //     $scope.error = 'Can not post the comment';
+	  //   });
+
+	  // };	
 
 });

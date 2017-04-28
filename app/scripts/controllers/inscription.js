@@ -28,7 +28,6 @@
         }
 
         if(hasError == false) {
-          //console.log("coucou");
           $scope.userSchema.mail = $("#email").val();
           $scope.userSchema.sex = sexVal;
           $scope.userSchema.age = ageVal;
@@ -47,7 +46,7 @@
           }).catch(function() {
 
             // If an error occurs, hide the loading message and show an error message.
-            InscriptionCtrl.error = 'Linscription est pour le moment indisponible';
+            InscriptionCtrl.error = 'L inscription est pour le moment indisponible';
           });
         }
     });

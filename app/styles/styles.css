@@ -211,6 +211,11 @@ div {
 	font-size: 18px;
 	color: black;
 	text-align: center;
+	margin-top: 20px;
+}
+
+.boutonMulti a {
+	color: black;
 }
 
 .boutonQuizzMultimedia {

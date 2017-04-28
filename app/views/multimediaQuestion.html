@@ -5,14 +5,14 @@
 	<div class="questionMultimedia">
 		<form>
 			<p>{{quizzMultiCtrl.intitule}}</p>
-			<input type="radio" name="answer"  value="1" /><label>{{quizzMultiCtrl.reponse1}}</label><br />
-			<input type="radio" name="answer"  value="2" /><label>{{quizzMultiCtrl.reponse2}}</label><br />
-			<input type="radio" name="answer"  value="3" /><label>{{quizzMultiCtrl.reponse3}}</label><br />
+			<input type="radio" name="answer" value="{{quizzMultiCtrl.reponse1}}"/><label>{{quizzMultiCtrl.reponse1}}</label><br />
+			<input type="radio" name="answer" value="{{quizzMultiCtrl.reponse2}}" /><label>{{quizzMultiCtrl.reponse2}}</label><br />
+			<input type="radio" name="answer" value="{{quizzMultiCtrl.reponse3}}" /><label>{{quizzMultiCtrl.reponse3}}</label><br />
 		</form>
 	</div>
 	<div class="boutonMulti">
-		<a  href="/#!/quizzMultimedia"><button class="boutonQuizzMultimedia">Retour</button></a>
-		<button type="button" class="boutonQuizzMultimedia">Terminer la mission</button>
+		<a href="/#!/quizzMultimedia"><button>Retour</button></a>
+		<a href="/#!/resultMultimedia"><button type="button" disabled="disabled" ng-click="valideReponse()" class="boutonQuizzMultimedia">Terminer la mission</button></a>
 	</div>
 
 </div>
