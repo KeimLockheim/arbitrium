@@ -19,8 +19,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule'
-    //'gajus.swing'
+    'dragularModule',
+    'angular-storage',
+    'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -48,10 +49,6 @@ angular
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
         controllerAs: 'inscriptionCtrl'
-      }).when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'loginCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
@@ -60,19 +57,23 @@ angular
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginCtrl'
       }).otherwise({
         redirectTo: '/'
       });
   });
 
-angular.module('arbitriumApp.auth', ['angular-storage']).run(function(AuthService, $rootScope, $route) {
+/*angular.module('arbitriumApp').run(function(AuthService, $rootScope, $location) {
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
 
       event.preventDefault();
-      $route.go('login');
+      $location.path('login');
     }
   });
-});
+});*/

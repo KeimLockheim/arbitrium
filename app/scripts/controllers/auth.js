@@ -1,4 +1,4 @@
-angular.module('arbitriumApp.auth', ['angular-storage']).factory('AuthService', function(store) {
+angular.module('arbitriumApp').factory('AuthService', function(store) {
   var service = {
     authToken: store.get('authToken'),
 
@@ -16,16 +16,18 @@ angular.module('arbitriumApp.auth', ['angular-storage']).factory('AuthService', 
   return service;
 });
 
-angular.module('arbitriumApp.auth', ['angular-storage']).controller('LoginCtrl', function(AuthService, $http, $scope, $route) {
-  var loginCtrl = this;
+angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $http, $scope, $route) {
+  var LoginCtrl = this; 
   $scope.userSchema = {};
+  $(".error").hide();
+  console.log("test");
+  $("#login").click(function(){
+    console.log("test");
+  });
 
-  // Add the register function to the scope.
   loginCtrl.logIn = function() {
-
-    // Forget the previous error (if any).
-    delete loginCtrl.error;
-    $scope.userSchema.mail = $("#email").val();
+  console.log("test");
+    /*$scope.userSchema.mail = $("#email").val();
     $scope.userSchema.password = $("#pwd1").val();
 
     $http({
@@ -45,7 +47,7 @@ angular.module('arbitriumApp.auth', ['angular-storage']).controller('LoginCtrl',
       // If an error occurs, hide the loading message and show an error message.
       $ionicLoading.hide();
       loginCtrl.error = 'Could not log in.';
-    });
+    });*/
   };
 });
 
