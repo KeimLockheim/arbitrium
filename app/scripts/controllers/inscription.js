@@ -1,4 +1,4 @@
- angular.module('arbitriumApp').controller('InscriptionCtrl', function($scope, $http) {
+ angular.module('arbitriumApp').controller('InscriptionCtrl', function($location, $scope, $http, $route) {
   var InscriptionCtrl = this;
 
   $("#inscription").click(function(){
@@ -9,7 +9,7 @@
         var sexVal = $("#sex").val();
 
         var sexVal = document.querySelector('input[name = "sex"]:checked').value;
-        //console.log(sexVal);
+
         var passwordVal = $("#pwd1").val();
         var checkVal = $("#pwd2").val();
         if (ageVal<12 || ageVal>99 || isNaN(ageVal)) {
@@ -41,15 +41,13 @@
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
-            $window.location.href = '/';
+            $location.path('/');
 
           }).catch(function() {
 
             // If an error occurs, hide the loading message and show an error message.
-            InscriptionCtrl.error = 'L inscription est pour le moment indisponible';
+            InscriptionCtrl.error = "L'inscription est pour le moment indisponible";
           });
         }
     });
-  
-
 });

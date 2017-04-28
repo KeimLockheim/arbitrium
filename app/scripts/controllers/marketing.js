@@ -1,32 +1,183 @@
 'use strict';
 
-angular.module('citizen-engagement').factory('IssuesService', function($http, apiUrl) {
+angular.module('arbitriumApp').factory('MarketingService', function() {
 
   var service = {};
 
-  // service.retrieveQuestionsPage = function(page, interest) {
-  //   page = page || 1; // Start from page 1
+  var questions = {
 
-  //   var requestData = {};
-
-  //   if (interest) {
-  //     requestData.interest = interest;
-  //   }
-
-  //   // GET the current page
-  //   return $http({
-  //     method: 'POST',
-  //     url: apiUrl + '/questions/searches',
-  //     params: {
-  //       page: page
-  //     },
-  //     data: requestData
-  //   })
-  // };
-
-  service.checkResults = function() {
-    
+    sport: [
+      {
+        question: "Quel événement célèbre annuel est connu pour ses nombreuses publicités et ses shows?",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "A qui appartient ce logo?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1,
+        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+      }
+    ],
+    food: [
+      {
+        question: "Food ?",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "sgfd?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1
+      }
+    ],
+    divertissement: [
+      {
+        question: "Divertissement",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "sgfd?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1
+      }
+    ],
+    business: [
+      {
+        question: "Business",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "sgfd?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1
+      }
+    ],
+    technologie: [
+      {
+        question: "Technologie",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "sgfd?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1
+      }
+    ],
+    mode: [
+      {
+        question: "Mode",
+        options: ["Igfsd", "dfgs", "Super Bowl"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque de sport a pour slogan “Just do it”?",
+        options: ["Nike", "Adidas", "Fila"],
+        answer: 0
+      },
+      {
+        question: "Quel sportif était l’acteur principal des machines à café Jura?",
+        options: ["Alexander Frei", "Laure Manaudou", "Roger Federer"],
+        answer: 2
+      },
+      {
+        question: "Quelle marque sponsorise la 'Spartan Race'?",
+        options: ["Mammut", "Reebok", "fsd"],
+        answer: 1
+      },
+      {
+        question: "sgfd?",
+        options: ["adf dfa", "adfasdf adsfell", "asdfadfa"],
+        answer: 1
+      }
+    ]
   };
+
+      service.getQuestion = function(category, id) {
+        if(id < questions[category].length) {
+          return questions[category][id];
+        } else {
+          return false;
+        }
+      };
 
   return service;
 });
@@ -40,16 +191,79 @@ angular.module('citizen-engagement').factory('IssuesService', function($http, ap
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('QuizzCtrl', function () {
+  .controller('MarketingCtrl', function ($routeParams, MarketingService, $scope, $http) {
+    $scope.marketingCtrl = {};
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-    var quizzCtrl = this;
+    var marketingCtrl = this;
+
+    marketingCtrl.start = function() {
+      marketingCtrl.id = 0;
+      marketingCtrl.questionNo = 1;
+      marketingCtrl.score = 0;
+      marketingCtrl.quizzOver = false;
+      marketingCtrl.inProgress = true;
+      marketingCtrl.answerMode = true;
+      marketingCtrl.getQuestion();
+    };
+
+    marketingCtrl.reset = function() {
+      marketingCtrl.inProgress = false;
+      marketingCtrl.score = 0;
+    }
+
+    marketingCtrl.getQuestion = function() {
+      //console.log($routeParams.category);
+      if ($routeParams.category) {
+
+        var q = MarketingService.getQuestion($routeParams.category, marketingCtrl.id);
+        if(q) {
+          marketingCtrl.question = q.question;
+          marketingCtrl.options = q.options;
+          marketingCtrl.answer = q.answer;
+          marketingCtrl.answerMode = true;
+          //console.log(marketingCtrl.answerMode);
+        } else {
+          marketingCtrl.quizzOver = true;
+        }
+      }
+    };
+
+    marketingCtrl.checkAnswer = function() {
+      console.log($('input[name=answer]:checked').length);
+      if(!$('input[name=answer]:checked').length) return;
+      var ans = $('input[name=answer]:checked').val();
+
+      if(ans == marketingCtrl.options[marketingCtrl.answer]) {
+        marketingCtrl.score++;
+        marketingCtrl.correctAns = true;
+      } else {
+        marketingCtrl.correctAns = false;
+      }
+
+      marketingCtrl.answerMode = false;
+      // !$('li').addClass( "correct" );
+    };
+
+    marketingCtrl.nextQuestion = function() {
+      marketingCtrl.id++;
+      marketingCtrl.questionNo++;
+      marketingCtrl.getQuestion();
+
+    }
+
+    marketingCtrl.start();
 
 
 
+    if(marketingCtrl.quizzOver == true){
+      $scope.marketingCtrl = sexVal;
 
-  });
+
+    }
+
+});

@@ -1,24 +1,24 @@
 
 <div class="text-center">
   <div id="imgKallax"><img src="../images/index/logo_CompletBlanc.png"></div>
-  <div id="titre"><h1>Inscription</h1></div>
+  <div id="titre"><h1>Connexion</h1></div>
 </div>
 
 <div id="formulaire">
     <a href="javascript:history.go(-1)" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span>Retour</a>
     <br />
     <br />
-    <form name="loginForm" id="inscrForm" class="row">
-        <p ng-if="login.error" class="error">{{ login.error }}</p>
+    <form name="loginForm" id="loginCtrl" class="row">
+        <p ng-if="loginCtrl.error" class="error">{{ loginCtrl.error }}</p>
 
-        <input name="email" id="email" type="email" class="form-control" placeholder="Email *" required ng-model="login.userSchema.mail"/>
+        <input name="email" id="email" type="email" class="form-control" placeholder="Email" required ng-model="loginCtrl.userSchema.mail"/>
         <br />
 
-        <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe *" required/>
+        <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe" ng-model="loginCtrl.userSchema.pwd" required/>
         <br/>
 
         <div class="">
-            <input class="btn btn-success" type="submit" value="Login" name="login" id="login" ng-disabled="inscrForm.$invalid" ng-click="login.register()"/>
+            <input class="btn btn-success" type="submit" value="Login" name="login" id="login" ng-disabled="loginCtrl.$invalid" ng-click="loginCtrl.logIn()"/>
         </div>
     </form>
 </div>
