@@ -1,10 +1,19 @@
+<style>
+  li {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .correct {
+    background: green;
+  }
+  </style>
 <button>Arbitrium</button>
-<h2>Marketing & Communication</h2>
+<h3>Marketing & Communication</h3>
 <div ng-show="!marketingCtrl.quizzOver">
 	<img src=""></img>
 	<h2 id="question">{{marketingCtrl.question}}</h2>
 	<ul id="options">
-		<li ng-repeat="option in marketingCtrl.options">
+		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == 'answer' || monObjet.attribut == 'test2'}>
 			<label>
 				<input type="radio" name="answer" value="{{option}}">
 				{{option}}

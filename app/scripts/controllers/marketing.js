@@ -245,7 +245,7 @@ angular.module('arbitriumApp')
       }
 
       marketingCtrl.answerMode = false;
-      
+      // !$('li').addClass( "correct" );
     };
 
     marketingCtrl.nextQuestion = function() {

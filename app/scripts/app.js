@@ -9,7 +9,6 @@
  * Main module of the application.
  */
 
-angular.module('arbitriumApp', ['angular-storage'])
 
 angular
   .module('arbitriumApp', [
@@ -78,14 +77,14 @@ angular
       });
   });
 
-angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route) {
+// angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
-  $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+//   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
-    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+//     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
 
-      event.preventDefault();
-      $location.url('login');
-    }
-  });
-});
+//       event.preventDefault();
+//       $location.url('login');
+//     }
+//   });
+// });
