@@ -10,6 +10,14 @@ angular.module('arbitriumApp').factory('AuthService', function(store) {
     unsetAuthToken: function() {
       service.authToken = null;
       store.remove('authToken');
+    },
+
+    userInf: store.get('userInf'),
+
+    setUserId: function(userId) {
+      service.userInf = userId;
+      store.set('userInf', userId);
+      
     }
   };
 

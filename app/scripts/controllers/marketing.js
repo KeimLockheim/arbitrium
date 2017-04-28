@@ -191,7 +191,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('MarketingCtrl', function ($routeParams, MarketingService) {
+  .controller('MarketingCtrl', function ($routeParams, MarketingService, $scope, $http) {
+    $scope.marketingCtrl = {};
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -258,18 +259,11 @@ angular.module('arbitriumApp')
     marketingCtrl.start();
 
 
+    if(marketingCtrl.quizzOver == true){
+      $scope.marketingCtrl = sexVal;
+
+
+    }
+
 });
 
-angular.module('arbitriumApp')
-  .controller('MarketingHometCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
-    var marketingCtrl = this;
-
-
-
-  });
