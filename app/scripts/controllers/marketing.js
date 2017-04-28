@@ -246,7 +246,7 @@ angular.module('arbitriumApp')
       }
 
       marketingCtrl.answerMode = false;
-      
+      // !$('li').addClass( "correct" );
     };
 
     marketingCtrl.nextQuestion = function() {
@@ -259,6 +259,7 @@ angular.module('arbitriumApp')
     marketingCtrl.start();
 
 
+<<<<<<< HEAD
     if(marketingCtrl.quizzOver == true){
       $scope.marketingCtrl = sexVal;
 
@@ -267,3 +268,6 @@ angular.module('arbitriumApp')
 
 });
 
+=======
+});
+>>>>>>> 3168a5ff2bdc8ad5d5d61371a4e2db24c04359c9

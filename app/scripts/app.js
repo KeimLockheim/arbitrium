@@ -9,10 +9,7 @@
  * Main module of the application.
  */
 
-//angular.module('arbitriumApp')
-
-angular
-  .module('arbitriumApp', [
+angular.module('arbitriumApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -37,8 +34,12 @@ angular
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
-      }).when('/business', {
-        templateUrl: 'views/business.html',
+      }).when('/quizzBusiness1', {
+        templateUrl: 'views/quizzBusiness1.html',
+        controller: 'BusinessCtrl',
+        controllerAs: 'business'
+      }).when('/quizzBusiness2', {
+        templateUrl: 'views/quizzBusiness2.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/marketing/', {
@@ -59,7 +60,7 @@ angular
         controllerAs: 'inscriptionCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
-        controller: 'QuizzMultiCtrl',
+        controllexr: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
       }).when('/multimediaQ1', {
         templateUrl: 'views/multimediaQuestion.html',
@@ -82,11 +83,10 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
-    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
-      console.log('coucou les abeilles');
-      
+    if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
+
       event.preventDefault();
-      $location.url('login');
+      $location.url('/login');
       
     }
   });
