@@ -1,4 +1,3 @@
-
 <div class="text-center">
   <div id="imgKallax"><img src="../images/index/logo_CompletBlanc.png"></div>
   <div id="titre"><h1>Inscription</h1></div>
@@ -14,9 +13,9 @@
         <input name="email" id="email" type="email" class="form-control" placeholder="Email *" required ng-model="InscriptionCtrl.userSchema.mail"/>
         <br />
 
-        <span class="form_col">Sexe * :</span>
-        <label><input name="sex" type="radio" value="male" ng-model="InscriptionCtrl.userSchema.sex" required/>Homme</label>
-        <label><input name="sex" type="radio" value="female" ng-model="InscriptionCtrl.userSchema.sex" required/>Femme</label>
+        <span class="form_col" >Sexe * :</span>
+        <label><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="male" required/>Homme</label>
+        <label><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="female" required/>Femme</label>
         <br/>
 
         <input name="age" id="age" type="number" class="form-control" placeholder="Âge *" ng-model="InscriptionCtrl.userSchema.age" required/>
@@ -25,16 +24,11 @@
         <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe *" required/>
         <br/>
 
-        <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" required/>
+        <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" ng-model="InscriptionCtrl.userSchema.password" required/>
         <br />
-        <!-- <span class="form_col"></span>
-        <label><input name="news" type="checkbox" /> Je désire recevoir la newsletter chaque mois.</label>
-        <br /><br /> -->
         <div class="">
             <input class="btn btn-success" type="submit" value="Inscription" name="inscription" id="inscription" ng-disabled="inscrForm.$invalid"/> 
             <input class="btn btn-warning" type="reset" value="Réinitialiser le formulaire" />
         </div>
     </form>
 </div>
-
-
