@@ -20,8 +20,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'dragularModule',
-    'angular-storage',
-    'gajus.swing'
+    'gajus.swing',
+    'angular-storage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -61,19 +61,23 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'loginCtrl'
+      }).when('/kallax', {
+        templateUrl: 'views/kallax.html',
+        controller: 'KallaxCtrl',
+        controllerAs: 'kallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
   });
 
-/*angular.module('arbitriumApp').run(function(AuthService, $rootScope, $location) {
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route) {
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
 
       event.preventDefault();
-      $location.path('login');
+      $location.url('login');
     }
   });
-});*/
+});
