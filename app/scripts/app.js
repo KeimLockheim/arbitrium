@@ -16,8 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule',
-    'gajus.swing'
+    'dragularModule'
+    //'gajus.swing'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -33,8 +33,12 @@ angular
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
-      }).when('/business', {
-        templateUrl: 'views/business.html',
+      }).when('/quizzBusiness1', {
+        templateUrl: 'views/quizzBusiness1.html',
+        controller: 'BusinessCtrl',
+        controllerAs: 'business'
+      }).when('/quizzBusiness2', {
+        templateUrl: 'views/quizzBusiness2.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/quizz', {

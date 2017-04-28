@@ -132,7 +132,7 @@ div {
 }
 
 /*----------------------------
-	Training
+	Business Quiz
 -----------------------------*/
 .wrapper {
     display: table;
@@ -140,17 +140,19 @@ div {
     width: 100%;
 }
 
-.containerVertical:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.2);
+.dragColumn {
+	display: inline-table;
+	width: 50%;
 }
 
-.containerVertical {
-    display: table-cell;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 50%;
+.dragPeople {
+	width: 100%;
+	min-height: 50px;
+  height: auto;
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.containerVertical div, .gu-mirror {
+.dragContainer div {
     margin: 10px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -161,9 +163,27 @@ div {
     cursor: -webkit-grab;
 }
 
+.dragHorizontalOrder {
+	display: table-row;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dragHorizontalContainer {
+	display: inline-block;
+}
+
 .clickedClass {
   background-color: orange !important;
 }
+
+.businessManQuizzMessage {
+	display: inline-block;
+	background-color: rgba(244, 226, 66, 0.2);
+	width: 100%;
+	margin: 5%;
+	padding: 2%;
+}
+
 
 /*----------------------------
 	Quizz Multimédia
