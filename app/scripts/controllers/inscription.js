@@ -9,6 +9,7 @@
         var sexVal = $("#sex").val();
 
         var sexVal = document.querySelector('input[name = "sex"]:checked').value;
+
         var passwordVal = $("#pwd1").val();
         var checkVal = $("#pwd2").val();
         if (ageVal<12 || ageVal>99 || isNaN(ageVal)) {
