@@ -78,14 +78,17 @@ angular
       });
   });
 
-angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route) {
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
-
+      console.log('coucou les abeilles');
+      
       event.preventDefault();
       $location.url('login');
+      
     }
   });
+
 });
