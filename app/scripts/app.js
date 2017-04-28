@@ -10,8 +10,7 @@
  */
 
 
-angular
-  .module('arbitriumApp', [
+angular.module('arbitriumApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -77,14 +76,18 @@ angular
       });
   });
 
-// angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
-//   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
-//     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+
+  $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+
+    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+
 
 //       event.preventDefault();
 //       $location.url('login');
-//     }
-//   });
-// });
+
+ //   }
+  //});
+});
