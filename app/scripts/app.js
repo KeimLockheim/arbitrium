@@ -9,13 +9,7 @@
  * Main module of the application.
  */
 
-<<<<<<< HEAD
-angular
-  .module('arbitriumApp', [
-=======
-
 angular.module('arbitriumApp', [
->>>>>>> a7850605e247a736807743f782e7702ab08ba074
     'ngAnimate',
     'ngCookies',
     'ngResource',
