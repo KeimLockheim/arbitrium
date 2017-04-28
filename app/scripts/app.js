@@ -9,8 +9,6 @@
  * Main module of the application.
  */
 
-angular.module('arbitriumApp', ['angular-storage'])
-
 angular
   .module('arbitriumApp', [
     'ngAnimate',
@@ -21,6 +19,7 @@ angular
     'ngTouch',
     'dragularModule',
     'gajus.swing',
+    'angular-storage',
     'angular-storage'
   ])
   .config(function ($routeProvider) {
@@ -51,7 +50,7 @@ angular
         controllerAs: 'inscriptionCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
-        controller: 'QuizzMultiCtrl',
+        controllexr: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
       }).when('/multimediaQ1', {
         templateUrl: 'views/multimediaQuestion.html',
@@ -70,14 +69,14 @@ angular
       });
   });
 
-angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route) {
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
-    if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
+    if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-      $location.url('login');
+      $location.url('/login');
     }
   });
 });

@@ -62,7 +62,6 @@ angular.module('arbitriumApp').factory('AuthInterceptor', function(AuthService) 
       if (AuthService.authToken && !config.headers.Authorization) {
         config.headers.Authorization = 'Bearer ' + AuthService.authToken;
       }
-
       return config;
     }
   };
