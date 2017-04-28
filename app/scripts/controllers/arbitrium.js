@@ -1,12 +1,21 @@
 'use strict';
 
 
-angular.module('arbitriumApp').factory('ArbitriumService', function($http, apiUrl) {
+angular.module('arbitriumApp').factory('ArbitriumService', function($http) {
   var service = {};
 
-  service.get = function (checkboxState){
+  //Get stories
+  service.getStories = function (id){
+    return $http({
+      method: 'GET',
+      url: 'http://hexagon-api-dev.comem.ch' + '/stories'
+    }).then(function(res) {
+      return res.data;
+    }).catch(function() {
+      console.log("error no such ");
 
-  }
+    });
+  };
 
 
   return service;
@@ -24,7 +33,7 @@ angular.module('arbitriumApp').factory('ArbitriumService', function($http, apiUr
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('ArbitriumCtrl', function () {
+  .controller('ArbitriumCtrl', function (ArbitriumService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -32,6 +41,13 @@ angular.module('arbitriumApp')
     ];
 
     var arbitriumCtrl = this;
+
+    ArbitriumService.getStories().then(function(stories){
+      var stories = stories;
+
+      var conversations = stories[0].Assets.Conversations[0].DialogNodes;
+      console.log(conversations);
+    });
 
     arbitriumCtrl.cards = [
         {name: 'clubs', symbol: '♣'},
@@ -85,4 +101,6 @@ angular.module('arbitriumApp')
             return throwOutConfidence === 1;
         }
     };
+
+
 });

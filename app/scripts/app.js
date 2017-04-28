@@ -9,18 +9,16 @@
  * Main module of the application.
  */
 
-angular.module('arbitriumApp', ['angular-storage'])
-
-angular
-  .module('arbitriumApp', [
+angular.module('arbitriumApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule'
-    //'gajus.swing'
+    'dragularModule',
+    'gajus.swing',
+    'angular-storage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
