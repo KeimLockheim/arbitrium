@@ -8,16 +8,17 @@
  *
  * Main module of the application.
  */
-angular
-  .module('arbitriumApp', [
+
+angular.module('arbitriumApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'dragularModule'
-    //'gajus.swing'
+    'dragularModule',
+    'gajus.swing',
+    'angular-storage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -41,49 +42,52 @@ angular
         templateUrl: 'views/quizzBusiness2.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
-      }).when('/quizz', {
-        templateUrl: 'views/quizz.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+      }).when('/marketing/', {
+        templateUrl: 'views/marketing.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/quizz/:category', {
+        templateUrl: 'views/marketingQuizz.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/results', {
+        templateUrl: 'views/marketingResultat.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/inscription', {
+        templateUrl: 'views/formInscr.html',
+        controller: 'InscriptionCtrl',
+        controllerAs: 'inscriptionCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+        controllexr: 'QuizzMultiCtrl',
+        controllerAs: 'quizzMultiCtrl'
       }).when('/multimediaQ1', {
-        templateUrl: 'views/multimediaQ1.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ2', {
-        templateUrl: 'views/multimediaQ2.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ3', {
-        templateUrl: 'views/multimediaQ3.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ4', {
-        templateUrl: 'views/multimediaQ4.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ5', {
-        templateUrl: 'views/multimediaQ5.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ6', {
-        templateUrl: 'views/multimediaQ6.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
-      })
-      .when('/multimediaQ7', {
-        templateUrl: 'views/multimediaQ7.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+        templateUrl: 'views/multimediaQuestion.html',
+        controller: 'QuizzMultiCtrl',
+        controllerAs: 'quizzMultiCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginCtrl'
+      }).when('/kallax', {
+        templateUrl: 'views/kallax.html',
+        controller: 'KallaxCtrl',
+        controllerAs: 'kallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
   });
+
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
+
+  $rootScope.$on('$routeChangeStart', function(event, toRoute) {
+
+    if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
+
+
+      event.preventDefault();
+      $location.url('/login');
+    }
+  });
+});

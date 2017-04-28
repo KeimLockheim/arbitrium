@@ -1,0 +1,43 @@
+<style>
+  li {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .correct {
+    background: green;
+  }
+  </style>
+<button>Arbitrium</button>
+<h3>Marketing & Communication</h3>
+<div ng-show="!marketingCtrl.quizzOver">
+	<img src=""></img>
+	<h2 id="question">{{marketingCtrl.question}}</h2>
+	<ul id="options">
+		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == 'answer' || monObjet.attribut == 'test2'}>
+			<label>
+				<input type="radio" name="answer" value="{{option}}">
+				{{option}}
+			</label>
+		</li>
+	</ul>
+	<button ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode">Valider</button>
+
+	<div ng-show="!marketingCtrl.answerMode">
+		<button ng-click="marketingCtrl.nextQuestion()" class="next-question">Suivant</button>
+		<span ng-show="marketingCtrl.correctAns">C'est correct!</span>
+		<span ng-show="!marketingCtrl.correctAns">Désolé, mauvaise réponse.</span>
+	</div>
+
+	<div>
+		<p>Question {{marketingCtrl.questionNo}} sur 5</p>
+	</div>
+</div>
+
+<div ng-show="marketingCtrl.quizzOver">
+	<p>Bravo tu as terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
+	<p>Tu as répondu juste à {{marketingCtrl.score}} questions sur 5</p>
+	<p>Tu as débloquer le point et peux maintenant aller constater l'évolution de ton Kallax !</p>
+	<a href="/#!/training">
+		<button>Kallax</button>
+	</a>
+</div>
