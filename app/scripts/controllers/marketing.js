@@ -259,17 +259,3 @@ angular.module('arbitriumApp')
 
 
 });
-
-angular.module('arbitriumApp')
-  .controller('MarketingHometCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
-    var marketingCtrl = this;
-
-
-
-  });
