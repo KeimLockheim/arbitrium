@@ -1,4 +1,4 @@
- angular.module('arbitriumApp').controller('InscriptionCtrl', function($scope, $http, $route) {
+ angular.module('arbitriumApp').controller('InscriptionCtrl', function($location, $scope, $http, $route) {
   var InscriptionCtrl = this;
 
   $("#inscription").click(function(){
@@ -42,7 +42,7 @@
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
-            $route.go('/');
+            $location.path('/');
 
           }).catch(function() {
 
@@ -51,6 +51,4 @@
           });
         }
     });
-  
-
 });

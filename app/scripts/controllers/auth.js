@@ -1,4 +1,4 @@
-angular.module('arbitriumApp.auth', ['angular-storage']).factory('AuthService', function(store) {
+angular.module('arbitriumApp').factory('AuthService', function(store) {
   var service = {
     authToken: store.get('authToken'),
 
@@ -16,15 +16,12 @@ angular.module('arbitriumApp.auth', ['angular-storage']).factory('AuthService', 
   return service;
 });
 
-angular.module('arbitriumApp.auth', ['angular-storage']).controller('LoginCtrl', function(AuthService, $http, $scope, $route) {
-  var loginCtrl = this;
+angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $location, $http, $scope, $route) {
+  var LoginCtrl = this;
   $scope.userSchema = {};
+  $(".error").hide();
 
-  // Add the register function to the scope.
-  loginCtrl.logIn = function() {
-
-    // Forget the previous error (if any).
-    delete loginCtrl.error;
+  $("#login").click(function(){
     $scope.userSchema.mail = $("#email").val();
     $scope.userSchema.password = $("#pwd1").val();
 
@@ -34,28 +31,24 @@ angular.module('arbitriumApp.auth', ['angular-storage']).controller('LoginCtrl',
       data: $scope.userSchema
     }).then(function(res) {
 
-      // If successful, give the token to the authentication service.
       AuthService.setAuthToken(res.data.token);
 
-      // Go to the issue creation tab.
-      $route.go('/');
+      $location.path('/kallax');
 
     }).catch(function() {
 
-      // If an error occurs, hide the loading message and show an error message.
-      $ionicLoading.hide();
-      loginCtrl.error = 'Could not log in.';
+      loginCtrl.error = 'Impossible de se loguer';
     });
-  };
+  });
 });
 
-/*angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route) {
+angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location) {
   var logoutCtrl = this;
 
-  logoutCtrl.logOut = function() {
+  $("#logout").click(function(){
     AuthService.unsetAuthToken();
-    $route.go('login');
-  };
+    $location.path('/');
+  });
 });
 
 angular.module('arbitriumApp').factory('AuthInterceptor', function(AuthService) {
@@ -77,4 +70,4 @@ angular.module('arbitriumApp').factory('AuthInterceptor', function(AuthService) 
 
 angular.module('arbitriumApp').config(function($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor');
-});*/
+});
