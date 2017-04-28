@@ -13,7 +13,7 @@
 	<img src=""></img>
 	<h2 id="question">{{marketingCtrl.question}}</h2>
 	<ul id="options">
-		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == 'answer' || monObjet.attribut == 'test2'}>
+		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == '' || monObjet.attribut == 'test2'}>
 			<label>
 				<input type="radio" name="answer" value="{{option}}">
 				{{option}}
@@ -36,7 +36,7 @@
 <div ng-show="marketingCtrl.quizzOver">
 	<p>Bravo tu as terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
 	<p>Tu as répondu juste à {{marketingCtrl.score}} questions sur 5</p>
-	<p>Tu as débloquer le point et peux maintenant aller constater l'évolution de ton Kallax !</p>
+	<p>Tu as débloqué le point et peux maintenant aller constater l'évolution de ton Kallax !</p>
 	<a href="/#!/training">
 		<button>Kallax</button>
 	</a>
