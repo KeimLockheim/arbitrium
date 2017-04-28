@@ -67,12 +67,10 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-<<<<<<< HEAD
       }).when('/resultMultimedia/', {
         templateUrl: 'views/resultMultimedia.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-=======
       }).when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
@@ -81,7 +79,6 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/kallax.html',
         controller: 'KallaxCtrl',
         controllerAs: 'kallaxCtrl'
->>>>>>> a6d7e0b075cafee3e37f7d0d2bc74eedf12141f9
       }).otherwise({
         redirectTo: '/'
       });
@@ -94,7 +91,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-      $location.url('/login');
+      $location.url('/inscription');
       
     }
   });
