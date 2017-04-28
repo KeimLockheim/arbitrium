@@ -18,7 +18,6 @@ angular.module('arbitriumApp', [
     'ngTouch',
     'dragularModule',
     'gajus.swing',
-    'angular-storage',
     'angular-storage'
   ])
   .config(function ($routeProvider) {
@@ -35,8 +34,12 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
-      }).when('/business', {
-        templateUrl: 'views/business.html',
+      }).when('/quizzBusiness1', {
+        templateUrl: 'views/quizzBusiness1.html',
+        controller: 'BusinessCtrl',
+        controllerAs: 'business'
+      }).when('/quizzBusiness2', {
+        templateUrl: 'views/quizzBusiness2.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/marketing/', {
