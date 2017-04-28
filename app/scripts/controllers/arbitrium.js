@@ -16,6 +16,18 @@ angular.module('arbitriumApp').factory('ArbitriumService', function($http) {
 
     });
   };
+  //Git image
+  service.getImage = function (id){
+    return $http({
+      method: 'GET',
+      url: 'http://hexagon-api-dev.comem.ch' + '/stories'
+    }).then(function(res) {
+      return res.data;
+    }).catch(function() {
+      console.log("error no such ");
+
+    });
+  };
 
 
   return service;
@@ -49,12 +61,17 @@ angular.module('arbitriumApp')
       console.log(conversations);
     });
 
-    arbitriumCtrl.cards = [
-        {name: 'clubs', symbol: '♣'},
-        {name: 'diamonds', symbol: '♦'},
-        {name: 'hearts', symbol: '♥'},
-        {name: 'spades', symbol: '♠'}
+    arbitriumCtrl.cards =[
+      {name:'clubs',symbol: ''},
+      {}
     ];
+
+    // arbitriumCtrl.cards = [
+    //     {name: 'clubs', symbol: '♣'},
+    //     {name: 'diamonds', symbol: '♦'},
+    //     {name: 'hearts', symbol: '♥'},
+    //     {name: 'spades', symbol: '♠'}
+    // ];
 
     arbitriumCtrl.remove = function (index) {
       var cardName = arbitriumCtrl.cards.splice(index, 1)[0].name;

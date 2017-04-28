@@ -9,6 +9,7 @@
  * Main module of the application.
  */
 
+
 angular.module('arbitriumApp', [
     'ngAnimate',
     'ngCookies',
@@ -38,18 +39,22 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/business.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
-      }).when('/quizz', {
-        templateUrl: 'views/quizz.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+      }).when('/marketing/', {
+        templateUrl: 'views/marketing.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/quizz/:category', {
+        templateUrl: 'views/marketingQuizz.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/results', {
+        templateUrl: 'views/marketingResultat.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
       }).when('/inscription', {
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
         controllerAs: 'inscriptionCtrl'
-      }).when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'loginCtrl'
       }).when('/quizzMultimedia', {
         templateUrl: 'views/quizzMultimedia.html',
         controller: 'QuizzMultiCtrl',
@@ -58,19 +63,27 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginCtrl'
+      }).when('/kallax', {
+        templateUrl: 'views/kallax.html',
+        controller: 'KallaxCtrl',
+        controllerAs: 'kallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
   });
 
-angular.module('arbitriumApp.auth', ['angular-storage']).run(function(AuthService, $rootScope, $route) {
+angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $location) {
 
   $rootScope.$on('$routeChangeStart', function(event, toRoute) {
 
     if (!AuthService.authToken && !(toRoute.name == 'login' || toRoute.name == 'inscription')) {
 
-      event.preventDefault();
-      $route.go('login');
+      //event.preventDefault();
+      //$location.url('login');
     }
   });
 });
