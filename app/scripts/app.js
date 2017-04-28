@@ -36,10 +36,18 @@ angular
         templateUrl: 'views/business.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
-      }).when('/quizz', {
-        templateUrl: 'views/quizz.html',
-        controller: 'QuizzCtrl',
-        controllerAs: 'quizz'
+      }).when('/marketing/', {
+        templateUrl: 'views/marketing.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/quizz/:category', {
+        templateUrl: 'views/marketingQuizz.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
+      }).when('/marketing/results', {
+        templateUrl: 'views/marketingResultat.html',
+        controller: 'MarketingCtrl',
+        controllerAs: 'marketingCtrl'
       }).when('/inscription', {
         templateUrl: 'views/formInscr.html',
         controller: 'InscriptionCtrl',
