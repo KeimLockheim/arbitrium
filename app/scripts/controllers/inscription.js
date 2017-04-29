@@ -28,7 +28,6 @@
         }
 
         if(hasError == false) {
-          //console.log("coucou");
           $scope.userSchema.mail = $("#email").val();
           $scope.userSchema.sex = sexVal;
           $scope.userSchema.age = ageVal;
