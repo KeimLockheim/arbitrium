@@ -192,7 +192,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('MarketingCtrl', function ($routeParams, MarketingService) {
+  .controller('MarketingCtrl', function ($routeParams, MarketingService, $scope, $http, AuthService, store, $location) {
+    $scope.userSchema = {};
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -265,5 +266,46 @@ angular.module('arbitriumApp')
 
     marketingCtrl.start();
 
+    // Le code pour le patch commence ICI
+    
+    // Pour tester le patch, décommentez la ligne ci-dessous
+    marketingCtrl.quizzOver = true;
+
+    if(marketingCtrl.quizzOver == true){
+
+      var actualUserId = AuthService.userInf.id;
+      $scope.userSchema.marketingComDone = true;
+      console.log($scope.userSchema.marketingComDone);
+      // Make the request to retrieve or create the user.
+          $http({
+            method: 'PATCH',
+            url: 'http://localhost:3005/users/'+ actualUserId,
+            data: {"marketingComDone" : "true"},
+            contentType: 'application/json'
+          }).then(function(res) {
+
+            console.log("AUTOP");
+
+              $http({
+                method: 'GET',
+                url: 'http://localhost:3005/users/'+ actualUserId,
+              }).then(function(res) {
+
+                if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
+                  console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
+                }else{
+                  console.log("Il te manque encore des entraienemtns");
+                }
+            });
+
+            $location.path('kallax');
+                      
+          }).catch(function(res) {
+            console.log("Ca marche pas ton patch");
+            console.log(res);
+            // If an error occurs, hide the loading message and show an error message.
+            //MarketingCtrl.error = "Problème avec le post marketing done";
+          });
+     } 
 
 });

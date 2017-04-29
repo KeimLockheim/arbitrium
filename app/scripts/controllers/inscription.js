@@ -28,7 +28,6 @@
         }
 
         if(hasError == false) {
-          //console.log("coucou");
           $scope.userSchema.mail = $("#email").val();
           $scope.userSchema.sex = sexVal;
           $scope.userSchema.age = ageVal;
@@ -38,7 +37,7 @@
           // Make the request to retrieve or create the user.
           $http({
             method: 'POST',
-            url: 'http://hexagon-api-dev.comem.ch/users',
+            url: 'http://localhost:3005/users',
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
