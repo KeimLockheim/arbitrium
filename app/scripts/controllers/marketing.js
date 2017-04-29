@@ -10,7 +10,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       {
         question: "Quel événement célèbre annuel est connu pour ses nombreuses publicités et ses shows?",
         options: ["Igfsd", "dfgs", "Super Bowl"],
-        answer: 2
+        answer: 2,
+        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
       },
       {
         question: "Quelle marque de sport a pour slogan “Just do it”?",
@@ -225,6 +226,8 @@ angular.module('arbitriumApp')
           marketingCtrl.options = q.options;
           marketingCtrl.answer = q.answer;
           marketingCtrl.answerMode = true;
+          console.log('image:' + (q.image || ''));
+          marketingCtrl.image = (q.image || 'images/Clear.gif');
           //console.log(marketingCtrl.answerMode);
         } else {
           marketingCtrl.quizzOver = true;
@@ -242,7 +245,11 @@ angular.module('arbitriumApp')
         marketingCtrl.correctAns = true;
       } else {
         marketingCtrl.correctAns = false;
+        // parent.parent is ugly but since the selector does not work, we cannot change this (https://api.jquery.com/parent/)
+        $('input[name=answer]:checked').parent().parent().addClass('wrong');
+
       }
+      $('#options li:nth-child(' +  (marketingCtrl.answer+1) + ')').addClass('correct');
 
       marketingCtrl.answerMode = false;
       // !$('li').addClass( "correct" );
@@ -251,6 +258,7 @@ angular.module('arbitriumApp')
     marketingCtrl.nextQuestion = function() {
       marketingCtrl.id++;
       marketingCtrl.questionNo++;
+      marketingCtrl.image = null;
       marketingCtrl.getQuestion();
 
     }
