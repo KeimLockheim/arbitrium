@@ -48,11 +48,12 @@
                   <img src="../images/index/blog.png" alt="icone blog">
                 </a>
               </div>
-              <div class="col-lg-12 user">
-                <a href="https://www.google.com/" target="_blank">
-                  <img src="../images/index/user.png" alt="icone user">
-                </a>  
-              </div>
+              <!--<div class="col-lg-12 user">
+                <a>coucou
+                <img src="../images/index/user.png"/>
+                </a>
+              </div>-->
+              
               <div class="col-lg-12 arbitriumIcon">
                 <a href="https://www.google.com/" target="_blank">
                   <img src="../images/index/arbitrium.png" alt="icone arbitrium">
@@ -61,6 +62,11 @@
             </div>
         </div>
     </header>
+    
+<!-- BOUTON LOGOUT ICI -->
+    <div ng-controller=LogoutCtrl class="">
+            <input class="btn btn-success" type="submit" value="Logout" name="logout" id="logout" ng-click="logoutCtrl.logout()"/>
+    </div>
 
     <div class="container">
     <div ng-view=""></div>
