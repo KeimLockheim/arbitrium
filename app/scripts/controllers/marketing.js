@@ -29,37 +29,37 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       },
       {
         question: "A qui appartient ce logo?",
-        options: ["nadfdfvc", "basdfvc", "nbvc"],
+        options: ["Puma", "Salomon", "Craft"],
         answer: 1,
         image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
       }
     ],
     food: [
       {
-        question: "Quelle chaîne de restaurant a pour mascotte un clown jaune et rouge?",
-        options: ["Burger King", "McDonald's", ""],
+        question: "Quelle chaîne de restaurants a pour mascotte un clown jaune et rouge?",
+        options: ["Burger King", "McDonald's", "Pizza Hut"],
         answer: 1
       },
       {
-        question: "Quel producteur de boisson a utilisé un célèbre dj suisse pour sa publicité?",
-        options: ["asdfasd", "asdfasdf", "Coca Cola"],
+        question: "Quel producteur de boisson a utilisé un célèbre DJ suisse pour sa publicité?",
+        options: ["Rivella", "Fanta", "Coca Cola"],
         answer: 2,
         image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
       },
       {
         question: "Quelle marque a pour slogan 'What Else?'?",
-        options: ["Nespresso", "asdfas", "adfa"],
+        options: ["Nespresso", "Tic Tac", "Delizio"],
         answer: 0
       },
       {
         question: "A quelle entreprise correspond cette illustration?",
-        options: ["adsfasdf", "adsfaadfa", "KFC"],
+        options: ["Subway", "Domino's", "KFC"],
         answer: 2,
         image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
       },
       {
         question: "Qui dit 'On n’a pas fini de vous faire aimer la viande'?",
-        options: ["asdfasdfasd", "Charal", "asdf"],
+        options: ["Findus", "Charal", "Gourmet"],
         answer: 1
       }
     ],
@@ -224,7 +224,6 @@ angular.module('arbitriumApp')
     }
 
     marketingCtrl.getQuestion = function() {
-      //console.log($routeParams.category);
       if ($routeParams.category) {
 
         var q = MarketingService.getQuestion($routeParams.category, marketingCtrl.id);
@@ -235,7 +234,6 @@ angular.module('arbitriumApp')
           marketingCtrl.answerMode = true;
           console.log('image:' + (q.image || ''));
           marketingCtrl.image = (q.image || 'images/Clear.gif');
-          //console.log(marketingCtrl.answerMode);
         } else {
           marketingCtrl.quizzOver = true;
         }
@@ -259,7 +257,6 @@ angular.module('arbitriumApp')
       $('#options li:nth-child(' +  (marketingCtrl.answer+1) + ')').addClass('correct');
 
       marketingCtrl.answerMode = false;
-      // !$('li').addClass( "correct" );
     };
 
     marketingCtrl.nextQuestion = function() {
@@ -305,7 +302,7 @@ angular.module('arbitriumApp')
             });
 
             $location.path('kallax');
-                      
+
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");
             console.log(res);
