@@ -67,10 +67,6 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-      }).when('/resultMultimedia/', {
-        templateUrl: 'views/resultMultimedia.html',
-        controller: 'QuizzMultiCtrl',
-        controllerAs: 'quizzMultiCtrl'
       }).when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
@@ -91,7 +87,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-      $location.url('/inscription');
+      $location.url('/login');
       
     }
   });

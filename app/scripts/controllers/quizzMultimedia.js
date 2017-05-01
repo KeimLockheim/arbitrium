@@ -58,13 +58,6 @@ angular.module('arbitriumApp')
 		break;
 	}
 
-	// if (!$("input[name='answer']").is(':checked')) {
- //   		$('.boutonQuizzMultimedia').prop('disabled', true);
-	// }
-	// else {
-	// 	$('.boutonQuizzMultimedia').prop('enable', true);
-	// }
-
 	$(function(){
 	    $("input[type='radio']").change(function(){
 
@@ -77,17 +70,13 @@ angular.module('arbitriumApp')
 	$scope.valideReponse = function() {
 
 		var answer = document.querySelector('input[name = "answer"]:checked').value;
-		
-		console.log(answer);
 
 		if (quizzMultiCtrl.reponseCorrect == answer) {
-			console.log("YAY");
-			$scope.right = true;
-			
+			$scope.showGoodMessage = true;
 		}
 
 		else {
-			console.log("caca");
+			$scope.showBadMessage = true;
 		}
 
 	};

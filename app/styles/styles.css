@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: 'Brasilia-Short II';
+    src: url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display:auto;
+}
+
 
 /*-------------------------
 	Simple reset
@@ -9,23 +17,16 @@
 	padding:0;
 }
 
-
+h1 {
+	font-family:'Brasilia-Short II';
+}
 /*-------------------------
 	General Styles
 --------------------------*/
 
-
-html{
-	/*background:url('../img/tile_bg.jpg') #b0b0b0;*/
-	position:relative;
-}
-
 body{
-	background:url('../images/index/header-bg-empty.jpg') no-repeat top;
-	/*background-color: #6A7F7F;*/
-	min-height: 600px;
-    padding: 25px 0 0;
-	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	background:url('../images/index/fond.jpg') no-repeat top;
+	background-size: 100%;
 	font-size: 14px;
 }
 
@@ -39,8 +40,52 @@ a:hover{
 	text-decoration:underline;
 }
 
-section, footer{
-	display: block;
+
+/**********************************************
+					HEADER
+**********************************************/
+.entete {
+  display: inline;
+  width: 100%;
+  overflow: auto;
+}
+.banniere {
+  position: absolute;
+  width: 33.3%;
+  display: inline-block;
+  text-align: center;
+}
+.banniere img{
+  width: 100%;
+}
+.logoHeig {
+  display: inline-block;
+  float: left;
+  width: 33.3%;
+}
+.logoHeig img {
+  margin: 10px;
+  width: 30%;
+}
+.socialNetwork {
+  display: inline-block;
+  float: right;
+  width: 33.3%;
+}
+.socialNetwork img{
+  width: 7%;
+  margin: 5px;
+  float: right;
+} 
+
+.user {
+  position: relative;
+  width: 49%;
+  text-align: center;
+}
+.user img {
+  width: 6%;
+  padding-top: 10%;
 }
 
 
@@ -49,7 +94,6 @@ section, footer{
 -----------------------------*/
 
 div {
-	font-family: 'Roboto', sans-serif;
 	color: #fff;
 }
 
@@ -60,8 +104,8 @@ div {
 
 #logoHeig {
 	display: inline-block;
-	height: 20%;
-	width: 20%;
+	height: 10%;
+	width: 10%;
 }
 
 #imgMedia {
@@ -270,6 +314,20 @@ div {
 .questionMultimedia input[type="radio"] + label {
 	margin-left: 10px;
 } 
+
+.reponseMultimedia{
+	margin-top: 5%;
+}
+
+.reponseMultimedia p {
+	font-size: 17px;
+}
+
+.reponseMultimedia button {
+	color: black;
+	font-size: 15px;
+}
+
 
 /*----------------------------
 	The Footer
