@@ -1,0 +1,24 @@
+<h1>1. Attribuez chaque tâche à une personne</h1>
+
+<div ng-controller='FormController'>
+  <form novalidate class="businessManagementQuizzForm">
+    <div class='wrapper' ng-controller="BusinessCtrl">
+      <div class='dragColumn dragContainer'>
+        <div id="taskPlanning" class='dragTask peopleTask'>Planification du projet</div>
+        <div id="taskAnalyse" class='dragTask'>Analyse financière</div>
+        <div id="taskMarket" class='dragTask'>Étude de marché</div>
+        <div id="taskDesign" class='dragTask'>Réalisation de maquettes design</div>
+        <div id="taskDev" class='dragTask'>Développement web</div>
+      </div>
+      <div class='dragColumn'>
+        <h4>Chef de projet</h4><div id='contChefProjet' class='dragContainer dragPeople'></div>
+        <h4>Responsable marketing</h4><div id='contRespMarket' class='dragContainer dragPeople'></div>
+        <h4>Développeur</h4><div id='contDev' class='dragContainer dragPeople'></div>
+        <h4>Comptable</h4><div id='contComptable' class='dragContainer dragPeople'></div>
+        <h4>Graphiste</h4><div id='contGraphiste' class='dragContainer dragPeople'></div>
+      </div>
+    </div>
+    <div class="businessManQuizzMessage ng-hide" ng-show="showMessage"></div>
+    <input type="submit" class="btn btn-primary" ng-click="check()" value="Suite" />
+  </form>
+</div>

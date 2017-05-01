@@ -10,7 +10,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       {
         question: "Quel événement célèbre annuel est connu pour ses nombreuses publicités et ses shows?",
         options: ["Igfsd", "dfgs", "Super Bowl"],
-        answer: 2
+        answer: 2,
+        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
       },
       {
         question: "Quelle marque de sport a pour slogan “Just do it”?",
@@ -191,7 +192,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('MarketingCtrl', function ($routeParams, MarketingService) {
+  .controller('MarketingCtrl', function ($routeParams, MarketingService, $scope, $http, AuthService, store, $location) {
+    $scope.userSchema = {};
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -225,6 +227,8 @@ angular.module('arbitriumApp')
           marketingCtrl.options = q.options;
           marketingCtrl.answer = q.answer;
           marketingCtrl.answerMode = true;
+          console.log('image:' + (q.image || ''));
+          marketingCtrl.image = (q.image || 'images/Clear.gif');
           //console.log(marketingCtrl.answerMode);
         } else {
           marketingCtrl.quizzOver = true;
@@ -242,7 +246,11 @@ angular.module('arbitriumApp')
         marketingCtrl.correctAns = true;
       } else {
         marketingCtrl.correctAns = false;
+        // parent.parent is ugly but since the selector does not work, we cannot change this (https://api.jquery.com/parent/)
+        $('input[name=answer]:checked').parent().parent().addClass('wrong');
+
       }
+      $('#options li:nth-child(' +  (marketingCtrl.answer+1) + ')').addClass('correct');
 
       marketingCtrl.answerMode = false;
       // !$('li').addClass( "correct" );
@@ -251,25 +259,53 @@ angular.module('arbitriumApp')
     marketingCtrl.nextQuestion = function() {
       marketingCtrl.id++;
       marketingCtrl.questionNo++;
+      marketingCtrl.image = null;
       marketingCtrl.getQuestion();
 
     }
 
     marketingCtrl.start();
 
+    // Le code pour le patch commence ICI
+    
+    // Pour tester le patch, décommentez la ligne ci-dessous
+    marketingCtrl.quizzOver = true;
+
+    if(marketingCtrl.quizzOver == true){
+
+      var actualUserId = AuthService.userInf.id;
+      $scope.userSchema.marketingComDone = true;
+      console.log($scope.userSchema.marketingComDone);
+      // Make the request to retrieve or create the user.
+          $http({
+            method: 'PATCH',
+            url: 'http://localhost:3005/users/'+ actualUserId,
+            data: {"marketingComDone" : "true"},
+            contentType: 'application/json'
+          }).then(function(res) {
+
+            console.log("AUTOP");
+
+              $http({
+                method: 'GET',
+                url: 'http://localhost:3005/users/'+ actualUserId,
+              }).then(function(res) {
+
+                if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
+                  console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
+                }else{
+                  console.log("Il te manque encore des entraienemtns");
+                }
+            });
+
+            $location.path('kallax');
+                      
+          }).catch(function(res) {
+            console.log("Ca marche pas ton patch");
+            console.log(res);
+            // If an error occurs, hide the loading message and show an error message.
+            //MarketingCtrl.error = "Problème avec le post marketing done";
+          });
+     } 
 
 });
-
-angular.module('arbitriumApp')
-  .controller('MarketingHometCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
-    var marketingCtrl = this;
-
-
-
-  });
