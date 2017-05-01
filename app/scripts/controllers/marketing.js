@@ -279,7 +279,7 @@ angular.module('arbitriumApp')
       // Make the request to retrieve or create the user.
           $http({
             method: 'PATCH',
-            url: 'http://localhost:3005/users/'+ actualUserId,
+            url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
             data: {"marketingComDone" : "true"},
             contentType: 'application/json'
           }).then(function(res) {
@@ -288,7 +288,7 @@ angular.module('arbitriumApp')
 
               $http({
                 method: 'GET',
-                url: 'http://localhost:3005/users/'+ actualUserId,
+                url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
               }).then(function(res) {
 
                 if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
