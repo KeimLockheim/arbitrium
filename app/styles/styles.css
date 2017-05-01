@@ -49,10 +49,16 @@ a:hover{
 /**********************************************
 					HEADER
 **********************************************/
+
+.header {
+  margin-bottom: 6%;
+}
 .entete {
   display: inline;
   width: 100%;
   overflow: auto;
+  margin: 0;
+  padding: 0
 }
 .banniere {
   position: absolute;
@@ -77,22 +83,37 @@ a:hover{
   float: right;
   width: 33.3%;
 }
-.socialNetwork img{
+.socialNetwork img {
   width: 7%;
   margin: 5px;
   float: right;
 } 
 
+.usefulIcons {
+	text-align: center;
+}
+
 .user {
-  position: relative;
+  position: fixed;
   width: 49%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 10%;
+  padding-top: 9%;
+  margin-left: 65%;
 }
 
+.arbitriumIcon {
+  position: fixed;
+  width: 49%;
+  text-align: center;
+}
+.arbitriumIcon img {
+  width: 6%;
+  padding-top: 9%;
+  margin-left: 117%;
+}
 
 /*----------------------------
 	Main Section
@@ -351,4 +372,41 @@ div {
 	#siteMediaLink a {
 		font-size: 18px;
 	}
+}
+
+/* Pour IPAD */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+/**********************************************
+					HEADER
+**********************************************/
+
+
+.header {
+  margin-bottom: 10%;
+}
+
+.logoHeig img {
+  margin: 10px;
+  width: 50%;
+}
+
+.socialNetwork img {
+  width: 9%;
+  margin: 5px;
+  float: right;
+} 
+
+.user img {
+  width: 6%;
+  padding-top: 9%;
+  margin-left: 70%;
+}
+
+.arbitriumIcon img {
+  width: 6%;
+  padding-top: 9%;
+  margin-left: 120%;
+}
+
 }
