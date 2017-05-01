@@ -18,7 +18,6 @@ angular.module('arbitriumApp', [
     'ngTouch',
     'dragularModule',
     'gajus.swing',
-    'angular-storage',
     'angular-storage'
   ])
   .config(function ($routeProvider) {
