@@ -91,13 +91,14 @@ a:hover{
 
 .user {
   position: fixed;
-  width: 49%;
+  z-index: 1;
+  width: 50%;
   text-align: center;
 }
 .user img {
   width: 6%;
   padding-top: 9%;
-  margin-left: 65%;
+  margin-left: 67%;
 }
 
 .arbitriumIcon {
