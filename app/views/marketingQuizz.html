@@ -12,8 +12,9 @@
 <div ng-show="!marketingCtrl.quizzOver">
 	<img src=""></img>
 	<h2 id="question">{{marketingCtrl.question}}</h2>
+	<img ng-src={{marketingCtrl.image}} />
 	<ul id="options">
-		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == '' || monObjet.attribut == 'test2'}>
+		<li ng-repeat="option in marketingCtrl.options">
 			<label>
 				<input type="radio" name="answer" value="{{option}}">
 				{{option}}

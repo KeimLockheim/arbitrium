@@ -87,9 +87,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-      $location.url('/login');
-      
-    }
+      $location.url('/');
   });
 
 });
