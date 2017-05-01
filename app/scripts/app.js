@@ -19,6 +19,7 @@ angular.module('arbitriumApp', [
     'dragularModule',
     'gajus.swing',
     'angular-storage'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -34,8 +35,12 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
-      }).when('/business', {
-        templateUrl: 'views/business.html',
+      }).when('/quizzBusiness1', {
+        templateUrl: 'views/quizzBusiness1.html',
+        controller: 'BusinessCtrl',
+        controllerAs: 'business'
+      }).when('/quizzBusiness2', {
+        templateUrl: 'views/quizzBusiness2.html',
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/marketing/', {
@@ -58,7 +63,7 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/quizzMultimedia.html',
         controllexr: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-      }).when('/multimediaQ1', {
+      }).when('/multimedia/:Id', {
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
@@ -81,9 +86,10 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
 
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
-
       event.preventDefault();
-      $location.url('/login');
+
+      $location.url('/');
     }
   });
+
 });
