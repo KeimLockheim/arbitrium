@@ -41,7 +41,7 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
 
     $http({
       method: 'POST',
-      url: 'http://localhost:3005/auth',
+      url: 'http://hexagon-api-dev.comem.ch/auth',
       data: $scope.userSchema
     }).then(function(res) {
 

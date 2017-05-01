@@ -12,7 +12,16 @@
 	</div>
 	<div class="boutonMulti">
 		<a href="/#!/quizzMultimedia"><button>Retour</button></a>
-		<a href="/#!/resultMultimedia"><button type="button" disabled="disabled" ng-click="valideReponse()" class="boutonQuizzMultimedia">Terminer la mission</button></a>
+		<button type="button" disabled="disabled" ng-click="valideReponse()" class="boutonQuizzMultimedia">Vérifier</button>
 	</div>
 
+	<div class="reponseMultimedia ng-hide" ng-show="showGoodMessage" >
+		<p>Bien joué! Tu as trouvé la bonne réponse et tu peux maintenant continuer ton entraînement ou passer à l'épreuve finale!</p>
+		<a href="/#!/training"><button>Terminer la mission</button></a>
+	</div>
+
+	<div class="reponseMultimedia ng-hide" ng-show="showBadMessage">
+		<p>Ah dommage! Tu n'as pas trouvé la bonne réponse... Si tu veux réessayer, tu peux visionner une autre vidéo ou alors continuer ton entraînement et passer à l'épreuve finale!</p>
+		<a href="/#!/training"><button>Terminer la mission</button></a>
+	</div>
 </div>
