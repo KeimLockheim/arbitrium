@@ -1,5 +1,5 @@
 angular.module('arbitriumApp')
-  .controller('QuizzMultiCtrl', function ($routeParams, $scope, $http) {
+  .controller('QuizzMultiCtrl', function ($routeParams, $scope, $http, AuthService, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -79,23 +79,46 @@ angular.module('arbitriumApp')
 			$scope.showBadMessage = true;
 		}
 
+		console.log("testetstest");
+
 	};
 
-	  //   $http({
-	  //     method: 'POST',
-	  //     url: apiUrl + '/issues/'+issueId+'/comments',
-	  //     data: $scope.comment
-	  //   }).success(function(comments) {
-	  //     $ionicPopup.alert({
-	  //       title: 'Comment',
-	  //       template: 'Comment posted'
-	  //     });
+	$scope.terminerMission = function (){
 
-	  //   }).catch(function() {
-	  //     // If an error occurs, hide the loading message and show an error message.
-	  //     $scope.error = 'Can not post the comment';
-	  //   });
+		
+		
+		var actualUserId = AuthService.userInf.id;
+		console.log(actualUserId);
+      // Make the request to retrieve or create the user.
+         $http({
+            method: 'PATCH',
+            url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+            data: {"multimediaDone" : "true"},
+            contentType: 'application/json'
+          }).then(function(res) {
 
-	  // };	
+              $http({
+                method: 'GET',
+                url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+              }).then(function(res) {
+
+                if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
+                  console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
+                }else{
+                  console.log("Il te manque encore des entraienemtns");
+                }
+            });
+
+            $location.path('kallax');
+                      
+          }).catch(function(res) {
+            console.log("Ca marche pas ton patch dans multimedia");
+            console.log(res);
+            // If an error occurs, hide the loading message and show an error message.
+            //MarketingCtrl.error = "Problème avec le post marketing done";
+          });
+          
+
+	};
 
 });
