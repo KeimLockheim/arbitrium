@@ -52,7 +52,7 @@ a:hover{
 **********************************************/
 
 .header {
-  margin-bottom: 6%;
+  margin-bottom: 10%;
 }
 .entete {
   display: inline;
@@ -91,26 +91,26 @@ a:hover{
 }
 
 .user {
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 50%;
+  padding-top: 4.5%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 2%;
-  margin-right: 70%;
+  margin-left: 70%;
 }
 
 .arbitriumIcon {
-  position: relative;
+  position: absolute;
   width: 49%;
+  margin-left: 33%;
+  padding-top: 4.5%;
   text-align: center;
 }
 .arbitriumIcon img {
   width: 6%;
-  padding-top: 0%;
-  margin-left: 117%;
 }
 
 /*----------------------------
@@ -462,36 +462,7 @@ div {
 						HEADER
 	**********************************************/
 
-	.header {
-	  margin-bottom: 10%;
-	}
 
-	.logoHeig img {
-	  margin: 0px;
-	  width: 50%;
-	}
-
-	.socialNetwork img {
-	  width: 9%;
-	  margin: 5px;
-	  float: right;
-	} 
-
-	.user img {
-	  width: 6%;
-	  padding-top: 0;
-	  margin-left: 70%;
-	}
-
-	.arbitriumIcon {
-	  position: relative;
-	  width: 49%;
-	}
-	.arbitriumIcon img {
-	  width: 6%;
-	  padding-top: 0%;
-	  margin-left: 120%;
-	}
 
 }
 
@@ -502,65 +473,5 @@ div {
 						HEADER
 	**********************************************/
 
-	.header {
-	  margin-bottom: 6%;
-	}
-	.entete {
-	  display: inline;
-	  width: 100%;
-	  overflow: auto;
-	  margin: 0;
-	  padding: 0
-	}
-	.banniere {
-	  position: absolute;
-	  width: 80%;
-	  display: inline-block;
-	  text-align: center;
-	}
-	.banniere img{
-	  width: 100%;
-	}
-	.logoHeig {
-	  display: inline-block;
-	  float: left;
-	  width: 10%;
-	}
-	.logoHeig img {
-	  margin: 10px;
-	  width: 1500%;
-	}
-	.socialNetwork {
-	  display: inline-block;
-	  float: right;
-	  width: 10%;
-	}
-	.socialNetwork img {
-	  width: 250%;
-	  margin: 5px;
-	  float: right;
-	}
-
-	.user {
-	  position: static;
-	  width: 49%;
-	  text-align: center;
-	}
-	.user img {
-	  width: 6%;
-	  padding-top: 9%;
-	  margin-left: 65%;
-	}
-
-	.arbitriumIcon {
-	  position: static;
-	  width: 49%;
-	  text-align: center;
-	}
-	.arbitriumIcon img {
-	  width: 6%;
-	  padding-top: 9%;
-	  margin-left: 117%;
-	}
 
 }
