@@ -44,6 +44,13 @@ body{
 	text-decoration:underline;
 }
 
+ul {
+	list-style: none;
+	text-align: left;
+	margin: 8px;
+    font-size: 16px;
+}
+
 
 /**********************************************
 					HEADER
@@ -174,7 +181,7 @@ div {
 }
 
 /*----------------------------
-	Button
+	Buttons
 -----------------------------*/
 .btn {
 	font-family:'Brasilia-Short II';
@@ -218,6 +225,16 @@ div {
 	line-height: 60px;
 }
 
+#grp1Marketing {
+	display: inline;
+}
+
+.btn-group {
+	width: 125px;
+	height: 50px;
+	line-height: 40px;
+	margin: 2px;
+}
 /*----------------------------
 	Formulaire inscription
 -----------------------------*/
@@ -230,6 +247,7 @@ div {
 
 .btnRadio{
 	float: left;
+	display: block;
 }
 
 .labelRadio {
@@ -274,6 +292,26 @@ div {
 	Training
 -----------------------------*/
 
+
+/*----------------------------
+	Marketing
+-----------------------------*/
+.btnRadioMarketing,
+.validationFooter {
+	display: block;
+}
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
+
+#question {
+	font-size: 16px;
+}
 
 /*----------------------------
 	Business Quiz
@@ -572,6 +610,25 @@ div {
 	  width: 6%;
 	  padding-top: 9%;
 	  margin-left: 117%;
+	}
+
+	/*----------------------------
+		Buttons
+	-----------------------------*/
+
+	.btn-group {
+		width: 100px;
+		height: 50px;
+		line-height: 40px;
+		margin: 2px;
+	}
+
+	/*----------------------------
+		Marketing & Communication
+	-----------------------------*/
+
+	#interests .btn {
+		font-size: 10px;
 	}
 
 }
