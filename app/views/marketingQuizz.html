@@ -45,6 +45,6 @@
 	<p>Vous avez répondu juste à {{marketingCtrl.score}} questions sur 5</p>
 	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax!</p>
 	<a href="/#!/training">
-		<button>Terminer la mission</button>
+		<button ng-click="marketingCtrl.patch()">Terminer la mission</button>
 	</a>
 </div>
