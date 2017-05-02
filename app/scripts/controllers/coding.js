@@ -51,13 +51,11 @@ angular.module('arbitriumApp')
     $scope.patch = function() {
     	console.log("test");
       var actualUserId = AuthService.userInf.id;
-      $scope.userSchema.codingComDone = true;
-      console.log($scope.userSchema.codingComDone);
       // Make the request to retrieve or create the user.
           $http({
             method: 'PATCH',
             url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
-            data: {"codingComDone" : "true"},
+            data: {"codingDone" : "true"},
             contentType: 'application/json'
           }).then(function(res) {
 
@@ -75,7 +73,7 @@ angular.module('arbitriumApp')
                 }
             });
 
-            $location.path('kallax');
+            $location.path('training');
 
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");
