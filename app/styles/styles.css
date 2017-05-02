@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
 @font-face {
     font-family: 'Brasilia-Short II';
-    src: url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    src: url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
     font-display:auto;
