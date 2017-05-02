@@ -90,25 +90,25 @@ a:hover{
 } 
 
 .user {
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 50%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 9%;
-  margin-left: 67%;
+  padding-top: 2%;
+  margin-right: 70%;
 }
 
 .arbitriumIcon {
-  position: fixed;
+  position: relative;
   width: 49%;
   text-align: center;
 }
 .arbitriumIcon img {
   width: 6%;
-  padding-top: 9%;
+  padding-top: 0%;
   margin-left: 117%;
 }
 
@@ -383,7 +383,7 @@ div {
 	}
 
 	.logoHeig img {
-	  margin: 10px;
+	  margin: 0px;
 	  width: 50%;
 	}
 
@@ -395,13 +395,17 @@ div {
 
 	.user img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0;
 	  margin-left: 70%;
 	}
 
+	.arbitriumIcon {
+	  position: relative;
+	  width: 49%;
+	}
 	.arbitriumIcon img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0%;
 	  margin-left: 120%;
 	}
 
@@ -454,7 +458,7 @@ div {
 	} 
 
 	.user {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
@@ -465,7 +469,7 @@ div {
 	}
 
 	.arbitriumIcon {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
