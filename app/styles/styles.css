@@ -22,15 +22,20 @@
 	General Styles
 --------------------------*/
 
+html {
+	margin: 0;
+	padding: 0;
+	background: url(../images/index/fond.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000;
+}
+
 body{
-  background: url(../images/index/fond.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
+	font-family: 'Roboto';
+	background-color: transparent;
 }
 
 
@@ -242,12 +247,10 @@ div {
 .form_col, 
 .form-control::placeholder{
 	color: #00ADAF;
-	font-family:'Brasilia-Short II';
 }
 
 .btnRadio{
 	float: left;
-	display: block;
 }
 
 .labelRadio {
@@ -281,7 +284,9 @@ div {
 	font-size: 20px;
 }
 
-
+.inscriptionBtn {
+	width: 160px;
+}
 
 /*----------------------------
 	Menu Kallax
