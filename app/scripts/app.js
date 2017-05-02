@@ -30,6 +30,9 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
         controllerAs: 'arbitriumCtrl'
+      }).when("/spiderProfile/:communication/:marketing/:business/:programmation/:multimedia/:management", {
+        templateUrl: "/views/spiderProfile.html",
+        controller: "SpiderprofileCtrl"
       }).when('/training', {
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
