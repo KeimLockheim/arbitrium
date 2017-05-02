@@ -7,8 +7,6 @@
     font-display:auto;
 }
 
-
-
 /*-------------------------
 	Simple reset
 --------------------------*/
@@ -18,6 +16,9 @@
 	padding:0;
 }
 
+h1 {
+	font-family:'Brasilia-Short II';
+}
 /*-------------------------
 	General Styles
 --------------------------*/
@@ -36,24 +37,18 @@ html {
 body{
 	font-family: 'Roboto';
 	background-color: transparent;
+
 }
 
 
-#linkMedia, #linkMedia:visited {
+a, a:visited {
 	text-decoration:none;
 	outline:none;
 	color:#E4E2E2;
 }
 
-#linkMedia:hover{
+a:hover{
 	text-decoration:underline;
-}
-
-ul {
-	list-style: none;
-	text-align: left;
-	margin: 8px;
-    font-size: 16px;
 }
 
 
@@ -61,9 +56,9 @@ ul {
 					HEADER
 **********************************************/
 
-/*.header {
-  margin-bottom: 6%;
-}*/
+.header {
+  margin-bottom: 10%;
+}
 .entete {
   display: inline;
   width: 100%;
@@ -101,26 +96,26 @@ ul {
 }
 
 .user {
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 50%;
+  padding-top: 4.5%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 2%;
-  margin-right: 70%;
+  margin-left: 70%;
 }
 
 .arbitriumIcon {
-  position: relative;
+  position: absolute;
   width: 49%;
+  margin-left: 33%;
+  padding-top: 4.5%;
   text-align: center;
 }
 .arbitriumIcon img {
   width: 6%;
-  padding-top: 0%;
-  margin-left: 117%;
 }
 
 /*----------------------------
@@ -150,13 +145,8 @@ div {
 	height:43%;
 }
 
-.titre {
+#titre {
 	margin-bottom: 20px;
-	font-family: 'Roboto';
-}
-
-.titreBrasilia {
-	font-family:'Brasilia-Short II';
 }
 
 #note {
@@ -164,7 +154,7 @@ div {
 	margin: 0 auto;
 	padding: 4px;
 	float: inherit;
-	width: 400px;
+	width: 90%;
 }
 
 #description {
@@ -186,15 +176,16 @@ div {
 }
 
 /*----------------------------
-	Buttons
+	Button
 -----------------------------*/
+
 .btn {
 	font-family:'Roboto';
 }
 
 .btnCyan,
 .btnCyan :visited {
-	background-color: #00ADAF;
+	background-color: #33f0dd;
 	color: #fff;
 }
 
@@ -206,47 +197,24 @@ div {
 .btnWhite,
 .btnWhite :visited {
 	background-color: #fff;
-	color: #00ADAF;
+	color: #33f0dd;
 }
 
 .boutonChoix {
 	font-size: 20px;
-	display: block;
-	padding-bottom: 5px;
-}
-
-#btnEntrainement {
-	width: 150px;
-}
-
-#btnArbitrium {
-	width: 150px;
-}
-
-.btnMenu {
 	width: 200px;
-	height: 75px;
-	margin: 2px;
-	line-height: 60px;
+	display: block;
+	padding: 25px 0;
 }
 
-#grp1Marketing {
-	display: inline;
-}
 
-.btn-group {
-	width: 125px;
-	height: 50px;
-	line-height: 40px;
-	margin: 2px;
-}
 /*----------------------------
 	Formulaire inscription
 -----------------------------*/
 .form-control, 
 .form_col, 
 .form-control::placeholder{
-	color: #00ADAF;
+	color: #33f0dd;
 }
 
 .btnRadio{
@@ -284,6 +252,7 @@ div {
 	font-size: 20px;
 }
 
+
 .inscriptionBtn {
 	width: 160px;
 }
@@ -296,26 +265,18 @@ div {
 /*----------------------------
 	Training
 -----------------------------*/
-
-
-/*----------------------------
-	Marketing
------------------------------*/
-.btnRadioMarketing,
-.validationFooter {
-	display: block;
+#boutonsChoix form {
+	display: inline-block;
+  	width: 45%;
+	height: 40%;
+	margin: 2%;
 }
 
-.correct {
-	color: green;
-}
-
-.wrong {
-	color: red;
-}
-
-#question {
-	font-size: 16px;
+#boutonsChoix input {
+	font-size: 20px;
+	color: #000;
+	width: 100%;
+	padding: 25px 0;
 }
 
 /*----------------------------
@@ -509,8 +470,8 @@ div {
 	}
 }
 
-/* Pour IPAD */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+/* Pour IPAD - Landscape*/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)  {
 
 	/**********************************************
 						HEADER
@@ -519,45 +480,76 @@ div {
 	.header {
 	  margin-bottom: 10%;
 	}
-
-	.logoHeig img {
-	  margin: 0px;
+	.entete {
+	  display: inline;
+	  width: 100%;
+	  overflow: auto;
+	  margin: 0;
+	  padding: 0
+	}
+	.banniere {
+	  position: absolute;
 	  width: 50%;
+	  display: inline-block;
+	  text-align: center;
+	}
+	.banniere img{
+	  width: 100%;
+	}
+	.logoHeig {
+	  display: inline-block;
+	  float: left;
+	  width: 25%;
+	}
+	.logoHeig img {
+	  margin: 10px;
+	  width: 80%;
+	}
+	.socialNetwork {
+	  display: inline-block;
+	  float: right;
+	  width: 25%;
+	}
+	.socialNetwork img {
+	  width: 15%;
+	  margin: 7px;
+	  float: right;
 	}
 
-	.socialNetwork img {
-	  width: 9%;
-	  margin: 5px;
-	  float: right;
-	} 
-
+	.user {
+	  position: absolute;
+	  z-index: 1;
+	  width: 50%;
+	  padding-top: 6%;
+	  text-align: center;
+	}
 	.user img {
-	  width: 6%;
-	  padding-top: 0;
-	  margin-left: 70%;
+	  width: 10%;
+	  margin-left: 60%;
 	}
 
 	.arbitriumIcon {
-	  position: relative;
+	  position: absolute;
 	  width: 49%;
+	  margin-left: 36%;
+	  padding-top: 6%;
+	  text-align: center;
 	}
 	.arbitriumIcon img {
-	  width: 6%;
-	  padding-top: 0%;
-	  margin-left: 120%;
+	  width: 10%;
 	}
 
 }
 
-/* Pour Smartphones */
-@media screen and (min-device-width: 375px) and (max-device-width: 667px) {
+/* Pour IPAD - Portrait */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)  {
 
 	/**********************************************
 						HEADER
 	**********************************************/
 
 	.header {
-	  margin-bottom: 6%;
+	  margin-bottom: 10%;
 	}
 	.entete {
 	  display: inline;
@@ -565,6 +557,83 @@ div {
 	  overflow: auto;
 	  margin: 0;
 	  padding: 0
+	}
+	.banniere {
+	  position: absolute;
+	  width: 50%;
+	  display: inline-block;
+	  text-align: center;
+	}
+	.banniere img{
+	  width: 100%;
+	}
+	.logoHeig {
+	  display: inline-block;
+	  float: left;
+	  width: 25%;
+	}
+	.logoHeig img {
+	  margin: 10px;
+	  width: 80%;
+	}
+	.socialNetwork {
+	  display: inline-block;
+	  float: right;
+	  width: 25%;
+	}
+	.socialNetwork img {
+	  width: 15%;
+	  margin: 7px;
+	  float: right;
+	}
+
+	.user {
+	  position: absolute;
+	  z-index: 1;
+	  width: 50%;
+	  padding-top: 6%;
+	  text-align: center;
+	}
+	.user img {
+	  width: 10%;
+	  margin-left: 60%;
+	}
+
+	.arbitriumIcon {
+	  position: absolute;
+	  width: 49%;
+	  margin-left: 36%;
+	  padding-top: 6%;
+	  text-align: center;
+	}
+	.arbitriumIcon img {
+	  width: 10%;
+	}
+
+}
+
+/* Pour Smartphones */
+@media screen and (min-device-width: 320px) and (max-device-width: 736px) {
+
+	/**********************************************
+						HEADER
+	**********************************************/
+
+	html {
+		margin: 0;
+		padding: 0;
+		width: 100%
+
+	}
+	.header {
+	  margin-bottom: 10%;
+	}
+	.entete {
+	  display: inline;
+	  width: 100%;
+	  overflow: auto;
+	  margin: 0;
+	  padding: 0;
 	}
 	.banniere {
 	  position: absolute;
@@ -582,7 +651,7 @@ div {
 	}
 	.logoHeig img {
 	  margin: 10px;
-	  width: 1500%;
+	  width: 1000%;
 	}
 	.socialNetwork {
 	  display: inline-block;
@@ -590,50 +659,32 @@ div {
 	  width: 10%;
 	}
 	.socialNetwork img {
-	  width: 250%;
-	  margin: 5px;
+	  width: 300%;
+	  margin: 7px;
 	  float: right;
 	}
 
 	.user {
-	  position: static;
-	  width: 49%;
+	  position: absolute;
+	  z-index: 1;
+	  width: 50%;
+	  padding-top: 7%;
 	  text-align: center;
 	}
 	.user img {
-	  width: 6%;
-	  padding-top: 9%;
-	  margin-left: 65%;
+	  width: 20%;
+	  margin-left: 35%;
 	}
 
 	.arbitriumIcon {
-	  position: static;
+	  position: absolute;
 	  width: 49%;
+	  margin-left: 42%;
+	  padding-top: 7%;
 	  text-align: center;
 	}
 	.arbitriumIcon img {
-	  width: 6%;
-	  padding-top: 9%;
-	  margin-left: 117%;
-	}
-
-	/*----------------------------
-		Buttons
-	-----------------------------*/
-
-	.btn-group {
-		width: 100px;
-		height: 50px;
-		line-height: 40px;
-		margin: 2px;
-	}
-
-	/*----------------------------
-		Marketing & Communication
-	-----------------------------*/
-
-	#interests .btn {
-		font-size: 10px;
+	  width: 20%;
 	}
 
 }
