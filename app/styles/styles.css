@@ -41,23 +41,29 @@ body{
 }
 
 
-a, a:visited {
+#linkMedia, #linkMedia:visited {
 	text-decoration:none;
 	outline:none;
 	color:#E4E2E2;
 }
 
-a:hover{
+#linkMedia:hover{
 	text-decoration:underline;
 }
 
+ul {
+	list-style: none;
+	text-align: left;
+	margin: 8px;
+	font-size: 16px;
+}
 
 /**********************************************
 					HEADER
 **********************************************/
 
 .header {
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 .entete {
   display: inline;
@@ -145,8 +151,13 @@ div {
 	height:43%;
 }
 
-#titre {
+.titre {
 	margin-bottom: 20px;
+	font-family: 'Roboto';
+}
+
+.titreBrasilia {
+	font-family:'Brasilia-Short II';
 }
 
 #note {
@@ -185,7 +196,7 @@ div {
 
 .btnCyan,
 .btnCyan :visited {
-	background-color: #33f0dd;
+	background-color: #00ADAF;
 	color: #fff;
 }
 
@@ -197,16 +208,40 @@ div {
 .btnWhite,
 .btnWhite :visited {
 	background-color: #fff;
-	color: #33f0dd;
+	color: #00ADAF;
 }
 
 .boutonChoix {
 	font-size: 20px;
-	width: 200px;
 	display: block;
-	padding: 25px 0;
+	padding-bottom: 5px;
 }
 
+#btnEntrainement {
+  width: 150px;
+}
+
+#btnArbitrium {
+  width: 150px;
+}
+
+.btnMenu {
+  width: 200px;
+  height: 75px;
+  margin: 2px;
+  line-height: 60px;
+}
+
+#grp1Marketing {
+  display: inline;
+}
+
+.btn-group {
+  width: 125px;
+  height: 50px;
+  line-height: 40px;
+  margin: 2px;
+}
 
 /*----------------------------
 	Formulaire inscription
@@ -214,7 +249,7 @@ div {
 .form-control, 
 .form_col, 
 .form-control::placeholder{
-	color: #33f0dd;
+	color: #00ADAF;
 }
 
 .btnRadio{
@@ -277,6 +312,26 @@ div {
 	color: #000;
 	width: 100%;
 	padding: 25px 0;
+}
+
+/*----------------------------
+  Marketing
+—---------------------------*/
+.btnRadioMarketing,
+.validationFooter {
+  display: block;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+#question {
+  font-size: 16px;
 }
 
 /*----------------------------
@@ -687,4 +742,22 @@ div {
 	  width: 20%;
 	}
 
+  /*----------------------------
+    Buttons
+  —---------------------------*/
+
+  .btn-group {
+    width: 100px;
+    height: 50px;
+    line-height: 40px;
+    margin: 2px;
+  }
+
+  /*----------------------------
+    Marketing & Communication
+  —---------------------------*/
+
+  #interests .btn {
+    font-size: 10px;
+  }
 }
