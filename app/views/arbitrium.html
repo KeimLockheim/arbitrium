@@ -1,4 +1,12 @@
-<link rel="stylesheet" type="text/css" href="bower_components/angular-swing/examples/card-stack/card-stack.css">
+<link rel="stylesheet" type="text/css" href="styles/arbitrium.css">
+<div class="row">
+    <div class="progress vertical">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps}}%;"></div>
+    </div>
+    <div class="progress vertical">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent}}%;"></div>
+    </div>
+</div>
 
 <div id="viewport" ng-controller="ArbitriumCtrl as card">
 
@@ -11,7 +19,13 @@
             swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
             swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
             swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
-            ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">{{card.symbol}}
+            ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">
+            <div class="row" data-rDroite="{{card.reponseDroite}}" data-rGauche="{{card.reponseGauche}}">
+              <p class="col-xs-12">{{card.description}}</p>
+              <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
+              <p class="swipe col-xs-12"></p>
+            </div>
+
         </li>
     </ul>
 </div>
