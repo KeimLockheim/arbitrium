@@ -21,10 +21,8 @@
 
             <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" ng-model="InscriptionCtrl.userSchema.password" required/>
             <br />
-            <div class="">
-                <input class="btn btnCyan" type="submit" value="INSCRIPTION" name="inscription" id="inscription" ng-disabled="inscrForm.$invalid"/> 
-                <a class="btn btnWhite" href="#!/login">J'AI DEJA UN COMPTE</a>
-            </div>
+                <input class="btn btnCyan inscriptionBtn" type="submit" value="INSCRIPTION" name="inscription" id="inscription" ng-disabled="inscrForm.$invalid"/>
+                <a class="btn btnWhite inscriptionBtn" href="#!/login">J'AI DEJA UN COMPTE</a>
         </form>
     </div>
 </div>

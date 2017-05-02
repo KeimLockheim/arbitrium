@@ -1,31 +1,38 @@
 
-<div class="row">
-    <div class="progress vertical">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps}}%;"></div>
-    </div>
-    <div class="progress vertical">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent}}%;"></div>
-    </div>
-</div>
+<link rel="stylesheet" type="text/css" href="styles/arbitrium.css">
+
 
 <div id="viewport" ng-controller="ArbitriumCtrl as card">
+  <div class="row">
+    <div class="row" id="jauges">
+      <div class="progress vertical" id="timeJauge">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps}}%;"></div>
+      </div>
+      <div class="progress vertical" id="moneyJauge">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent}}%;"></div>
+      </div>
+    </div>
+    <div class="row" id="iconeJauges">
+      <img id="time" src="../images/arbitrium/hourglass.png" height="18" width="18"/>
+      <img id="money" src="../images/arbitrium/dollars.png" height="18" width="18"/>
+    </div>
+  </div>
+  <ul class="stack" swing-stack swing-options="options" id="cardsDisplay">
+      <li swing-card
+          swing-on-throwout="arbitriumCtrl.remove($index)"
+          swing-on-throwoutleft="arbitriumCtrl.throwoutleft(eventName, eventObject)"
+          swing-on-throwoutright="arbitriumCtrl.throwoutright(eventName, eventObject)"
+          swing-on-throwin="arbitriumCtrl.throwin(eventName, eventObject)"
+          swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
+          swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
+          swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
+          ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">
+          <div class="row" data-rDroite="{{card.reponseDroite}}" data-rGauche="{{card.reponseGauche}}">
+            <p class="col-xs-12">{{card.description}}</p>
+            <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
+            <p class="swipe col-xs-12"></p>
+          </div>
 
-    <ul class="stack" swing-stack swing-options="options">
-        <li swing-card
-            swing-on-throwout="arbitriumCtrl.remove($index)"
-            swing-on-throwoutleft="arbitriumCtrl.throwoutleft(eventName, eventObject)"
-            swing-on-throwoutright="arbitriumCtrl.throwoutright(eventName, eventObject)"
-            swing-on-throwin="arbitriumCtrl.throwin(eventName, eventObject)"
-            swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
-            swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
-            swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
-            ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">
-            <div class="row" data-rDroite="{{card.reponseDroite}}" data-rGauche="{{card.reponseGauche}}">
-              <p class="col-xs-12">{{card.description}}</p>
-              <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
-              <p class="swipe col-xs-12"></p>
-            </div>
-
-        </li>
-    </ul>
+      </li>
+  </ul>
 </div>
