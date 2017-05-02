@@ -3,14 +3,25 @@
     <h2>2. Mettez les tâches dans l'ordre chronologique</h2>
     <div class='wrapper' ng-controller="BusinessCtrl">
       <div class='dragContainer dragHorizontalOrder' id='orderContainer'>
-        <div id="order1" class='dragHorizontalContainer'>Planification du projet</div>
-        <div id="order2" class='dragHorizontalContainer'>Analyse financière</div>
-        <div id="order3" class='dragHorizontalContainer'>Étude de marché</div>
         <div id="order4" class='dragHorizontalContainer'>Réalisation de maquettes design</div>
+        <div id="order2" class='dragHorizontalContainer'>Analyse financière</div>
+        <div id="order1" class='dragHorizontalContainer'>Planification du projet</div>
         <div id="order5" class='dragHorizontalContainer'>Développement web</div>
+        <div id="order3" class='dragHorizontalContainer'>Étude de marché</div>
       </div>
     </div>
-    <div class="businessManQuizzMessage ng-hide" ng-show="showMessage"></div>
-    <input type="submit" class="btn btn-primary" ng-click="check()" value="Valider" />
+    <div class="businessManQuizzMessage ng-hide messageErreur" ng-show="showMessage">
+      <h5>Les tâches ne sont pas encore dans le bon ordre ...</h5>
+    </div>
+    <input type="submit" class="btn btn-primary" ng-show="!showQuizzOver" ng-click="check()" value="Valider" />
+
+    <div class="businessManQuizzMessage ng-hide" ng-show="showQuizzOver">
+    	<p>Bravo ! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
+    	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax!</p>
+    	<a href="/#!/training">
+    		<button>Terminer la mission</button>
+    	</a>
+    </div>
+
   </form>
 </div>

@@ -17,6 +17,8 @@ angular.module('arbitriumApp')
 
     $scope.check = function() {
 
+      //$scope.showDialog = true;
+
       var tag = '';
       angular.element('.businessManQuizzMessage').html('<h5>Indices :</h5>');
 
@@ -53,7 +55,8 @@ angular.module('arbitriumApp')
       }
     }
   }])
-  .controller('FormController2', function($scope) {
+
+  .controller('FormController2', function($scope, AuthService, $http, $location) {
 
     $scope.check = function() {
 
@@ -63,8 +66,50 @@ angular.module('arbitriumApp')
       && angular.element('#orderContainer').children()[3].id == 'order4'
       && angular.element('#orderContainer').children()[4].id == 'order5') {
         console.log('C\'est tout bon !');
+
+        $scope.showMessage = false;
+        $scope.showQuizzOver = true;
+
+        /***************** INSERER CODE POUR LE PATCH DE PUTA *****************/
+
+        var actualUserId = AuthService.userInf.id;
+      //$scope.userSchema.marketingComDone = true;
+      //console.log($scope.userSchema.marketingComDone);
+      // Make the request to retrieve or create the user.
+          $http({
+            method: 'PATCH',
+            url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+            data: {"businessManagementDone" : "true"},
+            contentType: 'application/json'
+          }).then(function(res) {
+
+            console.log("AUTOP");
+
+              $http({
+                method: 'GET',
+                url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+              }).then(function(res) {
+
+                if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
+                  console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
+                }else{
+                  console.log("Il te manque encore des entraienemtns");
+                }
+            });
+
+            $location.path('training');
+
+          }).catch(function(res) {
+            console.log("Ca marche pas ton patch de business");
+            console.log(res);
+            // If an error occurs, hide the loading message and show an error message.
+            //MarketingCtrl.error = "Problème avec le post marketing done";
+          });
+
+        /***********************************************************************/
+
       } else {
-        angular.element('.businessManQuizzMessage').html('<h5>Les tâches ne sont pas encore dans le bon ordre ...</h5>');
+
         $scope.showMessage = true;
       }
     }

@@ -19,7 +19,6 @@ angular.module('arbitriumApp', [
     'dragularModule',
     'gajus.swing',
     'angular-storage'
-
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -87,7 +86,6 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-
       $location.url('/');
     }
   });
