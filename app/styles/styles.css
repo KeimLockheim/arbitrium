@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
 @font-face {
     font-family: 'Brasilia-Short II';
-    src: url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    src: url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('/fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
     font-display:auto;
@@ -22,15 +22,20 @@
 	General Styles
 --------------------------*/
 
+html {
+	margin: 0;
+	padding: 0;
+	background: url(../images/index/fond.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000;
+}
+
 body{
-  background: url(../images/index/fond.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
+	font-family: 'Roboto';
+	background-color: transparent;
 }
 
 
@@ -184,7 +189,7 @@ div {
 	Buttons
 -----------------------------*/
 .btn {
-	font-family:'Brasilia-Short II';
+	font-family:'Roboto';
 }
 
 .btnCyan,
@@ -242,12 +247,10 @@ div {
 .form_col, 
 .form-control::placeholder{
 	color: #00ADAF;
-	font-family:'Brasilia-Short II';
 }
 
 .btnRadio{
 	float: left;
-	display: block;
 }
 
 .labelRadio {
@@ -281,7 +284,9 @@ div {
 	font-size: 20px;
 }
 
-
+.inscriptionBtn {
+	width: 160px;
+}
 
 /*----------------------------
 	Menu Kallax
