@@ -1,5 +1,6 @@
 angular.module('arbitriumApp').factory('AuthService', function(store) {
   var service = {
+
     authToken: store.get('authToken'),
 
     setAuthToken: function(token) {
@@ -17,8 +18,13 @@ angular.module('arbitriumApp').factory('AuthService', function(store) {
     setUserId: function(userId) {
       service.userInf = userId;
       store.set('userInf', userId);
-      
+    },
+
+    unsetUserId: function() {
+      service.userInf = null;
+      store.remove('userInf');
     }
+
   };
 
   return service;
@@ -40,6 +46,8 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
     }).then(function(res) {
 
       AuthService.setAuthToken(res.data.token);
+      AuthService.setUserId(res.data.user);
+      console.log("Login OK");
 
       $location.path('/kallax');
 
@@ -50,11 +58,17 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
   });
 });
 
-angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location) {
-  var logoutCtrl = this;
+angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location, $scope) {
+  var LogoutCtrl = this;
 
   $("#logout").click(function(){
+    //console.log(AuthService.userInf);
+    //console.log(AuthService.authToken);
     AuthService.unsetAuthToken();
+    AuthService.unsetUserId();
+    //console.log(AuthService.userInf);
+    //console.log(AuthService.authToken);
+    console.log("Logout OK");
     $location.path('/');
   });
 });

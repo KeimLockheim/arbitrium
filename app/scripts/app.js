@@ -18,8 +18,7 @@ angular.module('arbitriumApp', [
     'ngTouch',
     'dragularModule',
     'gajus.swing',
-    'angular-storage',
-    'ui.bootstrap'
+    'angular-storage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -63,7 +62,7 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/quizzMultimedia.html',
         controllexr: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
-      }).when('/multimediaQ1', {
+      }).when('/multimedia/:Id', {
         templateUrl: 'views/multimediaQuestion.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
@@ -87,8 +86,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-      $location.url('/login');
-
+      $location.url('/');
     }
   });
 

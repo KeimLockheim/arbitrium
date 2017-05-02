@@ -6,24 +6,31 @@
   .correct {
     background: green;
   }
-  </style>
-<button>Arbitrium</button>
+  .wrong {
+    background: red;
+  }
+</style>
+
 <h3>Marketing & Communication</h3>
 <div ng-show="!marketingCtrl.quizzOver">
-	<img src=""></img>
+	<img src="" class="img-fluid"></img>
 	<h2 id="question">{{marketingCtrl.question}}</h2>
+	<img ng-src={{marketingCtrl.image}} />
 	<ul id="options">
-		<li ng-repeat="option in marketingCtrl.options" ng-class={'correct' : monObjet.attribut == '' || monObjet.attribut == 'test2'}>
+		<li ng-repeat="option in marketingCtrl.options">
 			<label>
 				<input type="radio" name="answer" value="{{option}}">
 				{{option}}
 			</label>
 		</li>
 	</ul>
-	<button ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode">Valider</button>
+	<!-- <button ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode">Valider</button> -->
+	<input type="submit" class="btn btn-primary" ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode" value="Valider"/>
+
 
 	<div ng-show="!marketingCtrl.answerMode">
-		<button ng-click="marketingCtrl.nextQuestion()" class="next-question">Suivant</button>
+		<input type="submit" class="next-question btn btn-primary" ng-click="marketingCtrl.nextQuestion()" value="Suivant"/>
+		<!-- <button ng-click="marketingCtrl.nextQuestion()" class="next-question">Suivant</button> -->
 		<span ng-show="marketingCtrl.correctAns">C'est correct!</span>
 		<span ng-show="!marketingCtrl.correctAns">Désolé, mauvaise réponse.</span>
 	</div>
@@ -34,10 +41,10 @@
 </div>
 
 <div ng-show="marketingCtrl.quizzOver">
-	<p>Bravo tu as terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
-	<p>Tu as répondu juste à {{marketingCtrl.score}} questions sur 5</p>
-	<p>Tu as débloqué le point et peux maintenant aller constater l'évolution de ton Kallax !</p>
+	<p>Bravo ! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
+	<p>Vous avez répondu juste à {{marketingCtrl.score}} questions sur 5</p>
+	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax!</p>
 	<a href="/#!/training">
-		<button>Kallax</button>
+		<button>Terminer la mission</button>
 	</a>
 </div>

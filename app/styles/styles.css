@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: 'Brasilia-Short II';
+    src: url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display:auto;
+}
+
 
 /*-------------------------
 	Simple reset
@@ -9,25 +17,23 @@
 	padding:0;
 }
 
-
+h1 {
+	font-family:'Brasilia-Short II';
+}
 /*-------------------------
 	General Styles
 --------------------------*/
 
-
-html{
-	/*background:url('../img/tile_bg.jpg') #b0b0b0;*/
-	position:relative;
-}
-
 body{
-	background:url('../images/index/header-bg-empty.jpg') no-repeat top;
-	/*background-color: #6A7F7F;*/
-	min-height: 600px;
-    padding: 25px 0 0;
-	font:14px/1.3 'Segoe UI',Arial, sans-serif;
-	font-size: 14px;
+  background: url(../images/index/fond.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
+
 
 a, a:visited {
 	text-decoration:none;
@@ -39,36 +45,79 @@ a:hover{
 	text-decoration:underline;
 }
 
-section, footer{
-	display: block;
+
+/**********************************************
+					HEADER
+**********************************************/
+
+.header {
+  margin-bottom: 6%;
+}
+.entete {
+  display: inline;
+  width: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: 0
+}
+.banniere {
+  position: absolute;
+  width: 33.3%;
+  display: inline-block;
+  text-align: center;
+}
+.banniere img{
+  width: 100%;
+}
+.logoHeig {
+  display: inline-block;
+  float: left;
+  width: 33.3%;
+}
+.logoHeig img {
+  margin: 10px;
+  width: 30%;
+}
+.socialNetwork {
+  display: inline-block;
+  float: right;
+  width: 33.3%;
+}
+.socialNetwork img {
+  width: 7%;
+  margin: 5px;
+  float: right;
+} 
+
+.user {
+  position: fixed;
+  z-index: 1;
+  width: 50%;
+  text-align: center;
+}
+.user img {
+  width: 6%;
+  padding-top: 9%;
+  margin-left: 67%;
 }
 
+.arbitriumIcon {
+  position: fixed;
+  width: 49%;
+  text-align: center;
+}
+.arbitriumIcon img {
+  width: 6%;
+  padding-top: 9%;
+  margin-left: 117%;
+}
 
 /*----------------------------
 	Main Section
 -----------------------------*/
 
 div {
-	font-family: 'Roboto', sans-serif;
 	color: #fff;
-}
-
-#logos {
-	margin: 10px;
-	display: inline;
-}
-
-#logoHeig {
-	display: inline-block;
-	height: 20%;
-	width: 20%;
-}
-
-#imgMedia {
-	display: inline-block;
-	height: 8%;
-	width: 6%;
-	float: right;
 }
 
 #contenu {
@@ -79,28 +128,14 @@ div {
 	height:43%;
 }
 
-#imgKallax {
-	display: inline-block;
-	margin: 0 auto;
-}
-
-#imgKallax img {
-	max-height: 100%;
-	max-width: 100%;
-	height: 30%;
-	width: 30%;
-}
-
 #titre {
 	margin-bottom: 20px;
 }
 
 #note {
-	/*color: #393939;*/
 	font-size: 14px;
 	margin: 0 auto;
 	padding: 4px;
-	/*text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);*/
 	width: 400px;
 }
 
@@ -237,74 +272,65 @@ div {
 	font-size: 15px;
 }
 
+.boutonMulti {
+	font-size: 18px;
+	color: black;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.boutonMulti a {
+	color: black;
+}
+
+.boutonQuizzMultimedia {
+	color: black;
+	margin-top: 20px;
+}
+
+.contentMultimedia {
+	text-align: center;
+}
+
+.titreQuestion {
+	text-align: center;
+}
+
+.questionMultimedia {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.questionMultimedia input[type="radio"] + label {
+	margin-left: 10px;
+} 
+
+.reponseMultimedia{
+	margin-top: 5%;
+}
+
+.reponseMultimedia p {
+	font-size: 17px;
+}
+
+.reponseMultimedia button {
+	color: black;
+	font-size: 15px;
+}
+
+
 /*----------------------------
 	The Footer
 -----------------------------*/
 
 
-footer{
-	background-color: #111111;
-	bottom: 0;
-	box-shadow: 0 -1px 2px #111111;
-	height: 45px;
-	left: 0;
-	position: fixed;
-	width: 100%;
-	z-index: 100000;
-}
-
-footer h2{
-	color: #EEEEEE;
-	font-size: 14px;
-	font-weight: normal;
-	left: 50%;
-	margin-left: -400px;
-	padding: 13px 0 0;
-	position: absolute;
-	width: 540px;
-}
-
-footer h2 i{
-	font-style:normal;
-	color:#888;
-}
-
-footer a.tzine,a.tzine:visited{
-	color: #999999;
-	font-size: 12px;
-	left: 50%;
-	margin: 16px 0 0 110px;
-	position: absolute;
-	text-decoration: none;
-	top: 0;
-}
-
-footer a i{
-	color:#ccc;
-	font-style: normal;
-}
-
-footer a i b{
-	color:#c92020;
-	font-weight: normal;
-}
 
 /*----------------------------
 	MediaQueries
 -----------------------------*/
 
 @media screen and (orientation: landscape) {
-	body{
-		font-size: 8px;
-	}
-
-	#imgKallax img {
-		max-height: 100%;
-		max-width: 100%;
-		height: 15%;
-		width: 15%;
-	}
-
 	#description {
 		margin-top: 10px;
 	}
@@ -319,30 +345,9 @@ footer a i b{
 }
 
 @media screen and (max-device-width: 480px){
-	body{
-		font-size: 10px;
-	}
-
-	#logoHeig {
-		/*height: 32%;*/
-		width: 32%;
-	}
-
-	#imgMedia {
-		/*height: 20%;*/
-		width: 10%;
-	}
 
 	#contenu {
 		margin-top: 150px;
-	}
-
-	#imgKallax img {
-		max-height: 100%;
-		max-width: 100%;
-		height: 35%;
-		width: 35%;
-		margin-bottom: 10px;
 	}
 
 	#titre {
@@ -364,4 +369,110 @@ footer a i b{
 	#siteMediaLink a {
 		font-size: 18px;
 	}
+}
+
+/* Pour IPAD */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+	/**********************************************
+						HEADER
+	**********************************************/
+
+	.header {
+	  margin-bottom: 10%;
+	}
+
+	.logoHeig img {
+	  margin: 10px;
+	  width: 50%;
+	}
+
+	.socialNetwork img {
+	  width: 9%;
+	  margin: 5px;
+	  float: right;
+	} 
+
+	.user img {
+	  width: 6%;
+	  padding-top: 9%;
+	  margin-left: 70%;
+	}
+
+	.arbitriumIcon img {
+	  width: 6%;
+	  padding-top: 9%;
+	  margin-left: 120%;
+	}
+
+}
+
+/* Pour Smartphones */
+@media screen and (min-device-width: 375px) and (max-device-width: 667px) {
+
+	/**********************************************
+						HEADER
+	**********************************************/
+
+	.header {
+	  margin-bottom: 6%;
+	}
+	.entete {
+	  display: inline;
+	  width: 100%;
+	  overflow: auto;
+	  margin: 0;
+	  padding: 0
+	}
+	.banniere {
+	  position: absolute;
+	  width: 80%;
+	  display: inline-block;
+	  text-align: center;
+	}
+	.banniere img{
+	  width: 100%;
+	}
+	.logoHeig {
+	  display: inline-block;
+	  float: left;
+	  width: 10%;
+	}
+	.logoHeig img {
+	  margin: 10px;
+	  width: 1500%;
+	}
+	.socialNetwork {
+	  display: inline-block;
+	  float: right;
+	  width: 10%;
+	}
+	.socialNetwork img {
+	  width: 250%;
+	  margin: 5px;
+	  float: right;
+	} 
+
+	.user {
+	  position: fixed;
+	  width: 49%;
+	  text-align: center;
+	}
+	.user img {
+	  width: 6%;
+	  padding-top: 9%;
+	  margin-left: 65%;
+	}
+
+	.arbitriumIcon {
+	  position: fixed;
+	  width: 49%;
+	  text-align: center;
+	}
+	.arbitriumIcon img {
+	  width: 6%;
+	  padding-top: 9%;
+	  margin-left: 117%;
+	}
+
 }

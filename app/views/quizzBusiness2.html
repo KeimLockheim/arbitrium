@@ -10,7 +10,18 @@
         <div id="order3" class='dragHorizontalContainer'>Étude de marché</div>
       </div>
     </div>
-    <div class="businessManQuizzMessage ng-hide" ng-show="showMessage"></div>
-    <input type="submit" class="btn btn-primary" ng-click="check()" value="Valider" />
+    <div class="businessManQuizzMessage ng-hide messageErreur" ng-show="showMessage">
+      <h5>Les tâches ne sont pas encore dans le bon ordre ...</h5>
+    </div>
+    <input type="submit" class="btn btn-primary" ng-show="!showQuizzOver" ng-click="check()" value="Valider" />
+
+    <div class="businessManQuizzMessage ng-hide" ng-show="showQuizzOver">
+    	<p>Bravo ! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
+    	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax!</p>
+    	<a href="/#!/training">
+    		<button>Terminer la mission</button>
+    	</a>
+    </div>
+
   </form>
 </div>
