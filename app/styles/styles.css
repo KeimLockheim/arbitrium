@@ -8,6 +8,7 @@
 }
 
 
+
 /*-------------------------
 	Simple reset
 --------------------------*/
@@ -17,9 +18,6 @@
 	padding:0;
 }
 
-h1 {
-	font-family:'Brasilia-Short II';
-}
 /*-------------------------
 	General Styles
 --------------------------*/
@@ -32,17 +30,25 @@ body{
   background-size: cover;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto';
 }
 
 
-a, a:visited {
+#linkMedia, #linkMedia:visited {
 	text-decoration:none;
 	outline:none;
 	color:#E4E2E2;
 }
 
-a:hover{
+#linkMedia:hover{
 	text-decoration:underline;
+}
+
+ul {
+	list-style: none;
+	text-align: left;
+	margin: 8px;
+    font-size: 16px;
 }
 
 
@@ -50,9 +56,9 @@ a:hover{
 					HEADER
 **********************************************/
 
-.header {
+/*.header {
   margin-bottom: 6%;
-}
+}*/
 .entete {
   display: inline;
   width: 100%;
@@ -87,28 +93,28 @@ a:hover{
   width: 7%;
   margin: 5px;
   float: right;
-} 
+}
 
 .user {
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 50%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 9%;
-  margin-left: 67%;
+  padding-top: 2%;
+  margin-right: 70%;
 }
 
 .arbitriumIcon {
-  position: fixed;
+  position: relative;
   width: 49%;
   text-align: center;
 }
 .arbitriumIcon img {
   width: 6%;
-  padding-top: 9%;
+  padding-top: 0%;
   margin-left: 117%;
 }
 
@@ -120,6 +126,17 @@ div {
 	color: #fff;
 }
 
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerPrinc {
+	position: absolute;
+	display: inline-block;
+}
+
 #contenu {
 	display: inline;
 	margin: 5px auto;
@@ -128,19 +145,29 @@ div {
 	height:43%;
 }
 
-#titre {
+.titre {
 	margin-bottom: 20px;
+	font-family: 'Roboto';
+}
+
+.titreBrasilia {
+	font-family:'Brasilia-Short II';
 }
 
 #note {
 	font-size: 14px;
 	margin: 0 auto;
 	padding: 4px;
+	float: inherit;
 	width: 400px;
 }
 
 #description {
-	margin-top: 30px;
+	margin-top: 0px;
+}
+
+#description h2 {
+	margin-top: 5px;
 }
 
 #siteMediaLink {
@@ -149,35 +176,141 @@ div {
 	font-size: 14px;
 }
 
+.clearfix {
+  overflow: auto;
+}
+
+/*----------------------------
+	Buttons
+-----------------------------*/
+.btn {
+	font-family:'Brasilia-Short II';
+}
+
+.btnCyan,
+.btnCyan :visited {
+	background-color: #00ADAF;
+	color: #fff;
+}
+
+.btnCyan :focus {
+	background-color: #3A706B;
+	color: #fff;
+}
+
+.btnWhite,
+.btnWhite :visited {
+	background-color: #fff;
+	color: #00ADAF;
+}
+
+.boutonChoix {
+	font-size: 20px;
+	display: block;
+	padding-bottom: 5px;
+}
+
+#btnEntrainement {
+	width: 150px;
+}
+
+#btnArbitrium {
+	width: 150px;
+}
+
+.btnMenu {
+	width: 200px;
+	height: 75px;
+	margin: 2px;
+	line-height: 60px;
+}
+
+#grp1Marketing {
+	display: inline;
+}
+
+.btn-group {
+	width: 125px;
+	height: 50px;
+	line-height: 40px;
+	margin: 2px;
+}
+/*----------------------------
+	Formulaire inscription
+-----------------------------*/
+.form-control, 
+.form_col, 
+.form-control::placeholder{
+	color: #00ADAF;
+	font-family:'Brasilia-Short II';
+}
+
+.btnRadio{
+	float: left;
+	display: block;
+}
+
+.labelRadio {
+	width: 50px;
+}
+
+.imgMale {
+	width: 48%;
+	height: auto;
+	display: inline;
+}
+
+.imgFemale {
+	width: 36%;
+	height: auto;
+	display: inline;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:50%;
+}
+
 .error {
 	color: red;
+	float:left;
+	font-size: 12px;
 }
+
+.titreH1Form {
+	font-size: 20px;
+}
+
+
 
 /*----------------------------
 	Menu Kallax
 -----------------------------*/
-.btnMenu {
-	font-size: 20px;
-	color: #000;
-	width: 100%;
-	padding: 25px 0;
-}
+
 
 /*----------------------------
 	Training
 -----------------------------*/
-#boutonsChoix form {
-	display: inline-block;
-  	width: 45%;
-	height: 40%;
-	margin: 2%;
+
+
+/*----------------------------
+	Marketing
+-----------------------------*/
+.btnRadioMarketing,
+.validationFooter {
+	display: block;
 }
 
-#boutonsChoix input {
-	font-size: 20px;
-	color: #000;
-	width: 100%;
-	padding: 25px 0;
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
+
+#question {
+	font-size: 16px;
 }
 
 /*----------------------------
@@ -350,24 +483,24 @@ div {
 		margin-top: 150px;
 	}
 
-	#titre {
+	.titre {
 		margin-bottom: 35px;
 	}
 
-	#titre h1 {
-		font-size: 40px;
+	.titre h1 {
+		font-size: 22px;
 	}
 
 	#note {
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	#description h2 {
-		font-size: 25px;
+		font-size: 18px;
 	}
 
 	#siteMediaLink a {
-		font-size: 18px;
+		font-size: 14px;
 	}
 }
 
@@ -383,7 +516,7 @@ div {
 	}
 
 	.logoHeig img {
-	  margin: 10px;
+	  margin: 0px;
 	  width: 50%;
 	}
 
@@ -395,13 +528,17 @@ div {
 
 	.user img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0;
 	  margin-left: 70%;
 	}
 
+	.arbitriumIcon {
+	  position: relative;
+	  width: 49%;
+	}
 	.arbitriumIcon img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0%;
 	  margin-left: 120%;
 	}
 
@@ -451,10 +588,10 @@ div {
 	  width: 250%;
 	  margin: 5px;
 	  float: right;
-	} 
+	}
 
 	.user {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
@@ -465,7 +602,7 @@ div {
 	}
 
 	.arbitriumIcon {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
@@ -473,6 +610,25 @@ div {
 	  width: 6%;
 	  padding-top: 9%;
 	  margin-left: 117%;
+	}
+
+	/*----------------------------
+		Buttons
+	-----------------------------*/
+
+	.btn-group {
+		width: 100px;
+		height: 50px;
+		line-height: 40px;
+		margin: 2px;
+	}
+
+	/*----------------------------
+		Marketing & Communication
+	-----------------------------*/
+
+	#interests .btn {
+		font-size: 10px;
 	}
 
 }
