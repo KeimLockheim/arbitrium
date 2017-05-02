@@ -41,7 +41,7 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
 
     $http({
       method: 'POST',
-      url: 'http://localhost:3005/auth',
+      url: 'http://hexagon-api-dev.comem.ch/auth',
       data: $scope.userSchema
     }).then(function(res) {
 
@@ -58,13 +58,18 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
   });
 });
 
-angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location) {
-  var logoutCtrl = this;
+angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location, $scope) {
+  var LogoutCtrl = this;
 
   $("#logout").click(function(){
+    //console.log(AuthService.userInf);
+    //console.log(AuthService.authToken);
     AuthService.unsetAuthToken();
     console.log("delog");
     AuthService.unsetUserId();
+    //console.log(AuthService.userInf);
+    //console.log(AuthService.authToken);
+    console.log("Logout OK");
     $location.path('/');
   });
 });

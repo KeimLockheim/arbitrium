@@ -19,7 +19,6 @@ angular.module('arbitriumApp', [
     'dragularModule',
     'gajus.swing',
     'angular-storage'
-
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -65,10 +64,6 @@ angular.module('arbitriumApp', [
         controllerAs: 'quizzMultiCtrl'
       }).when('/multimedia/:Id', {
         templateUrl: 'views/multimediaQuestion.html',
-        controller: 'QuizzMultiCtrl',
-        controllerAs: 'quizzMultiCtrl'
-      }).when('/resultMultimedia/', {
-        templateUrl: 'views/resultMultimedia.html',
         controller: 'QuizzMultiCtrl',
         controllerAs: 'quizzMultiCtrl'
       }).when('/login', {

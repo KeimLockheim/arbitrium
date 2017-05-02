@@ -37,7 +37,7 @@
           // Make the request to retrieve or create the user.
           $http({
             method: 'POST',
-            url: 'http://localhost:3005/users',
+            url: 'http://hexagon-api-dev.comem.ch/users',
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
