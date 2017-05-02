@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+
 /*-------------------------
 	Simple reset
 --------------------------*/
@@ -16,17 +17,18 @@
 
 
 html{
-	/*background:url('../img/tile_bg.jpg') #b0b0b0;*/
-	position:relative;
+	background:url('../images/index/fond.jpg') no-repeat center fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
 }
 
 body{
-	background:url('../images/index/header-bg-empty.jpg') no-repeat top;
-	/*background-color: #6A7F7F;*/
-	min-height: 600px;
     padding: 25px 0 0;
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
 	font-size: 14px;
+	background-color: transparent;
 }
 
 a, a:visited {
@@ -71,17 +73,15 @@ div {
 	float: right;
 }
 
-#contenu {
-	display: inline;
-	margin: 5px auto;
-	text-align: center;
-	position:absolute;
-	height:43%;
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#imgKallax {
+.containerPrinc {
+	position: absolute;
 	display: inline-block;
-	margin: 0 auto;
 }
 
 #imgKallax img {
@@ -91,21 +91,27 @@ div {
 	width: 30%;
 }
 
-#titre {
+.titre {
+	font-family: 
+}
+
+.titre h1 {
 	margin-bottom: 20px;
 }
 
 #note {
-	/*color: #393939;*/
 	font-size: 14px;
 	margin: 0 auto;
 	padding: 4px;
-	/*text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);*/
-	width: 400px;
+	float: inherit;
 }
 
 #description {
-	margin-top: 30px;
+	margin-top: 0px;
+}
+
+#description h2 {
+	margin-top: 5px;
 }
 
 #siteMediaLink {
@@ -114,19 +120,86 @@ div {
 	font-size: 14px;
 }
 
+.clearfix {
+  overflow: auto;
+}
+
+/*----------------------------
+	Button
+-----------------------------*/
+.btnCyan,
+.btnCyan :visited {
+	background-color: #33f0dd;
+	color: #fff;
+}
+
+.btnCyan :focus {
+	background-color: #3A706B;
+	color: #fff;
+}
+
+.btnWhite,
+.btnWhite :visited {
+	background-color: #fff;
+	color: #33f0dd;
+}
+
+.boutonChoix {
+	font-size: 20px;
+	width: 200px;
+	display: block;
+	padding: 25px 0;
+}
+
+
+/*----------------------------
+	Formulaire inscription
+-----------------------------*/
+.form-control, 
+.form_col, 
+.form-control::placeholder{
+	color: #33f0dd;
+}
+
+.btnRadio{
+	float: left;
+}
+
+.labelRadio {
+	width: 50px;
+}
+
+.imgMale {
+	width: 48%;
+	height: auto;
+	display: inline;
+}
+
+.imgFemale {
+	width: 36%;
+	height: auto;
+	display: inline;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:50%;
+}
+
 .error {
 	color: red;
+	float:left;
+	font-size: 12px;
+}
+
+.titreH1Form {
+	font-size: 20px;
 }
 
 /*----------------------------
 	Menu Kallax
 -----------------------------*/
-.btnMenu {
-	font-size: 20px;
-	color: #000;
-	width: 100%;
-	padding: 25px 0;
-}
+
 
 /*----------------------------
 	Training
@@ -328,16 +401,6 @@ footer a i b{
 -----------------------------*/
 
 @media screen and (orientation: landscape) {
-	body{
-		font-size: 8px;
-	}
-
-	#imgKallax img {
-		max-height: 100%;
-		max-width: 100%;
-		height: 15%;
-		width: 15%;
-	}
 
 	#description {
 		margin-top: 10px;
@@ -352,18 +415,19 @@ footer a i b{
 	}
 }
 
-@media screen and (max-device-width: 480px){
-	body{
-		font-size: 10px;
-	}
+/* Pour IPAD */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+}
+
+/* Pour Smartphones */
+@media screen and (min-device-width: 375px) and (max-device-width: 667px){
 
 	#logoHeig {
-		/*height: 32%;*/
 		width: 32%;
 	}
 
 	#imgMedia {
-		/*height: 20%;*/
 		width: 10%;
 	}
 
@@ -371,31 +435,23 @@ footer a i b{
 		margin-top: 150px;
 	}
 
-	#imgKallax img {
-		max-height: 100%;
-		max-width: 100%;
-		height: 35%;
-		width: 35%;
-		margin-bottom: 10px;
+	.titre {
+		margin-bottom: 25px;
 	}
 
-	#titre {
-		margin-bottom: 35px;
-	}
-
-	#titre h1 {
-		font-size: 40px;
+	.titre h1 {
+		font-size: 22px;
 	}
 
 	#note {
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	#description h2 {
-		font-size: 25px;
+		font-size: 18px;
 	}
 
 	#siteMediaLink a {
-		font-size: 18px;
+		font-size: 14px;
 	}
 }

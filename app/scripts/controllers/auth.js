@@ -36,8 +36,8 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
   $(".error").hide();
 
   $("#login").click(function(){
-    $scope.userSchema.mail = $("#email").val();
-    $scope.userSchema.password = $("#pwd1").val();
+    $scope.userSchema.mail = $("#emailLogin").val();
+    $scope.userSchema.password = $("#pwdLogin").val();
 
     $http({
       method: 'POST',
@@ -63,6 +63,7 @@ angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $r
 
   $("#logout").click(function(){
     AuthService.unsetAuthToken();
+    console.log("delog");
     AuthService.unsetUserId();
     $location.path('/');
   });

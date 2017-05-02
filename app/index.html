@@ -13,7 +13,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
     <link rel="icon" href="../images/favicon.ico" />
@@ -28,15 +27,17 @@
     <![endif]-->
 
   </head>
-  <body ng-app="arbitriumApp">
+  <body ng-app="arbitriumApp" class="bodyArbitrium">
 
     <div id="logos">
       <div id="logoHeig"><a href="https://heig-vd.ch/" target="_blank"><img src="../images/index/logo-heig-vd.svg"></a></div>
       <div id="imgMedia"><a href="https://media.heig-vd.ch/" target="_blank"><img src="../images/index/logo-mediaengineering.svg"></a></div>
+      <button class="btn btn-success" type="submit" value="Logout" name="logout" id="logout">logout</button>
     </div>
 
-    <div class="container">
-    <div ng-view=""></div>
+    <div class="container-fluid">
+        <div ng-view="" class="text-center">
+        </div>
     </div>
 
 
