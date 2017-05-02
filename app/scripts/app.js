@@ -18,7 +18,8 @@ angular.module('arbitriumApp', [
     'ngTouch',
     'dragularModule',
     'gajus.swing',
-    'angular-storage'
+    'angular-storage',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -87,7 +88,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
 
       event.preventDefault();
       $location.url('/login');
-      
+
     }
   });
 
