@@ -31,7 +31,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "A qui appartient ce logo?",
         options: ["Puma", "Salomon", "Craft"],
         answer: 1,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/sport1.jpg"
       }
     ],
     food: [
@@ -44,7 +44,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quel producteur de boisson a utilisé un célèbre DJ suisse pour sa publicité?",
         options: ["Rivella", "Fanta", "Coca Cola"],
         answer: 2,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/food1.jpg"
       },
       {
         question: "Quelle marque a pour slogan 'What Else?'?",
@@ -55,7 +55,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "A quelle entreprise correspond cette illustration?",
         options: ["Subway", "Domino's", "KFC"],
         answer: 2,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/food2.jpg"
       },
       {
         question: "Qui dit 'On n’a pas fini de vous faire aimer la viande'?",
@@ -67,7 +67,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       {
         question: "Quelle société utilise ce logo?",
         options: ["Vimeo", "Rutube", "YouTube"],
-        answer: 2
+        answer: 2,
+        image: "../images/marketing/divertissement1.jpg"
       },
       {
         question: "A quelle console de jeux-vidéo correspond le slogan 'For the player'",
@@ -85,9 +86,10 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         answer: 1
       },
       {
-        question: "Quelle société utilise cetet lampe dans son logo?",
+        question: "Quelle société utilise cette lampe dans son logo?",
         options: ["Ikea", "Microsoft", "Pixar"],
-        answer: 2
+        answer: 2,
+        image: "../images/marketing/divertissement2.jpg"
       }
     ],
     business: [
@@ -99,7 +101,8 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       {
         question: "Laquelle de ces entreprises représente une image familiale dans toutes ses publicités?",
         options: ["Groupe Mutuel", "Concordia", "Zurich Assurance"],
-        answer: 1
+        answer: 1,
+        image: "../images/marketing/business1.jpg"
       },
       {
         question: "Quelle entreprise n'utilise pas la télévision pour sa communication pour cette raison suivant : Notre public cible n’est pas de ceux qui passent du temps devant la télévision. ",
@@ -115,7 +118,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quelle entreprise utilise ce logo?",
         options: ["CSS", "Credit Suisse", "Manpower"],
         answer: 0,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/business2.jpg"
       }
     ],
     technologie: [
@@ -128,10 +131,10 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "A quelle marque appartient ce logo?",
         options: ["Logitech", "Windows", "HP"],
         answer: 0,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/technologie1.jpg"
       },
       {
-        question: "Quelle célèbre fabricant de boisson à utiliser le domaine des sciences avec le saut de Félix Baumgartner depuis la stratosphère en 2012?",
+        question: "Quelle célèbre producteur de boisson a utilisé le domaine des sciences avec le saut de Félix Baumgartner depuis la stratosphère en 2012?",
         options: ["Pepsi", "Lipton", "Red Bull"],
         answer: 2
       },
@@ -144,7 +147,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "De quelle entreprise cet homme est-il le fondateur??",
         options: ["BMW", "Novartis", "Apple"],
         answer: 2,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/technologie2.jpg"
       }
     ],
     mode: [
@@ -156,7 +159,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
       {
         question: "Quelle personnalité célèbre a tourné pour des publicités H&M?",
         options: ["Johnny Depp", "George Clooney", "Will Smith"],
-        answer: 2
+        answer: 0
       },
       {
         question: "Quelle marque utilise les films de “James Bond 007” pour promouvoir ses montres?",
@@ -167,13 +170,13 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quelle célèbre marque utilise ce logo?",
         options: ["Lacoste", "Christian Louboutin", "Guess"],
         answer: 0,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/mode1.jpg"
       },
       {
         question: "A quelle marque appartient cette publicité",
         options: ["Chanel", "Dior", "Lanvin"],
         answer: 1,
-        image: "http://smallbeerpress.com/wp-content/uploads/itunes.png"
+        image: "../images/marketing/mode2.jpg"
       }
     ]
   };
