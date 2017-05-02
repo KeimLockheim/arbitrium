@@ -35,8 +35,7 @@ angular.module('arbitriumApp', [
         controller: "SpiderprofileCtrl"
       }).when('/training', {
         templateUrl: 'views/training.html',
-        controller: 'TrainingCtrl',
-        controllerAs: 'training'
+        controller: 'KallaxCtrl'
       }).when('/coding', {
         templateUrl: 'views/coding.html',
         controller: 'CodingCtrl',
@@ -73,8 +72,7 @@ angular.module('arbitriumApp', [
         controllerAs: 'loginCtrl'
       }).when('/kallax', {
         templateUrl: 'views/kallax.html',
-        controller: 'KallaxCtrl',
-        controllerAs: 'kallaxCtrl'
+        controller: 'KallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
