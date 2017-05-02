@@ -7,7 +7,12 @@ angular.module('arbitriumApp').controller('KallaxCtrl', function($scope, AuthSer
   $scope.imageHexagon = 'jauge.png';
   $scope.hrefHexagonImg = '';
   var nbMissionsSucceeded = 0;
-  var imgHexagonFill = '';
+
+  $scope.showBasic = true;
+  $scope.showOne = false;
+  $scope.showTwo = false;
+  $scope.showThree = false;
+  $scope.showFour = false;
 
   // Récupération de l'état de complétion des activités
   $http({
@@ -38,23 +43,24 @@ angular.module('arbitriumApp').controller('KallaxCtrl', function($scope, AuthSer
     // Affichage des images en fonction du nombre de missions complétées
     switch (nbMissionsSucceeded) {
       case 1:
-        imgHexagonFill = 'jauge_1.png';
+          $scope.showBasic = false;
+          $scope.showOne = true;
         break;
       case 2:
-        imgHexagonFill = 'jauge_2.png';
+          $scope.showBasic = false;
+        $scope.showTwo = true;
         break;
       case 3:
-        imgHexagonFill = 'jauge_3.png';
+        $scope.showBasic = false;
+        $scope.showThree = true;
         break;
       case 4:
-        imgHexagonFill = 'jauge_4.png';
+        $scope.showBasic = false;
+        $scope.showFour = true;
         $scope.hrefHexagonImg = '/#!/arbitrium';
         break;
       default:
     }
-
-    // Changement du nom de l'image dans le scope
-    $scope.imageHexagon = imgHexagonFill;
 
   });
 
