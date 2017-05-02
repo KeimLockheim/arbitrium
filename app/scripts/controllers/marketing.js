@@ -280,8 +280,8 @@ angular.module('arbitriumApp')
 
     marketingCtrl.patch = function() {
       var actualUserId = AuthService.userInf.id;
-      $scope.userSchema.marketingComDone = true;
-      console.log($scope.userSchema.marketingComDone);
+      //$scope.userSchema.marketingComDone = true;
+      //console.log($scope.userSchema.marketingComDone);
       // Make the request to retrieve or create the user.
           $http({
             method: 'PATCH',
@@ -304,7 +304,7 @@ angular.module('arbitriumApp')
                 }
             });
 
-            $location.path('kallax');
+            $location.path('training');
 
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");

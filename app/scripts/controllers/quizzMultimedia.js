@@ -109,7 +109,7 @@ angular.module('arbitriumApp')
                 }
             });
 
-            $location.path('kallax');
+            $location.path('training');
                       
           }).catch(function(res) {
             console.log("Ca marche pas ton patch dans multimedia");

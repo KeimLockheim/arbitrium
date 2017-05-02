@@ -1,25 +1,20 @@
-
 <div class="text-center">
-  <div id="titre"><h1>Connexion</h1></div>
-</div>
+    <div class="titre"><h1 class="titreH1Form">Connectez-vous</h1></div>
+    <div class="formulaire center_div">
+        <form name="loginForm" id="loginCtrl">
+            <p ng-if="loginCtrl.error" class="error">{{ loginCtrl.error }}</p>
 
-<div id="formulaire">
-    <a href="javascript:history.go(-1)" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span>Retour</a>
-    <br />
-    <br />
-    <form name="loginForm" id="loginCtrl" class="row">
-        <p ng-if="loginCtrl.error" class="error">{{ loginCtrl.error }}</p>
+            <input name="email" id="emailLogin" type="email" class="form-control" placeholder="Email" required ng-model="loginCtrl.userSchema.mail"/>
+            <br />
 
-        <input name="email" id="email" type="email" class="form-control" placeholder="Email" required ng-model="loginCtrl.userSchema.mail"/>
-        <br />
+            <input name="pwd1" id="pwdLogin" type="password" class="form-control" placeholder="Mot de passe" ng-model="loginCtrl.userSchema.pwd" required/>
+            <br/>
 
-        <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe" ng-model="loginCtrl.userSchema.pwd" required/>
-        <br/>
-
-        <div class="">
-            <input class="btn btn-success" type="submit" value="Login" name="login" id="login" ng-disabled="loginCtrl.$invalid" ng-click="loginCtrl.logIn()"/>
-        </div>
-    </form>
+            <div class="">
+                <input class="btn btnCyan" type="submit" value="Login" name="login" id="login" ng-disabled="loginCtrl.$invalid"/>
+            </div>
+        </form>
+    </div>
 </div>
 
 

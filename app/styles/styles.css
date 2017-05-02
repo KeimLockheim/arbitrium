@@ -8,6 +8,7 @@
 }
 
 
+
 /*-------------------------
 	Simple reset
 --------------------------*/
@@ -87,28 +88,28 @@ a:hover{
   width: 7%;
   margin: 5px;
   float: right;
-} 
+}
 
 .user {
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 50%;
   text-align: center;
 }
 .user img {
   width: 6%;
-  padding-top: 9%;
-  margin-left: 67%;
+  padding-top: 2%;
+  margin-right: 70%;
 }
 
 .arbitriumIcon {
-  position: fixed;
+  position: relative;
   width: 49%;
   text-align: center;
 }
 .arbitriumIcon img {
   width: 6%;
-  padding-top: 9%;
+  padding-top: 0%;
   margin-left: 117%;
 }
 
@@ -118,6 +119,17 @@ a:hover{
 
 div {
 	color: #fff;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerPrinc {
+	position: absolute;
+	display: inline-block;
 }
 
 #contenu {
@@ -136,11 +148,16 @@ div {
 	font-size: 14px;
 	margin: 0 auto;
 	padding: 4px;
+	float: inherit;
 	width: 400px;
 }
 
 #description {
-	margin-top: 30px;
+	margin-top: 0px;
+}
+
+#description h2 {
+	margin-top: 5px;
 }
 
 #siteMediaLink {
@@ -149,19 +166,86 @@ div {
 	font-size: 14px;
 }
 
+.clearfix {
+  overflow: auto;
+}
+
+/*----------------------------
+	Button
+-----------------------------*/
+.btnCyan,
+.btnCyan :visited {
+	background-color: #33f0dd;
+	color: #fff;
+}
+
+.btnCyan :focus {
+	background-color: #3A706B;
+	color: #fff;
+}
+
+.btnWhite,
+.btnWhite :visited {
+	background-color: #fff;
+	color: #33f0dd;
+}
+
+.boutonChoix {
+	font-size: 20px;
+	width: 200px;
+	display: block;
+	padding: 25px 0;
+}
+
+
+/*----------------------------
+	Formulaire inscription
+-----------------------------*/
+.form-control, 
+.form_col, 
+.form-control::placeholder{
+	color: #33f0dd;
+}
+
+.btnRadio{
+	float: left;
+}
+
+.labelRadio {
+	width: 50px;
+}
+
+.imgMale {
+	width: 48%;
+	height: auto;
+	display: inline;
+}
+
+.imgFemale {
+	width: 36%;
+	height: auto;
+	display: inline;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:50%;
+}
+
 .error {
 	color: red;
+	float:left;
+	font-size: 12px;
+}
+
+.titreH1Form {
+	font-size: 20px;
 }
 
 /*----------------------------
 	Menu Kallax
 -----------------------------*/
-.btnMenu {
-	font-size: 20px;
-	color: #000;
-	width: 100%;
-	padding: 25px 0;
-}
+
 
 /*----------------------------
 	Training
@@ -350,24 +434,24 @@ div {
 		margin-top: 150px;
 	}
 
-	#titre {
+	.titre {
 		margin-bottom: 35px;
 	}
 
-	#titre h1 {
-		font-size: 40px;
+	.titre h1 {
+		font-size: 22px;
 	}
 
 	#note {
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	#description h2 {
-		font-size: 25px;
+		font-size: 18px;
 	}
 
 	#siteMediaLink a {
-		font-size: 18px;
+		font-size: 14px;
 	}
 }
 
@@ -383,7 +467,7 @@ div {
 	}
 
 	.logoHeig img {
-	  margin: 10px;
+	  margin: 0px;
 	  width: 50%;
 	}
 
@@ -395,13 +479,17 @@ div {
 
 	.user img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0;
 	  margin-left: 70%;
 	}
 
+	.arbitriumIcon {
+	  position: relative;
+	  width: 49%;
+	}
 	.arbitriumIcon img {
 	  width: 6%;
-	  padding-top: 9%;
+	  padding-top: 0%;
 	  margin-left: 120%;
 	}
 
@@ -451,10 +539,10 @@ div {
 	  width: 250%;
 	  margin: 5px;
 	  float: right;
-	} 
+	}
 
 	.user {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
@@ -465,7 +553,7 @@ div {
 	}
 
 	.arbitriumIcon {
-	  position: fixed;
+	  position: static;
 	  width: 49%;
 	  text-align: center;
 	}
