@@ -111,9 +111,26 @@ input {
 
 /* Jauges */
 
+#jauges, #iconeJauges{
+  text-align: center;
+}
+
+#cardsDisplay{
+  margin-top: 2%;
+}
+
+#timeJauge, #moneyJauge{
+  text-align: center;
+}
+
+#time, #money{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .vertical {
   display: inline-block;
-  width: 10%;
+  width: 7%;
   height: 10px;
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
