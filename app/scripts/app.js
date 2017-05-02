@@ -34,6 +34,10 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/training.html',
         controller: 'TrainingCtrl',
         controllerAs: 'training'
+      }).when('/coding', {
+        templateUrl: 'views/coding.html',
+        controller: 'CodingCtrl',
+        controllerAs: 'coding'
       }).when('/quizzBusiness1', {
         templateUrl: 'views/quizzBusiness1.html',
         controller: 'BusinessCtrl',
@@ -43,15 +47,9 @@ angular.module('arbitriumApp', [
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/marketing/', {
-        templateUrl: 'views/marketing.html',
-        controller: 'MarketingCtrl',
-        controllerAs: 'marketingCtrl'
+        templateUrl: 'views/marketing.html'
       }).when('/marketing/quizz/:category', {
         templateUrl: 'views/marketingQuizz.html',
-        controller: 'MarketingCtrl',
-        controllerAs: 'marketingCtrl'
-      }).when('/marketing/results', {
-        templateUrl: 'views/marketingResultat.html',
         controller: 'MarketingCtrl',
         controllerAs: 'marketingCtrl'
       }).when('/inscription', {

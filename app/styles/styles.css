@@ -462,7 +462,67 @@ div {
 						HEADER
 	**********************************************/
 
+	.header {
+	  margin-bottom: 10%;
+	}
+	.entete {
+	  display: inline;
+	  width: 100%;
+	  overflow: auto;
+	  margin: 0;
+	  padding: 0
+	}
+	.banniere {
+	  position: absolute;
+	  width: 33.3%;
+	  display: inline-block;
+	  text-align: center;
+	}
+	.banniere img{
+	  width: 100%;
+	}
+	.logoHeig {
+	  display: inline-block;
+	  float: left;
+	  width: 33.3%;
+	}
+	.logoHeig img {
+	  margin: 10px;
+	  width: 30%;
+	}
+	.socialNetwork {
+	  display: inline-block;
+	  float: right;
+	  width: 33.3%;
+	}
+	.socialNetwork img {
+	  width: 7%;
+	  margin: 5px;
+	  float: right;
+	}
 
+	.user {
+	  position: absolute;
+	  z-index: 1;
+	  width: 50%;
+	  padding-top: 4.5%;
+	  text-align: center;
+	}
+	.user img {
+	  width: 6%;
+	  margin-left: 70%;
+	}
+
+	.arbitriumIcon {
+	  position: absolute;
+	  width: 49%;
+	  margin-left: 33%;
+	  padding-top: 4.5%;
+	  text-align: center;
+	}
+	.arbitriumIcon img {
+	  width: 6%;
+	}
 
 }
 
@@ -473,5 +533,66 @@ div {
 						HEADER
 	**********************************************/
 
+	.header {
+	  margin-bottom: 10%;
+	}
+	.entete {
+	  display: inline;
+	  width: 100%;
+	  overflow: auto;
+	  margin: 0;
+	  padding: 0
+	}
+	.banniere {
+	  position: absolute;
+	  width: 33.3%;
+	  display: inline-block;
+	  text-align: center;
+	}
+	.banniere img{
+	  width: 100%;
+	}
+	.logoHeig {
+	  display: inline-block;
+	  float: left;
+	  width: 33.3%;
+	}
+	.logoHeig img {
+	  margin: 10px;
+	  width: 30%;
+	}
+	.socialNetwork {
+	  display: inline-block;
+	  float: right;
+	  width: 33.3%;
+	}
+	.socialNetwork img {
+	  width: 7%;
+	  margin: 5px;
+	  float: right;
+	}
+
+	.user {
+	  position: absolute;
+	  z-index: 1;
+	  width: 50%;
+	  padding-top: 4.5%;
+	  text-align: center;
+	}
+	.user img {
+	  width: 6%;
+	  margin-left: 70%;
+	}
+
+	.arbitriumIcon {
+	  position: absolute;
+	  width: 49%;
+	  margin-left: 33%;
+	  padding-top: 4.5%;
+	  text-align: center;
+	}
+	.arbitriumIcon img {
+	  width: 6%;
+	}
 
 }
