@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @font-face {
     font-family: 'Brasilia-Short II';
-    src: url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    src: url('../fonts/Brasilia-Short-II.ttf.woff') format('woff'), url('../fonts/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('../fonts/Brasilia-Short-II.ttf.eot'), url('../fonts/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
     font-display:auto;
@@ -242,12 +242,10 @@ div {
 .form_col, 
 .form-control::placeholder{
 	color: #00ADAF;
-	font-family:'Brasilia-Short II';
 }
 
 .btnRadio{
 	float: left;
-	display: block;
 }
 
 .labelRadio {
