@@ -74,17 +74,18 @@ ul {
 }
 .banniere {
   position: absolute;
-  width: 33.3%;
+  width: 33.33%;
   display: inline-block;
   text-align: center;
 }
 .banniere img{
+  margin-left: 1.5%;
   width: 100%;
 }
 .logoHeig {
   display: inline-block;
   float: left;
-  width: 33.3%;
+  width: 33.33%;
 }
 .logoHeig img {
   margin: 10px;
@@ -93,7 +94,7 @@ ul {
 .socialNetwork {
   display: inline-block;
   float: right;
-  width: 33.3%;
+  width: 33.33%;
 }
 .socialNetwork img {
   width: 7%;
@@ -110,7 +111,7 @@ ul {
 }
 .user img {
   width: 6%;
-  margin-left: 70%;
+  margin-left: 74%;
 }
 
 .arbitriumIcon {
@@ -580,7 +581,7 @@ div {
 	}
 	.user img {
 	  width: 10%;
-	  margin-left: 60%;
+	  margin-left: 63%;
 	}
 
 	.arbitriumIcon {
@@ -651,7 +652,7 @@ div {
 	}
 	.user img {
 	  width: 10%;
-	  margin-left: 60%;
+	  margin-left: 65%;
 	}
 
 	.arbitriumIcon {
@@ -728,7 +729,7 @@ div {
 	}
 	.user img {
 	  width: 20%;
-	  margin-left: 35%;
+	  margin-left: 45%;
 	}
 
 	.arbitriumIcon {
