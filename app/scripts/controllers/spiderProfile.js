@@ -10,7 +10,7 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
       var multimedia = $routeParams.multimedia;
       var management = $routeParams.management;
 
-      var ctx = document.getElementById("myChart");
+      var ctx = document.getElementById("spiderChart");
 
       var data = {
           labels: ["Communication", "Marketing", "Business", "Programmation", "Multimédia", "Management"],
@@ -27,6 +27,8 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
           ]
       };
 
+      Chart.defaults.global.defaultFontColor = '#ccc';
+
       var myRadarChart = new Chart(ctx, {
           type: 'radar',
           data: data,
@@ -40,11 +42,13 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
             },
             scale: {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                showLabelBackdrop: false
               }
             }
           }
       });
+
     }
 
     init();
