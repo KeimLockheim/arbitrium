@@ -30,6 +30,7 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	background-color: #000;
 }
 
 body{
@@ -283,7 +284,9 @@ div {
 	font-size: 20px;
 }
 
-
+.inscriptionBtn {
+	width: 160px;
+}
 
 /*----------------------------
 	Menu Kallax
