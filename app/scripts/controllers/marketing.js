@@ -218,6 +218,7 @@ angular.module('arbitriumApp')
       marketingCtrl.quizzOver = false;
       marketingCtrl.inProgress = true;
       marketingCtrl.answerMode = true;
+      marketingCtrl.validationQuizz == false;
       marketingCtrl.getQuestion();
     };
 
@@ -244,7 +245,6 @@ angular.module('arbitriumApp')
     };
 
     marketingCtrl.checkAnswer = function() {
-      console.log($('input[name=answer]:checked').length);
       if(!$('input[name=answer]:checked').length) return;
       var ans = $('input[name=answer]:checked').val();
 
@@ -267,18 +267,18 @@ angular.module('arbitriumApp')
       marketingCtrl.questionNo++;
       marketingCtrl.image = null;
       marketingCtrl.getQuestion();
-
-    }
+    };
 
     marketingCtrl.start();
 
     // Le code pour le patch commence ICI
-    
     // Pour tester le patch, décommentez la ligne ci-dessous
     //marketingCtrl.quizzOver = true;
 
-    if(marketingCtrl.quizzOver == true){
 
+
+
+    marketingCtrl.patch = function() {
       var actualUserId = AuthService.userInf.id;
       //$scope.userSchema.marketingComDone = true;
       //console.log($scope.userSchema.marketingComDone);
@@ -312,6 +312,6 @@ angular.module('arbitriumApp')
             // If an error occurs, hide the loading message and show an error message.
             //MarketingCtrl.error = "Problème avec le post marketing done";
           });
-     } 
+     }
 
 });

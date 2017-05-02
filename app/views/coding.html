@@ -1,26 +1,30 @@
 <h3>Coding</h3>
-<div ng-show="!coding.activityOver">
-	<div>
+<div ng-show="!activityOver">
+
 	<p>Vous ne pourrez pas effectuer la mission de Coding sur l’application. Rendez-vous sur le poste d’entraînement pour développer vos connaissances en coding grâce à nos robots! Apprenez à prendre contrôle des machines pour les faire travailler à vos côtés!</p>
 	<p>Une fois la mission terminée, revenez valider votre entraînement sur l’application en cliquant sur “Mission terminée”.</p>
 
-	<button ng-click="codingCtrl.firstValidation()" ng-show="codingCtrl.answerMode">Mission terminée</button>
-
-	<div ng-show="!codingCtrl.answerMode">
-		<span>Avez-vous vraiment fait l'activité? ;)</span>
-		<button ng-click="codingCtrl.secondValidation()" class="">Oui</button>
-	</div>
-
-	<div ng-show="!codingCtrl.answerMode">
-		<span>Vous êtes bien sûr?</span>
-		<button ng-click="codingCtrl.secondValidation()" class="">Je le jure sur mon Kallax!</button>
-	</div>
+	<input type="submit" class="btn btn-primary" ng-click="firstValidation()" value="Mission terminée"/>
+<!-- <button type="" ng-click="firstValidation()">Mission terminée</button> -->
 </div>
 
-<div ng-show="codingCtrl.activityOver">
+<div ng-show="activityOver1">
+	<span>Avez-vous vraiment fait l'activité? ;)</span>
+	<input type="submit" class="btn btn-primary" ng-click="secondValidation()" value="Oui"/>
+	<!-- <button ng-click="secondValidation()" class="">Oui</button> -->
+</div>
+
+<div ng-show="activityOver2">
+	<span>Vous êtes bien sûr?</span>
+	<input type="submit" class="btn btn-primary" ng-click="lastValidation()" value="Je le jure sur mon Kallax!"/>
+<!-- <button ng-click="lastValidation()" class="">Je le jure sur mon Kallax!</button> -->
+</div>
+
+<div ng-show="activityOver3">
 	<p>Bravo ! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
 	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax !</p>
-	<a href="/#!/training">
-		<button>Terminer la mission</button>
+	<a>
+		<input type="submit" class="btn btn-primary" ng-click="patch()" value="Terminer la mission"/>
+<!-- <button>Terminer la mission</button> -->
 	</a>
 </div>
