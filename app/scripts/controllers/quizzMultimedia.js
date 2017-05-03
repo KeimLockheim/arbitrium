@@ -11,6 +11,8 @@ angular.module('arbitriumApp')
 	//Définit quelle question doit être afficher selon l'ID
 	var multimediaQuestions = $routeParams.Id;
 
+	$scope.showBtn = true;
+
 	//Structure de questions à poser selon la vidéo visionnée
 	switch (multimediaQuestions) {
 		case "Q1":
@@ -65,18 +67,19 @@ angular.module('arbitriumApp')
 	    });
 	});
 
-
-
 	$scope.valideReponse = function() {
 
 		var answer = document.querySelector('input[name = "answer"]:checked').value;
 
 		if (quizzMultiCtrl.reponseCorrect == answer) {
 			$scope.showGoodMessage = true;
+			$scope.showBtn = false;
+			$scope.showBadMessage = false;
 		}
-
 		else {
 			$scope.showBadMessage = true;
+			$scope.showGoodMessage = false;
+			$scope.showBtn = false;
 		}
 
 		console.log("testetstest");
@@ -85,8 +88,6 @@ angular.module('arbitriumApp')
 
 	$scope.terminerMission = function (){
 
-		
-		
 		var actualUserId = AuthService.userInf.id;
 		console.log(actualUserId);
       // Make the request to retrieve or create the user.
@@ -110,14 +111,14 @@ angular.module('arbitriumApp')
             });
 
             $location.path('training');
-                      
+
           }).catch(function(res) {
             console.log("Ca marche pas ton patch dans multimedia");
             console.log(res);
             // If an error occurs, hide the loading message and show an error message.
             //MarketingCtrl.error = "Problème avec le post marketing done";
           });
-          
+
 
 	};
 

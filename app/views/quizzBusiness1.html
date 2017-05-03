@@ -1,7 +1,8 @@
-<h1>1. Attribuez chaque tâche à une personne</h1>
-<h4>(Glissez-déposez la tâche sous la personne concernée)</h4>
-
-<div ng-controller='FormController'>
+<div class="text-center">
+  <h1 class="titreBrasilia">1. Attribuez chaque tâche à une personne</h1>
+  <h4 class="titre">(Glissez-déposez la tâche sous la personne concernée)</h4>
+</div>
+<div ng-controller='FormController' class="formulaireBusiness center_divBusiness">
   <form novalidate class="businessManagementQuizzForm">
     <div class='wrapper' ng-controller="BusinessCtrl">
       <div class='dragColumn dragContainer'>
@@ -20,6 +21,6 @@
       </div>
     </div>
     <div class="businessManQuizzMessage ng-hide" ng-show="showMessage"></div>
-    <input type="submit" class="btn btn-primary" ng-click="check()" value="Suite" />
+    <div class="text-center" ><input type="submit" class="btn btnCyan" ng-click="check()" value="Suite" /></div>
   </form>
 </div>

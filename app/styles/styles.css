@@ -16,8 +16,9 @@
 	padding:0;
 }
 
-h1 {
+h1, h2 {
 	font-family:'Brasilia-Short II';
+	margin-top: 0px;
 }
 /*-------------------------
 	General Styles
@@ -143,13 +144,13 @@ div {
 	display: inline-block;
 }
 
-#contenu {
+/*#contenu {
 	display: inline;
 	margin: 5px auto;
 	text-align: center;
 	position:absolute;
 	height:43%;
-}
+}*/
 
 .titre {
 	margin-bottom: 20px;
@@ -198,6 +199,9 @@ div {
 .btnCyan :visited {
 	background-color: #00ADAF;
 	color: #fff;
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .btnCyan :focus {
@@ -209,20 +213,25 @@ div {
 .btnWhite :visited {
 	background-color: #fff;
 	color: #00ADAF;
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .boutonChoix {
-	font-size: 20px;
 	display: block;
 	padding-bottom: 5px;
 }
 
-#btnEntrainement {
+.btnBusiness,
+#btnEntrainement,
+#btnArbitrium {
   width: 150px;
 }
 
-#btnArbitrium {
-  width: 150px;
+#login,
+.btnMarketing{
+	width: 15%;
 }
 
 .btnMenu {
@@ -248,26 +257,33 @@ div {
 -----------------------------*/
 .form-control,
 .form_col,
-.form-control::placeholder{
+.form-control::placeholder {
 	color: #00ADAF;
+	margin-bottom: 10px;
 }
 
-.btnRadio{
-	float: left;
+.btnRadio {
+	float : left;
+	text-align: left;
 }
 
 .labelRadio {
-	width: 50px;
+	width: 10%;
+	display: inline;
+}
+
+.labelRadio input{
+	width: 15%;
 }
 
 .imgMale {
-	width: 48%;
+	width: 6%;
 	height: auto;
 	display: inline;
 }
 
 .imgFemale {
-	width: 36%;
+	width: 5%;
 	height: auto;
 	display: inline;
 }
@@ -281,15 +297,19 @@ div {
 	color: red;
 	float:left;
 	font-size: 12px;
+	font-weight: bold;
 }
 
 .titreH1Form {
 	font-size: 20px;
 }
 
-
 .inscriptionBtn {
 	width: 160px;
+}
+
+#login {
+	width: 30%;
 }
 
 /*----------------------------
@@ -340,6 +360,21 @@ div {
 /*----------------------------
 	Business Quiz
 -----------------------------*/
+.center_divBusiness{
+    margin: 0 auto;
+    width:90%;
+}
+
+.formulaireBusiness {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+.formulaireBusiness h4 {
+	font-size: 13px;
+}
+
 .wrapper {
     display: table;
     table-layout: fixed;
@@ -349,21 +384,22 @@ div {
 .dragColumn {
 	display: inline-table;
 	width: 50%;
+	margin-bottom: 10px;
 }
 
 .dragPeople {
 	width: 100%;
 	min-height: 50px;
-  height: auto;
+  	height: auto;
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dragContainer div {
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: rgba(0, 0, 0, 0.2);
     -webkit-transition: opacity 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4sp ease-in-out;
     cursor: move;
     cursor: grab;
     cursor: -webkit-grab;
@@ -372,6 +408,7 @@ div {
 .dragHorizontalOrder {
 	display: table-row;
 	background-color: rgba(255, 255, 255, 0.2);
+	text-align: left;
 }
 
 .dragHorizontalContainer {
@@ -386,7 +423,7 @@ div {
 	display: inline-block;
 	background-color: rgba(244, 226, 66, 0.2);
 	width: 100%;
-	margin: 5%;
+	margin-top: 1%;
 	padding: 2%;
 }
 
@@ -395,14 +432,14 @@ div {
 	Quizz Multimédia
 -----------------------------*/
 
-#introMultimedia p {
+/*#introMultimedia p {
 	font-size: 17px;
 }
 
 #introMultimedia h2 {
 	font-size: 30px;
 	text-align: center;
-}
+}*/
 
 #vignettesVideo {
 	margin: 30px;
@@ -429,7 +466,7 @@ div {
 	font-size: 15px;
 }
 
-.boutonMulti {
+/*.boutonMulti {
 	font-size: 18px;
 	color: black;
 	text-align: center;
@@ -457,10 +494,24 @@ div {
 	text-align: center;
 	font-size: 18px;
 	margin-top: 20px;
+}*/
+
+.questionMultimedia {
+	text-align: left;
+}
+
+.questionMultimedia label {
+	width: 10%;
+	display: inline;
+}
+
+.questionMultimedia input[type="radio"] {
+	text-align: left;
 }
 
 .questionMultimedia input[type="radio"] + label {
 	margin-left: 10px;
+	text-align: left;
 }
 
 .reponseMultimedia{
@@ -471,10 +522,10 @@ div {
 	font-size: 17px;
 }
 
-.reponseMultimedia button {
+/*.reponseMultimedia button {
 	color: black;
 	font-size: 15px;
-}
+}*/
 
 
 /*----------------------------
@@ -486,47 +537,6 @@ div {
 /*----------------------------
 	MediaQueries
 -----------------------------*/
-
-@media screen and (orientation: landscape) {
-	#description {
-		margin-top: 10px;
-	}
-
-	#siteMediaLink {
-		margin-top: 10px;
-	}
-
-	#siteMediaLink a {
-		font-size: 10px;
-	}
-}
-
-@media screen and (max-device-width: 480px){
-
-	#contenu {
-		margin-top: 150px;
-	}
-
-	.titre {
-		margin-bottom: 35px;
-	}
-
-	.titre h1 {
-		font-size: 22px;
-	}
-
-	#note {
-		font-size: 14px;
-	}
-
-	#description h2 {
-		font-size: 18px;
-	}
-
-	#siteMediaLink a {
-		font-size: 14px;
-	}
-}
 
 /* Pour IPAD - Landscape*/
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)  {
@@ -729,6 +739,7 @@ div {
 	  padding-top: 7%;
 	  text-align: center;
 	}
+
 	.user img {
 	  width: 20%;
 	  margin-left: 35%;
@@ -745,22 +756,167 @@ div {
 	  width: 20%;
 	}
 
+	.titreH1Form {
+		font-size: 16px;
+	}
+
+	.titre {
+		font-size: 16px;
+	}
+
+	.titre h4 {
+		font-size: 14px;
+	}
+
+	.titreBrasilia {
+		font-size: 18px;
+	}
+
+	.text-center p {
+		font-size: 10px;
+	}
+
+	#note {
+		font-size: 12px;
+	}
+
+  /*----------------------------
+    Formulaire
+  —---------------------------*/
+	.center-block {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+
+	.formulaire {
+		font-size: 12px;
+	}
+
+	.form-control{
+		height: 30px;
+	}
+
+	.error {
+		color: red;
+		float:left;
+		text-align: left;
+		font-size: 9px;
+		line-height: 15px;
+	}
+
+	.imgMale {
+		width: 10%;
+	}
+
+	.imgFemale {
+		width: 8%;
+	}
+
   /*----------------------------
     Buttons
   —---------------------------*/
+  	#login,
+  	.btnCyan,
+  	.btnMarketing,
+  	.btnWhite {
+  		font-size: 12px;
+		width: 100%;
+  	}
 
-  .btn-group {
-    width: 100px;
-    height: 50px;
-    line-height: 40px;
-    margin: 2px;
-  }
+	.btn-group {
+		width: 100px;
+		height: 50px;
+		line-height: 40px;
+		margin: 2px;
+	}
+
+	.btnMenu {
+		width: 100px;
+		height: 75px;
+		margin: 2px;
+		line-height: 60px;
+		font-size: 12px;
+		white-space: normal;
+	}
+
+	.btnTailleMobile,
+	.btnMarketing {
+		width: 50%;
+	}
+
+	.btnPlsLignes {
+		line-height: 28px;
+	}
+
+	.btnRetour {
+		width: 8%;
+		font-size: 6px;
+	}
 
   /*----------------------------
     Marketing & Communication
   —---------------------------*/
 
-  #interests .btn {
-    font-size: 10px;
+	#interests .btn {
+		font-size: 10px;
+	}
+
+	.btnRadioMarketing ul {
+		font-size: 12px;
+		float: left;
+	}
+
+	.imageQuizz {
+		width: 50%;
+	}
+
+  /*----------------------------
+    Kallax & Training
+  —---------------------------*/
+
+  .imgJauge {
+  	width: 30%;
   }
+
+  /*----------------------------
+    Multimedia
+  —---------------------------*/
+	#vignettesVideo {
+		/*margin: 30px;*/
+		text-align: center;
+	}
+
+	#vignettesVideo img {
+		width: 100%;
+		height: 100%;
+		padding: 2px;
+	}
+
+	#vignettesVideo button {
+		width: 100px;
+		height: 70px;
+		font-size: 10px;
+		background-color: transparent;
+	}
+
+	#vignettesVideo input {
+		width: 100px;
+		height: 70px;
+		font-size: 10px;
+	}
+
+
+  /*----------------------------
+    Business
+  —---------------------------*/
+  	.formulaireBusiness {
+		font-size: 10px;
+	}
+
+	.formulaireBusiness h4 {
+		font-size: 11px;
+	}
+
 }
