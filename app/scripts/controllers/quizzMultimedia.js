@@ -107,7 +107,7 @@ angular.module('arbitriumApp')
 
                 if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
                   console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
-                  $location.path('arbitrium');
+                  $location.path('training');
                 }else{
                   console.log("Il te manque encore des entrainements");
                   $location.path('training');
