@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-lg-3 col-md-2"></div>
@@ -6,5 +5,28 @@
       <canvas id="spiderChart"></canvas>
     </div>
     <div class="col-lg-3 col-md-8"></div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ratingModal">
+  Terminer le jeu
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-primary" id="ratingModalLabel">Qu'avez-vous pensé de notre stand ?</h4>
+      </div>
+      <div class="modal-body text-center">
+        <jk-rating-stars max-rating="5" rating="rating" on-rating="onRating(rating)" ></jk-rating-stars>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="theEnd()">Terminer</button>
+      </div>
+    </div>
   </div>
 </div>
