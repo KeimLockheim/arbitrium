@@ -19,7 +19,6 @@ angular.module('arbitriumApp', [
     'dragularModule',
     'gajus.swing',
     'angular-storage'
-
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -31,10 +30,16 @@ angular.module('arbitriumApp', [
         templateUrl: 'views/arbitrium.html',
         controller: 'ArbitriumCtrl',
         controllerAs: 'arbitriumCtrl'
+      }).when("/spiderProfile/:communication/:marketing/:business/:programmation/:multimedia/:management", {
+        templateUrl: "views/spiderProfile.html",
+        controller: "SpiderprofileCtrl"
       }).when('/training', {
         templateUrl: 'views/training.html',
-        controller: 'TrainingCtrl',
-        controllerAs: 'training'
+        controller: 'KallaxCtrl'
+      }).when('/coding', {
+        templateUrl: 'views/coding.html',
+        controller: 'CodingCtrl',
+        controllerAs: 'coding'
       }).when('/quizzBusiness1', {
         templateUrl: 'views/quizzBusiness1.html',
         controller: 'BusinessCtrl',
@@ -44,15 +49,9 @@ angular.module('arbitriumApp', [
         controller: 'BusinessCtrl',
         controllerAs: 'business'
       }).when('/marketing/', {
-        templateUrl: 'views/marketing.html',
-        controller: 'MarketingCtrl',
-        controllerAs: 'marketingCtrl'
+        templateUrl: 'views/marketing.html'
       }).when('/marketing/quizz/:category', {
         templateUrl: 'views/marketingQuizz.html',
-        controller: 'MarketingCtrl',
-        controllerAs: 'marketingCtrl'
-      }).when('/marketing/results', {
-        templateUrl: 'views/marketingResultat.html',
         controller: 'MarketingCtrl',
         controllerAs: 'marketingCtrl'
       }).when('/inscription', {
@@ -73,8 +72,7 @@ angular.module('arbitriumApp', [
         controllerAs: 'loginCtrl'
       }).when('/kallax', {
         templateUrl: 'views/kallax.html',
-        controller: 'KallaxCtrl',
-        controllerAs: 'kallaxCtrl'
+        controller: 'KallaxCtrl'
       }).otherwise({
         redirectTo: '/'
       });
@@ -87,9 +85,7 @@ angular.module('arbitriumApp').run(function(AuthService, $rootScope, $route, $lo
     if (!AuthService.authToken && !(toRoute.originalPath == '/login' || toRoute.originalPath == '/inscription' || toRoute.originalPath == '/')) {
 
       event.preventDefault();
-
       $location.url('/');
     }
   });
-
 });

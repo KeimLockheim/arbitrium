@@ -1,20 +1,22 @@
-<div id="boutonsChoix">
-  <a class="btn btn-primary btnMenu" onclick="return confirm('Insérer ici du texte pour expliquer ce qu\'est cette épreuve. NE PAS OUBLIER D\'ÉCHAPPER LES GUILLEMENTS SINON APRÈS JE PERDS UN QUART D\'HEURE À CHERCHER L\'ORIGINE DU BUG.')" href="/#!/blockly">Programmation</a>
-  <a class="btn btn-primary btnMenu" onclick="return confirm('Insérer ici du texte pour expliquer ce qu\'est cette épreuve. NE PAS OUBLIER D\'ÉCHAPPER LES GUILLEMENTS SINON APRÈS JE PERDS UN QUART D\'HEURE À CHERCHER L\'ORIGINE DU BUG.')" href="/#!/marketing">Marketing et communication</a>
-  <a class="btn btn-primary btnMenu" onclick="return confirm('Insérer ici du texte pour expliquer ce qu\'est cette épreuve. NE PAS OUBLIER D\'ÉCHAPPER LES GUILLEMENTS SINON APRÈS JE PERDS UN QUART D\'HEURE À CHERCHER L\'ORIGINE DU BUG.')" href="/#!/quizzMultimedia">Multimédia</a>
-  <a class="btn btn-primary btnMenu" onclick="return confirm('Insérer ici du texte pour expliquer ce qu\'est cette épreuve. NE PAS OUBLIER D\'ÉCHAPPER LES GUILLEMENTS SINON APRÈS JE PERDS UN QUART D\'HEURE À CHERCHER L\'ORIGINE DU BUG.')" href="/#!/quizzBusiness1">Business & Management</a>
+<a href='/#!/kallax' class="btn-primary"> Retour</a>
+<div class="text-center">
+  <div id="hexagonFill">
+    <a id="hexagonFillLink" ng-href="{{ hrefHexagonImg }}">
+      <img class="ng-hide" ng-show="showBasic" src="../images/kallax/jauge.png"/>
+      <img class="ng-hide" ng-show="showOne" src="../images/kallax/jauge_1.png"/>
+      <img class="ng-hide" ng-show="showTwo" src="../images/kallax/jauge_2.png"/>
+      <img class="ng-hide" ng-show="showThree" src="../images/kallax/jauge_3.png"/>
+      <img class="ng-hide" ng-show="showFour" src="../images/kallax/jauge_4.png"/>
+    </a>
+  </div>
+  <div id="boutonsTraining">
+    <div class="gr2BtnTraining">
+      <a class="btn btnCyan btnMenu" href="/#!/coding">Coding</a>
+      <a class="btn btnCyan btnMenu" href="/#!/marketing">Marketing & communication</a>
+    </div>
+    <div class="gr2BtnTraining">
+      <a class="btn btnCyan btnMenu" href="/#!/quizzMultimedia">Multimédia</a>
+      <a class="btn btnCyan btnMenu" href="/#!/quizzBusiness1">Business & Management</a>
+    </div>
+  </div>
 </div>
-
-<!-- EVENT HANDLING
-<a href="delete.php?id=22" class="confirmation">Link</a>
-...
-<script type="text/javascript">
-    var elems = document.getElementsByClassName('confirmation');
-    var confirmIt = function (e) {
-        if (!confirm('Are you sure?')) e.preventDefault();
-    };
-    for (var i = 0, l = elems.length; i < l; i++) {
-        elems[i].addEventListener('click', confirmIt, false);
-    }
-</script>
--->

@@ -17,10 +17,10 @@
           hasError = true;
         }
         if (passwordVal == '' || passwordVal.length < 4) {
-          $("#pwd1").after('<span class="error">Veuillez entrer un mot de passe de minimum 6 caractères</span>');
+          $("#pwd1").after('<span class="error">Veuillez entrer un mot de passe de minimum 4 caractères</span>');
           hasError = true;
         } else if (checkVal == '' || checkVal.length < 4) {
-          $("#pwd2").after('<span class="error">Veuillez entrer à nouveau votre mot de passe de minimum 6 caractères</span>');
+          $("#pwd2").after('<span class="error">Veuillez entrer à nouveau votre mot de passe de minimum 4 caractères</span>');
           hasError = true;
         } else if (passwordVal != checkVal ) {
           $("#pwd2").after('<span class="error">Les mots de passes ne sont pas identiques</span>');
@@ -28,7 +28,7 @@
         }
 
         if(hasError == false) {
-          $scope.userSchema.mail = $("#email").val();
+          $scope.userSchema.mail = $("#emailInscr").val();
           $scope.userSchema.sex = sexVal;
           $scope.userSchema.age = ageVal;
           $scope.userSchema.password = passwordVal;
@@ -41,6 +41,7 @@
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
+            console.log("Post OK");
             $location.path('/');
 
           }).catch(function() {

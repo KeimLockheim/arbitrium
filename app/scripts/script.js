@@ -1,6 +1,6 @@
 $(function(){
 
-	var note = $('#note'),
+	/*var note = $('#note'),
 		ts = new Date(2017, 4, 5), // Date (année,mois,jour) --> mois 4 = mai
 		newYear = true;
 
@@ -21,15 +21,15 @@ $(function(){
 			message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " et ";
 			message += seconds + " seconde" + ( seconds==1 ? '':'s' ) + " <br />";
 
-/*			if(newYear){
+		if(newYear){
 				message += "left until the new year!";
 			}
 			else {
 				message += "left to 10 days from now!";
 			}
-*/
+
 			note.html(message);
 		}
-	});
+	});*/
 
 });

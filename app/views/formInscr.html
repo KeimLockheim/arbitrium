@@ -1,33 +1,28 @@
-<div class="text-center">
-  <div id="titre"><h1>Inscription</h1></div>
-</div>
+<div class="text-center center_div">
+    <div class="titre"><h1 class="titreH1Form">Inscrivez-vous pour avoir accès au parcours d'entraînement et à l'Arbitrium</h1></div>
 
-<div id="formulaire">
-    <a href="javascript:history.go(-1)" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span>Retour</a>
-    <br />
-    <br />
-    <form name="inscrForm" id="inscrForm" class="row">
-        <p ng-if="InscriptionCtrl.error" class="error">{{ InscriptionCtrl.error }}</p>
+    <div id="formulaire">
+        <form name="inscrForm" id="inscrForm" class="formulaire">
+            <p ng-if="InscriptionCtrl.error" class="error">{{ InscriptionCtrl.error }}</p>
 
-        <input name="email" id="email" type="email" class="form-control" placeholder="Email *" required ng-model="InscriptionCtrl.userSchema.mail"/>
-        <br />
+            <input name="email" id="emailInscr" type="email" class="form-control" placeholder="Email *" required ng-model="InscriptionCtrl.userSchema.mail"/>
+            <br />
+            <div class="btnRadio">
+                <span class="form_col" >Sexe * :</span>
+                <label class="labelRadio"><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="male" required/><img src="../images/index/male.png" class="imgMale"></label>
+                <label class="labelRadio"><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="female" required/><img src="../images/index/female.png" class="imgFemale"></label>
+            </div>
+            <br/>
+            <input name="age" id="age" type="number" class="form-control" placeholder="Âge *" ng-model="InscriptionCtrl.userSchema.age" required/>
+            <br/>
 
-        <span class="form_col" >Sexe * :</span>
-        <label><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="male" required/>Homme</label>
-        <label><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="female" required/>Femme</label>
-        <br/>
+            <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe *" required/>
+            <br/>
 
-        <input name="age" id="age" type="number" class="form-control" placeholder="Âge *" ng-model="InscriptionCtrl.userSchema.age" required/>
-        <br/>
-
-        <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe *" required/>
-        <br/>
-
-        <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" ng-model="InscriptionCtrl.userSchema.password" required/>
-        <br />
-        <div class="">
-            <input class="btn btn-success" type="submit" value="Inscription" name="inscription" id="inscription" ng-disabled="inscrForm.$invalid"/> 
-            <input class="btn btn-warning" type="reset" value="Réinitialiser le formulaire" />
-        </div>
-    </form>
+            <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" ng-model="InscriptionCtrl.userSchema.password" required/>
+            <br />
+                <input class="btn btnCyan inscriptionBtn" type="submit" value="INSCRIPTION" name="inscription" id="inscription" ng-disabled="inscrForm.$invalid"/>
+                <a class="btn btnWhite inscriptionBtn" href="#!/login">J'AI DEJA UN COMPTE</a>
+        </form>
+    </div>
 </div>
