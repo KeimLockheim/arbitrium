@@ -59,7 +59,7 @@ angular.module('arbitriumApp')
             contentType: 'application/json'
           }).then(function(res) {
 
-            console.log("AUTOP");
+            console.log("Patch OK");
 
               $http({
                 method: 'GET',
@@ -68,15 +68,17 @@ angular.module('arbitriumApp')
 
                 if(res.data.codingDone && res.data.codingComDone && res.data.businessManagementDone && res.data.multimediaDone){
                   console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
+                  $location.path('arbitrium');
                 }else{
-                  console.log("Il te manque encore des entraienemtns");
+                  console.log("Il te manque encore des entrainements");
+                  $location.path('training');
                 }
             });
 
-            $location.path('training');
+            
 
           }).catch(function(res) {
-            console.log("Ca marche pas ton patch");
+            console.log("Ca marche pas ton patch sur coding");
             console.log(res);
             // If an error occurs, hide the loading message and show an error message.
             //codingCtrl.error = "Problème avec le post coding done";
