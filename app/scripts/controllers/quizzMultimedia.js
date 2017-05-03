@@ -52,7 +52,7 @@ angular.module('arbitriumApp')
 			quizzMultiCtrl.reponseCorrect = "Mario Kart";
 		break;
 		case "Q6":
-			quizzMultiCtrl.intitule = "En combien de groupes a été divisé la classe pour ce projet?";
+			quizzMultiCtrl.intitule = "En combien de groupes la classe a-t-elle été divisée pour ce projet?";
 			quizzMultiCtrl.reponse1 = "2";
 			quizzMultiCtrl.reponse2 = "3";
 			quizzMultiCtrl.reponse3 = "5";
