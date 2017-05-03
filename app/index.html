@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- endbuild -->
 
-
     <link rel="icon" href="../images/favicon.ico" />
 
     <!-- Our CSS stylesheet file -->
@@ -30,47 +29,65 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
   </head>
   <body ng-app="arbitriumApp">
     <header>
-        <div class="header">
-            <div class="row entete">
-                <div class="col-lg-12 logoHeig">
-                  <a href="https://heig-vd.ch/" target="_blank">
-                    <img src="../images/index/logo-heig-vd.svg" alt="logo HEIG-VD">
-                  </a>
-                </div>
-             <div class="col-lg-12 banniere">
-                <a href="https://media.heig-vd.ch/" target="_blank">
-                  <img src="../images/index/trait_banniere.png" alt="bannière heig">
-                </a>
-              </div>
-              <div class="col-lg-12 socialNetwork">
-                <a href="https://www.facebook.com/media.heigvd/" target="_blank">
-                  <img src="../images/index/facebook.png" alt="icone facebook">
-                </a>
-                <a href="http://blog.comem.ch/" target="_blank">
-                  <img src="../images/index/blog.png" alt="icone blog">
-                </a>
-              </div>
-              <div ng-controller=LogoutCtrl class="col-lg-12 user">
-                  <a href="#" id="logout">
-                    <img src="../images/index/user.png" alt="icone user">
-                  </a>
-              </div>
-              <div class="col-lg-12 arbitriumIcon">
-                <a href="/#!/arbitrium">
-                  <img src="../images/index/arbitrium.png" alt="icone arbitrium">
-                </a>
-              </div>
+      <div class="header">
+        <div class="container-fluid hidden-xs">
+          <div class="col-lg-4 col-md-4 col-sm-4 logoHeig">
+            <a href="https://heig-vd.ch/" target="_blank">
+              <img src="../images/index/logo-heig-vd.svg" alt="logo HEIG-VD">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 banniere">
+            <div class="row">
+              <a href="#" class="banPics col-lg-6 col-md-6 col-sm-6">
+                <img src="../images/index/user.png" alt="icone user">
+              </a>
+              <a href="/#!/arbitrium" class="banPics col-lg-6 col-md-6 col-sm-6">
+                <img src="../images/index/arbitrium.png" alt="icone arbitrium">
+              </a>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 socialNetwork">
+            <a href="https://www.facebook.com/media.heigvd/" target="_blank">
+              <img src="../images/index/facebook.png" alt="icone facebook">
+            </a>
+            <a href="http://blog.comem.ch/" target="_blank">
+              <img src="../images/index/blog.png" alt="icone blog">
+            </a>
+          </div>
         </div>
+        <div class="container-fluid hidden-lg hidden-md hidden-sm">
+          <div class="col-xs-6 logoHeig">
+            <a href="https://heig-vd.ch/" target="_blank">
+              <img src="../images/index/logo-heig-vd.svg" alt="logo HEIG-VD">
+            </a>
+          </div>
+          <div class="col-xs-6 socialNetwork">
+            <a href="https://www.facebook.com/media.heigvd/" target="_blank">
+              <img src="../images/index/facebook.png" alt="icone facebook">
+            </a>
+            <a href="http://blog.comem.ch/" target="_blank">
+              <img src="../images/index/blog.png" alt="icone blog">
+            </a>
+          </div>
+          <div class="col-xs-12 banniere">
+            <div class="row">
+              <a href="#" class="banPics col-xs-6">
+                <img src="../images/index/user.png" alt="icone user">
+              </a>
+              <a href="/#!/arbitrium" class="banPics col-xs-6">
+                <img src="../images/index/arbitrium.png" alt="icone arbitrium">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <div class="container">
     <div ng-view=""></div>
     </div>
-
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -117,5 +134,5 @@
     <script src="scripts/controllers/kallax.js"></script>
     <script src="scripts/controllers/coding.js"></script>
     <!-- endbuild -->
-</body>
+  </body>
 </html>
