@@ -73,11 +73,6 @@ ul {
   padding: 0
 }
 .banniere {
-  /*
-  position: absolute;
-  width: 33.3%;
-  display: inline-block;
-  */
   text-align: center;
   background: url(../images/index/trait_banniere.png) no-repeat center;
   background-size: 100%;
@@ -91,21 +86,11 @@ ul {
   margin: 28% 0;
 }
 
-/*
-.logoHeig {
-  display: inline-block;
-  float: left;
-  width: 33.3%;
-} */
 .logoHeig img {
   margin: 10px;
   width: 30%;
 }
-.socialNetwork {
-  display: inline-block;
-  float: right;
-  width: 33.3%;
-}
+
 .socialNetwork img {
   width: 7%;
   margin: 5px;
@@ -556,35 +541,18 @@ div {
 	  margin: 0;
 	  padding: 0
 	}
-	.banniere {
-    /*
-	  position: absolute;
-	  width: 50%;
-	  display: inline-block;
-	  text-align: center;
-    */
-	}
+
 	.banniere img{
 	  width: 100%;
 	}
-  /*
-	.logoHeig {
-	  display: inline-block;
-	  float: left;
-	  width: 25%;
-	}*/
+
 	.logoHeig img {
 	  margin: 10px;
 	  width: 80%;
 	}
-	.socialNetwork {
-	  display: inline-block;
-	  float: right;
-	  width: 25%;
-	}
+
 	.socialNetwork img {
 	  width: 15%;
-	  /*margin: 7px;*/
 	  float: right;
 	}
 
@@ -631,31 +599,17 @@ div {
 	  padding: 0
 	}
 	.banniere {
-    /*
-	  position: absolute;
-	  width: 50%;
-	  display: inline-block;
-    */
 	  text-align: center;
 	}
 	.banniere img{
 	  width: 100%;
 	}
-  /*
-	.logoHeig {
-	  display: inline-block;
-	  float: left;
-	  width: 25%;
-	}*/
+
 	.logoHeig img {
 	  margin: 10px;
 	  width: 80%;
 	}
-	.socialNetwork {
-	  display: inline-block;
-	  float: right;
-	  width: 25%;
-	}
+
 	.socialNetwork img {
 	  width: 15%;
 	  margin: 7px;
@@ -711,33 +665,19 @@ div {
 	  padding: 0;
 	}
 	.banniere {
-    /*
-	  position: absolute;
-	  width: 80%;
-	  display: inline-block;
-    */
 	  text-align: center;
 	}
 	.banniere img{
 	  width: 100%;
 	}
-  /*
-	.logoHeig {
-	  display: inline-block;
-	  float: left;
-	  width: 10%;
-	}*/
+
 	.logoHeig img {
 	  margin: 10px;
-	  width: 1000%;
+	  width: 100%;
 	}
-	.socialNetwork {
-	  display: inline-block;
-	  float: right;
-	  width: 10%;
-	}
+
 	.socialNetwork img {
-	  width: 300%;
+	  width: 30%;
 	  margin: 7px;
 	  float: right;
 	}
