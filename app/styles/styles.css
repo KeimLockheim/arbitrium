@@ -26,7 +26,7 @@ h1 {
 html {
 	margin: 0;
 	padding: 0;
-	background: url(../images/index/fond.jpg) no-repeat center fixed; 
+	background: url(../images/index/fond.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -247,8 +247,8 @@ div {
 /*----------------------------
 	Formulaire inscription
 -----------------------------*/
-.form-control, 
-.form_col, 
+.form-control,
+.form_col,
 .form-control::placeholder{
 	color: #00ADAF;
 }
@@ -296,6 +296,9 @@ div {
 /*----------------------------
 	Menu Kallax
 -----------------------------*/
+#hexagonFill {
+  padding: 2%;
+}
 
 
 /*----------------------------
@@ -459,7 +462,7 @@ div {
 
 .questionMultimedia input[type="radio"] + label {
 	margin-left: 10px;
-} 
+}
 
 .reponseMultimedia{
 	margin-top: 5%;
