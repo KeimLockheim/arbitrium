@@ -41,6 +41,7 @@
             data: $scope.userSchema
           }).then(function(res) {
             // Va à la page d'accueil
+            console.log("Post OK");
             $location.path('/');
 
           }).catch(function() {
