@@ -68,7 +68,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quelle société utilise ce logo?",
         options: ["Vimeo", "Rutube", "YouTube"],
         answer: 2,
-        image: "../images/marketing/divertissement1.jpg"
+        image: "../images/marketing/divertissement1.png"
       },
       {
         question: "A quelle console de jeux-vidéo correspond le slogan 'For the player'",
@@ -118,7 +118,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quelle entreprise utilise ce logo?",
         options: ["CSS", "Credit Suisse", "Manpower"],
         answer: 0,
-        image: "../images/marketing/business2.jpg"
+        image: "../images/marketing/business2.png"
       }
     ],
     technologie: [
@@ -170,7 +170,7 @@ angular.module('arbitriumApp').factory('MarketingService', function() {
         question: "Quelle célèbre marque utilise ce logo?",
         options: ["Lacoste", "Christian Louboutin", "Guess"],
         answer: 0,
-        image: "../images/marketing/mode1.jpg"
+        image: "../images/marketing/mode1.png"
       },
       {
         question: "A quelle marque appartient cette publicité",
