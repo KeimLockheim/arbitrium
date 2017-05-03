@@ -1,7 +1,5 @@
 
 <!--<link rel="stylesheet" type="text/css" href="styles/arbitrium.css">-->
-
-
 <div id="viewport" ng-controller="ArbitriumCtrl as card">
   <div class="row">
     <div class="row" id="jauges">
@@ -17,11 +15,11 @@
       <img id="money" src="../images/arbitrium/dollars.png" height="18" width="18"/>
     </div>
   </div>
-  <ul class="stack" swing-stack swing-options="options" id="cardsDisplay">
+  <ul class="stack" swing-stack swing-options="options">
       <li swing-card
-          swing-on-throwout="arbitriumCtrl.remove($index)"
-          swing-on-throwoutleft="arbitriumCtrl.throwoutleft(eventName, eventObject)"
-          swing-on-throwoutright="arbitriumCtrl.throwoutright(eventName, eventObject)"
+          swing-on-throwout="arbitriumCtrl.throwout($index, eventObject)"
+          swing-on-throwoutleft="arbitriumCtrl.throwoutleft($index, eventObject)"
+          swing-on-throwoutright="arbitriumCtrl.throwoutright($index, eventObject)"
           swing-on-throwin="arbitriumCtrl.throwin(eventName, eventObject)"
           swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
           swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"

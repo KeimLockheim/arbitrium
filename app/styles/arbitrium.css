@@ -37,7 +37,7 @@ input {
     width: 80%;
     max-width: 300px;
     height: 450px;
-    /*background: #ED5D52;*/
+    background: #ED5D52;
     position: absolute;
     top: 60px;
     left: 50%;
@@ -59,7 +59,10 @@ input {
     border: 10px solid #ECECEC;
     box-sizing: border-box;
     cursor: default; }
+
+    /*Text affichant la réponse sur la carte lorsqu'on la swipe*/
     #viewport li .swipe {
+      color: red;
       position: absolute;
       text-align: center;
       padding-left: 50px;
@@ -71,6 +74,7 @@ input {
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -ms-user-select: none;  }
+
     #viewport li p {
         font-family: "Roboto";
         padding-top: 15px;
@@ -83,13 +87,14 @@ input {
     #viewport li.in-deck:nth-child(2) {
       top: 4px;
       transform: translate(-4px, -2px) rotate(-1deg); }
-  #viewport #control {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 0; }
+
+    #viewport #control {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0; }
     #viewport #control button {
       background: #FFFFFF;
       color: #373737;
