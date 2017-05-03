@@ -4,7 +4,7 @@
     src: url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
-    font-display:auto;
+    font-display: auto;
 }
 
 /*-------------------------
@@ -81,11 +81,12 @@ ul {
 .banniere img{
   width: 100%;
 }
+/*
 .logoHeig {
   display: inline-block;
   float: left;
   width: 33.3%;
-}
+} */
 .logoHeig img {
   margin: 10px;
   width: 30%;
@@ -554,11 +555,12 @@ div {
 	.banniere img{
 	  width: 100%;
 	}
+  /*
 	.logoHeig {
 	  display: inline-block;
 	  float: left;
 	  width: 25%;
-	}
+	}*/
 	.logoHeig img {
 	  margin: 10px;
 	  width: 80%;
@@ -625,11 +627,12 @@ div {
 	.banniere img{
 	  width: 100%;
 	}
+  /*
 	.logoHeig {
 	  display: inline-block;
 	  float: left;
 	  width: 25%;
-	}
+	}*/
 	.logoHeig img {
 	  margin: 10px;
 	  width: 80%;
@@ -702,11 +705,12 @@ div {
 	.banniere img{
 	  width: 100%;
 	}
+  /*
 	.logoHeig {
 	  display: inline-block;
 	  float: left;
 	  width: 10%;
-	}
+	}*/
 	.logoHeig img {
 	  margin: 10px;
 	  width: 1000%;
