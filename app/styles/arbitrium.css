@@ -37,7 +37,7 @@ input {
     width: 80%;
     max-width: 300px;
     height: 450px;
-    background: #ED5D52;
+    background: #33f0dd;
     position: absolute;
     top: 60px;
     left: 50%;
@@ -147,7 +147,7 @@ input {
   display: inline-block;
   width: 7%;
   height: 10px;
-  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 .vertical {
