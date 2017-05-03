@@ -1,10 +1,14 @@
+@font-face {
+    font-family: 'Brasilia-Short II';
+    src: url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display:auto;
+}
+
 html, body, ul, li {
   margin: 0;
   padding: 0; }
-
-body {
-  /*background: #FCD424;*/
-  font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif; }
 
 button, input, code {
   display: inline-block;
@@ -27,7 +31,7 @@ input {
   height: 600px;
   /*background: #C7433E;*/
   /*border: 10px solid #ED5D52;*/
-  margin: 100px auto 0;
+  margin: 30px auto 0;
   position: relative; }
   #viewport .stack {
     width: 80%;
@@ -68,6 +72,7 @@ input {
       -webkit-user-select: none;
       -ms-user-select: none;  }
     #viewport li p {
+        font-family: "Roboto";
         padding-top: 15px;
         color: #373737;
         line-height: 15px;
@@ -90,7 +95,6 @@ input {
       color: #373737;
       font-weight: bold;
       border: none;
-      font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
       margin: 0 5px;
       padding: 10px 15px;
       cursor: pointer;
@@ -117,6 +121,12 @@ input {
 
 #cardsDisplay{
   margin-top: 2%;
+}
+
+#cardsDisplay img {
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  border-radius:15%;
 }
 
 #timeJauge, #moneyJauge{

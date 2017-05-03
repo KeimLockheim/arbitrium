@@ -29,7 +29,7 @@
           ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">
           <div class="row" data-rDroite="{{card.reponseDroite}}" data-rGauche="{{card.reponseGauche}}">
             <p class="col-xs-12">{{card.description}}</p>
-            <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
+            <img class="col-xs-12 imageCarte" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
             <p class="swipe col-xs-12"></p>
           </div>
 
