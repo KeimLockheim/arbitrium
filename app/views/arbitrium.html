@@ -27,12 +27,11 @@
           ng-repeat="card in arbitriumCtrl.cards" class="{{card.idCarte}}">
           <div class="row" data-rDroite="{{card.reponseG.titre}}" data-rGauche="{{card.reponseD.titre}}">
             <p class="col-xs-12">{{card.titre}}</p>
-            <img ng-if='card.picture != ""' class="col-xs-12" src="http://localhost:3005/{{card.picture}}" alt=""/>
+            <img ng-if='card.picture != ""' class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.picture}}" alt=""/>
             <div ng-if='card.picture == ""' class="col-xs-12"/>
 
               <p class="swipe col-xs-12"></p>
             </div>
-
       </li>
   </ul>
 

@@ -8,7 +8,7 @@ angular.module('arbitriumApp').factory('ArbitriumService', function($http) {
   service.getStories = function (id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3005' + '/stories'
+      url: 'http://hexagon-api-dev.comem.ch' + '/stories'
     }).then(function(res) {
       return res.data;
     }).catch(function() {

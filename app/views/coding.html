@@ -1,25 +1,23 @@
-<h3>Coding</h3>
-<div ng-show="!activityOver">
-	<p>Vous ne pourrez pas effectuer la mission de Coding sur l’application. Rendez-vous sur le poste d’entraînement pour développer vos connaissances en coding grâce à nos robots! Apprenez à prendre contrôle des machines pour les faire travailler à vos côtés!</p>
-	<p>Une fois la mission terminée, revenez valider votre entraînement sur l’application en cliquant sur “Mission terminée”.</p>
+<div class="text-center">
+	<h1>Coding</h1>
+	<div ng-show="!activityOver">
+		<p>Vous ne pourrez pas effectuer la mission de Coding sur l’application. Rendez-vous sur le poste d’entraînement pour développer vos connaissances en coding grâce à nos robots! Apprenez à prendre contrôle des machines pour les faire travailler à vos côtés!</p>
+		<p>Une fois la mission terminée, revenez valider votre entraînement sur l’application en cliquant sur “Mission terminée”.</p>
 
-	<input type="submit" class="btn btn-primary" ng-click="firstValidation()" value="Mission terminée"/>
-</div>
+		<input type="submit" class="btn btnCyan btnSpecial" ng-click="firstValidation()" value="Mission terminée"/>
+	</div>
 
-<div ng-show="activityOver1">
-	<span>Avez-vous vraiment fait l'activité?</span>
-	<input type="submit" class="btn btn-primary" ng-click="secondValidation()" value="Oui!"/>
-</div>
+	<div ng-show="activityOver1">
+		<span>Avez-vous vraiment fait l'activité?</span>
+		<input type="submit" class="btn btnCyan" ng-click="secondValidation()" value="Oui!"/>
+	</div>
 
-<div ng-show="activityOver2">
-	<span>Vous êtes bien sûr?</span>
-	<input type="submit" class="btn btn-primary" ng-click="lastValidation()" value="Oui! Je vous jure!"/>
-</div>
-
-<div ng-show="activityOver3">
-	<p>Bravo! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
-	<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax !</p>
-	<a>
-		<input type="submit" class="btn btn-primary" ng-click="patch()" value="Terminer la mission"/>
-	</a>
-</div>
+	<div ng-show="activityOver2">
+		<span>Vous êtes bien sûr?</span>
+		<input type="submit" class="btn btnCyan btnSpecial" ng-click="lastValidation()" value="Oui! Je vous jure!"/>
+	</div>
+	<div ng-show="activityOver3">
+		<p>Bravo! Vous avez terminé l'entraînement! Un pas de plus en direction de l'Arbitrium.</p>
+		<p>La mission a été validée et vous pouvez maintenant aller constater l'évolution de votre Kallax !</p>
+		<a><input type="submit" class="btn btnCyan btnSpecial btnTailleMobile" ng-click="patch()" value="Terminer la mission"/></a>
+	</div>

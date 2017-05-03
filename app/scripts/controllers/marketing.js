@@ -310,9 +310,7 @@ angular.module('arbitriumApp')
                   console.log("Il te manque encore des entraienemtns");
                 }
             });
-
             $location.path('training');
-
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");
             console.log(res);
