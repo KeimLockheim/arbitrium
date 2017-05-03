@@ -22,12 +22,12 @@ input {
   width: 50px; }
 
 #viewport {
-  width: 75%;
+  width: 100%;
   max-width: 600px;
   height: 600px;
   /*background: #C7433E;*/
   /*border: 10px solid #ED5D52;*/
-  margin: 100px auto 0;
+  margin: 20px auto 0;
   position: relative; }
   #viewport .stack {
     width: 80%;

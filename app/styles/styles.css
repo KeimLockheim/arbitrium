@@ -157,6 +157,10 @@ div {
 	font-family:'Brasilia-Short II';
 }
 
+#countdown {
+	margin-top: 40px;
+}
+
 #note {
 	font-size: 14px;
 	margin: 0 auto;
@@ -166,7 +170,7 @@ div {
 }
 
 #description {
-	margin-top: 0px;
+	margin-top: 10px;
 }
 
 #description h2 {
@@ -219,9 +223,7 @@ div {
 	padding-bottom: 5px;
 }
 
-.btnBusiness,
-#btnEntrainement,
-#btnArbitrium {
+.btnSpecial {
   width: 150px;
 }
 
@@ -659,6 +661,14 @@ div {
 	}
 	.arbitriumIcon img {
 	  width: 10%;
+	}
+
+	#countdown {
+		margin-top: 75px;
+	}
+	#description {
+		margin-top: 50px;
+		margin-bottom: 40px;
 	}
 
   /*----------------------------

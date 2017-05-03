@@ -311,8 +311,6 @@ angular.module('arbitriumApp')
                 }
             });
 
-            
-
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");
             console.log(res);
