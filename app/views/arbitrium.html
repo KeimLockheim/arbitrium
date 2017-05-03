@@ -1,15 +1,13 @@
 
 <!--<link rel="stylesheet" type="text/css" href="styles/arbitrium.css">-->
-
-
 <div id="viewport" ng-controller="ArbitriumCtrl as card">
   <div class="row">
     <div class="row" id="jauges">
       <div class="progress vertical" id="timeJauge">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps}}%;"></div>
+        <div class="time progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps*2.5}}%;"></div>
       </div>
       <div class="progress vertical" id="moneyJauge">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent}}%;"></div>
+        <div class="money progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent/100}}%;"></div>
       </div>
     </div>
     <div class="row" id="iconeJauges">
@@ -17,22 +15,28 @@
       <img id="money" src="../images/arbitrium/dollars.png" height="18" width="18"/>
     </div>
   </div>
-  <ul class="stack" swing-stack swing-options="options" id="cardsDisplay">
+  <ul class="stack" swing-stack swing-options="options">
       <li swing-card
-          swing-on-throwout="arbitriumCtrl.remove($index)"
-          swing-on-throwoutleft="arbitriumCtrl.throwoutleft(eventName, eventObject)"
-          swing-on-throwoutright="arbitriumCtrl.throwoutright(eventName, eventObject)"
+          swing-on-throwout="arbitriumCtrl.throwout($index, eventObject)"
+          swing-on-throwoutleft="arbitriumCtrl.throwoutleft($index, eventObject)"
+          swing-on-throwoutright="arbitriumCtrl.throwoutright($index, eventObject)"
           swing-on-throwin="arbitriumCtrl.throwin(eventName, eventObject)"
           swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
           swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
           swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
-          ng-repeat="card in arbitriumCtrl.cards" ng-class="card.name">
-          <div class="row" data-rDroite="{{card.reponseDroite}}" data-rGauche="{{card.reponseGauche}}">
-            <p class="col-xs-12">{{card.description}}</p>
-            <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.symbol}}" alt=""/>
-            <p class="swipe col-xs-12"></p>
-          </div>
+          ng-repeat="card in arbitriumCtrl.cards" class="{{card.idCarte}}">
+          <div class="row" data-rDroite="{{card.reponseG.titre}}" data-rGauche="{{card.reponseD.titre}}">
+            <p class="col-xs-12">{{card.titre}}</p>
+            <img ng-if='card.picture != ""' class="col-xs-12" src="http://localhost:3005/{{card.picture}}" alt=""/>
+            <div ng-if='card.picture == ""' class="col-xs-12"/>
+
+              <p class="swipe col-xs-12"></p>
+            </div>
 
       </li>
   </ul>
+
+</div>
+<div ng-show='finished'>
+  <button class="btn btnCyan btnMenu" ng-click="arbitriumCtrl.goToSpiderProfile()">Voir mes statistiques</a>
 </div>

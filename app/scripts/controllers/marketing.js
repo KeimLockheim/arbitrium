@@ -237,7 +237,14 @@ angular.module('arbitriumApp')
           marketingCtrl.answer = q.answer;
           marketingCtrl.answerMode = true;
           console.log('image:' + (q.image || ''));
-          marketingCtrl.image = (q.image || 'images/Clear.gif');
+          if (q.image) {
+            marketingCtrl.image = q.image;
+            $('img').addClass('imageQuizz');
+          } else {
+            marketingCtrl.image = 'images/Clear.gif';
+            $('img').removeClass('imageQuizz');
+          }
+          //marketingCtrl.image = (q.image || 'images/Clear.gif');
         } else {
           marketingCtrl.quizzOver = true;
         }

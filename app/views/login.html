@@ -5,10 +5,8 @@
             <p ng-if="loginCtrl.error" class="error">{{ loginCtrl.error }}</p>
 
             <input name="email" id="emailLogin" type="email" class="form-control" placeholder="Email" required ng-model="loginCtrl.userSchema.mail"/>
-            <br />
 
             <input name="pwd1" id="pwdLogin" type="password" class="form-control" placeholder="Mot de passe" ng-model="loginCtrl.userSchema.pwd" required/>
-            <br/>
 
             <div class="">
                 <input class="btn btnCyan" type="submit" value="Login" name="login" id="login" ng-disabled="loginCtrl.$invalid"/>
