@@ -64,7 +64,7 @@ ul {
 **********************************************/
 
 .header {
-  margin-bottom: 8%;
+  margin-bottom: 2%;
 }
 .entete {
   display: inline;
@@ -692,11 +692,10 @@ div {
 	html {
 		margin: 0;
 		padding: 0;
-		width: 100%
-
+		width: 100%;
 	}
 	.header {
-	  margin-bottom: 25%;
+	  margin-bottom: 2%;
 	}
 	.entete {
 	  display: inline;
