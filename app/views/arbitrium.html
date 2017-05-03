@@ -4,10 +4,10 @@
   <div class="row">
     <div class="row" id="jauges">
       <div class="progress vertical" id="timeJauge">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps}}%;"></div>
+        <div class="time progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutTemps}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutTemps*2.5}}%;"></div>
       </div>
       <div class="progress vertical" id="moneyJauge">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent}}%;"></div>
+        <div class="money progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{arbitriumCtrl.coutArgent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{arbitriumCtrl.coutArgent/100}}%;"></div>
       </div>
     </div>
     <div class="row" id="iconeJauges">
@@ -30,9 +30,13 @@
             <img ng-if='card.picture != ""' class="col-xs-12" src="http://localhost:3005/{{card.picture}}" alt=""/>
             <div ng-if='card.picture == ""' class="col-xs-12"/>
 
-            <p class="swipe col-xs-12"></p>
-          </div>
+              <p class="swipe col-xs-12"></p>
+            </div>
 
       </li>
   </ul>
+
+</div>
+<div ng-show='finished'>
+  <button class="btn btnCyan btnMenu" ng-click="arbitriumCtrl.goToSpiderProfile()">Voir mes statistiques</a>
 </div>

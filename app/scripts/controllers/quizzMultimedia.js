@@ -85,8 +85,8 @@ angular.module('arbitriumApp')
 
 	$scope.terminerMission = function (){
 
-		
-		
+
+
 		var actualUserId = AuthService.userInf.id;
 		console.log(actualUserId);
       // Make the request to retrieve or create the user.
@@ -113,15 +113,15 @@ angular.module('arbitriumApp')
                 }
             });
 
-            
-                      
+
+
           }).catch(function(res) {
             console.log("Ca marche pas ton patch dans multimedia");
             console.log(res);
             // If an error occurs, hide the loading message and show an error message.
             //MarketingCtrl.error = "Problème avec le post marketing done";
           });
-          
+
 
 	};
 

@@ -33,7 +33,7 @@ angular.module('arbitriumApp').factory('ArbitriumService', function($http) {
  * Controller of the arbitriumApp
  */
 angular.module('arbitriumApp')
-  .controller('ArbitriumCtrl', function (ArbitriumService) {
+  .controller('ArbitriumCtrl', function (ArbitriumService, $location ,$scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -41,17 +41,16 @@ angular.module('arbitriumApp')
     ];
 
     var arbitriumCtrl = this;
-    arbitriumCtrl.business = 0;
-    arbitriumCtrl.communication = 0;
-    arbitriumCtrl.management = 0;
-    arbitriumCtrl.marketing = 0;
-    arbitriumCtrl.multimedia = 0;
-    arbitriumCtrl.programmation = 0;
+    $scope.finished = false;
+    arbitriumCtrl.business = 50;
+    arbitriumCtrl.communication = 50;
+    arbitriumCtrl.management = 50;
+    arbitriumCtrl.marketing = 50;
+    arbitriumCtrl.multimedia = 50;
+    arbitriumCtrl.programmation = 50;
 
-    arbitriumCtrl.coutArgent = 0;
-    arbitriumCtrl.coutTemps = 0;
-
-
+    arbitriumCtrl.coutArgent = 8000;
+    arbitriumCtrl.coutTemps = 35;
 
     ArbitriumService.getStories().then(function(stories){
 
@@ -63,11 +62,13 @@ angular.module('arbitriumApp')
       arbitriumCtrl.cards.push({"idCarte":"b"+question.idCarte});
 
       });
-            console.log(arbitriumCtrl.cards);
       arbitriumCtrl.cards.reverse();
     });
 
-
+    arbitriumCtrl.goToSpiderProfile = function(){
+      $location.path('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
+      //console.log('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
+    }
 
     arbitriumCtrl.remove = function (index, eventObject) {
       //Supprime la carte après l'avoir lancé sur un côté
@@ -83,13 +84,36 @@ angular.module('arbitriumApp')
     }
 
     arbitriumCtrl.throwout = function (index, eventObject) {
-        
-
         arbitriumCtrl.remove(index,eventObject);
+        console.log(arbitriumCtrl);
+        console.log($scope);
+        if(angular.element(document.querySelector(".stack"))[0].children.length == 0){
+          $scope.finished = true;
+          $scope.$apply();
+        }
     };
 
     arbitriumCtrl.throwoutleft = function (index, eventObject) {
-      if(arbitriumCtrl.cards[index].estMultiple){
+
+      var carte = arbitriumCtrl.cards[index];
+      arbitriumCtrl.business += carte.reponseG.business;
+      arbitriumCtrl.communication += carte.reponseG.communication;
+      arbitriumCtrl.management += carte.reponseG.management;
+      arbitriumCtrl.marketing += carte.reponseG.marketing;
+      arbitriumCtrl.multimedia += carte.reponseG.multimedia;
+      arbitriumCtrl.programmation += carte.reponseG.programmation;
+      arbitriumCtrl.coutArgent += carte.reponseG.coutArgent;
+      var coutArgentAfficher = arbitriumCtrl.coutArgent / 100;
+      arbitriumCtrl.coutTemps -= carte.reponseG.coutTemps;
+      var coutTempsAfficher = arbitriumCtrl.coutTemps * 2.5;
+
+      console.log(arbitriumCtrl);
+
+      angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
+      angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
+
+
+      if(arbitriumCtrl.cards[index].estMultiple && arbitriumCtrl.cards[index-5]){
         var idCarteASupprimer = arbitriumCtrl.cards[index-4].idCarte;
         var idCarteBlankASupprimer = arbitriumCtrl.cards[index-5].idCarte;
 
@@ -100,7 +124,24 @@ angular.module('arbitriumApp')
     };
 
     arbitriumCtrl.throwoutright = function (index, eventObject) {
-      if(arbitriumCtrl.cards[index].estMultiple){
+      var carte = arbitriumCtrl.cards[index];
+      arbitriumCtrl.business += carte.reponseD.business;
+      arbitriumCtrl.communication += carte.reponseD.communication;
+      arbitriumCtrl.management += carte.reponseD.management;
+      arbitriumCtrl.marketing += carte.reponseD.marketing;
+      arbitriumCtrl.multimedia += carte.reponseD.multimedia;
+      arbitriumCtrl.programmation += carte.reponseD.programmation;
+      arbitriumCtrl.coutArgent += carte.reponseD.coutArgent;
+      var coutArgentAfficher = arbitriumCtrl.coutArgent / 100;
+      arbitriumCtrl.coutTemps -= carte.reponseD.coutTemps;
+      var coutTempsAfficher = arbitriumCtrl.coutTemps * 2.5;
+
+
+      angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
+      angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
+
+
+      if(arbitriumCtrl.cards[index].estMultiple && arbitriumCtrl.cards[index-3]){
         var idCarteASupprimer = arbitriumCtrl.cards[index-2].idCarte;
         var idCarteBlankASupprimer = arbitriumCtrl.cards[index-3].idCarte;
 
