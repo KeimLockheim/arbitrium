@@ -237,7 +237,14 @@ angular.module('arbitriumApp')
           marketingCtrl.answer = q.answer;
           marketingCtrl.answerMode = true;
           console.log('image:' + (q.image || ''));
-          marketingCtrl.image = (q.image || 'images/Clear.gif');
+          if (q.image) {
+            marketingCtrl.image = q.image;
+            $('img').addClass('imageQuizz');
+          } else {
+            marketingCtrl.image = 'images/Clear.gif';
+            $('img').removeClass('imageQuizz');
+          }
+          //marketingCtrl.image = (q.image || 'images/Clear.gif');
         } else {
           marketingCtrl.quizzOver = true;
         }
@@ -289,7 +296,9 @@ angular.module('arbitriumApp')
             data: {"marketingComDone" : "true"},
             contentType: 'application/json'
           }).then(function(res) {
-              console.log("Patch OK");
+
+            console.log("AUTOP");
+
               $http({
                 method: 'GET',
                 url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
@@ -297,14 +306,12 @@ angular.module('arbitriumApp')
 
                 if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
                   console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
-                  $location.path('arbitrium');
                 }else{
-                  console.log("Il te manque encore des entrainements");
-                  $location.path('training');
+                  console.log("Il te manque encore des entraienemtns");
                 }
             });
 
-            
+            $location.path('training');
 
           }).catch(function(res) {
             console.log("Ca marche pas ton patch");

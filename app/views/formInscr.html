@@ -1,23 +1,21 @@
-<div class="text-center center_div">
-    <div class="titre"><h1 class="titreH1Form">Inscrivez-vous pour avoir accès au parcours d'entraînement et à l'Arbitrium</h1></div>
+<div class="text-center">
+    <h1 class="titreH1Form">Inscrivez-vous pour avoir accès au parcours d'entraînement et à l'Arbitrium</h1>
+</div>
 
-    <div id="formulaire">
+<div class="text-center center_div">
+    <div class="formulaire">
         <form name="inscrForm" id="inscrForm" class="formulaire">
             <p ng-if="InscriptionCtrl.error" class="error">{{ InscriptionCtrl.error }}</p>
 
             <input name="email" id="emailInscr" type="email" class="form-control" placeholder="Email *" required ng-model="InscriptionCtrl.userSchema.mail"/>
-            <br />
             <div class="btnRadio">
                 <span class="form_col" >Sexe * :</span>
                 <label class="labelRadio"><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="male" required/><img src="../images/index/male.png" class="imgMale"></label>
                 <label class="labelRadio"><input name="sex" type="radio" ng-model="InscriptionCtrl.userSchema.sex" value="female" required/><img src="../images/index/female.png" class="imgFemale"></label>
             </div>
-            <br/>
             <input name="age" id="age" type="number" class="form-control" placeholder="Âge *" ng-model="InscriptionCtrl.userSchema.age" required/>
-            <br/>
 
             <input name="pwd1" id="pwd1" type="password" class="form-control" placeholder="Mot de passe *" required/>
-            <br/>
 
             <input name="pwd2" id="pwd2" type="password" class="form-control" placeholder="Mot de passe (confirmation) *" ng-model="InscriptionCtrl.userSchema.password" required/>
             <br />

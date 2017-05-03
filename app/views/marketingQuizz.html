@@ -1,10 +1,9 @@
-<div class="text-center center_div">
-	<h3 class="titreBrasilia">Marketing & Communication</h3>
+<div class="text-center">
+	<h2 class="titreBrasilia">Marketing & Communication</h3>
 	<div ng-show="!marketingCtrl.quizzOver">
-		<img src="" class="img-fluid"></img>
-		<h2 id="question">{{marketingCtrl.question}}</h2>
-		<img ng-src={{marketingCtrl.image}} />
-		<div class="btnRadioMarketing">
+		<h3 id="question" class="titreBrasilia">{{marketingCtrl.question}}</h2>
+		<img ng-src={{marketingCtrl.image}} class=""/>
+		<div class="btnRadioMarketing center_div">
 			<ul id="options">
 				<li ng-repeat="option in marketingCtrl.options">
 					<label>
@@ -16,11 +15,11 @@
 		</div>
 		<!-- <button ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode">Valider</button> -->
 		<div class="validationFooter">
-			<input type="submit" class="btn btnCyan" ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode" value="Valider"/>
+			<input type="submit" class="btn btnCyan btnMarketing" ng-click="marketingCtrl.checkAnswer()" ng-show="marketingCtrl.answerMode" value="Valider"/>
 
 
 			<div ng-show="!marketingCtrl.answerMode" class="validerFooter">
-				<input type="submit" class="next-question btn btnCyan" ng-click="marketingCtrl.nextQuestion()" value="Suivant"/>
+				<input type="submit" class="next-question btn btnCyan btnMarketing" ng-click="marketingCtrl.nextQuestion()" value="Suivant"/>
 				<!-- <button ng-click="marketingCtrl.nextQuestion()" class="next-question">Suivant</button> -->
 				<br/><span ng-show="marketingCtrl.correctAns">C'est correct!</span>
 				<span ng-show="!marketingCtrl.correctAns">Désolé, mauvaise réponse.</span>
