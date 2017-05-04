@@ -14,7 +14,7 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
       // Post des données sur profils afin de pouvoir créer des stats sur les types de users et de profils qui sont les plus getté
       $http({
               method: 'POST',
-              url: 'http://localhost:3005/profils/',
+              url: 'http://hexagon-api-dev.comem.ch/profils/',
               data: '{"business": ' + business + ', "marketing": ' + marketing + ', "communication": ' + communication + ', "programmation": ' + programmation + ',"multimedia": ' + multimedia + ', "management": ' + management + ' }'
             }).then(function(resp) {
               console.log('Post OK');
