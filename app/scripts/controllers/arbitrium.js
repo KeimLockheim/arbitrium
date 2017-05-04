@@ -8,7 +8,7 @@ angular.module('arbitriumApp').factory('ArbitriumService', function($http) {
   service.getStories = function (id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3005' + '/stories'
+      url: 'http://hexagon-api-dev.comem.ch' + '/stories'
     }).then(function(res) {
       return res.data;
     }).catch(function() {
@@ -54,77 +54,96 @@ angular.module('arbitriumApp')
 
     ArbitriumService.getStories().then(function(stories){
 
-      var story = stories[0].questions;
+      arbitriumCtrl.story = stories[0].questions;
 
-      arbitriumCtrl.cards = []
-      angular.forEach(story, function(question, key){
-      arbitriumCtrl.cards.push(question);
-      arbitriumCtrl.cards.push({"idCarte":"b"+question.idCarte});
-
+      $scope.cards = []
+      $scope.cards.push(stories[0].questions[0]);
+      for (var i = 1; i < arbitriumCtrl.story.length + 10; i++) {
+        $scope.cards.push({
+        "titre": "",
+        "picture": "blank.png",
+        "idCarte": "",
+        "reponseG": {
+          "titre": "",
+          "communication": "",
+          "marketing":"" ,
+          "business": "",
+          "programmation": "",
+          "multimedia": "",
+          "management": "",
+          "coutTemps":"" ,
+          "jumpTo": ""
+        },
+        "reponseD": {
+          "titre": "",
+          "communication": "" ,
+          "marketing": "",
+          "business": "",
+          "programmation": "",
+          "multimedia": "",
+          "management": "",
+          "coutTemps": "",
+          "jumpTo": ""
+        },
+        "estMultiple": false
       });
-      arbitriumCtrl.cards.reverse();
+      }
+
+      $scope.cards.reverse();
     });
+
+
+    arbitriumCtrl.addNextCard = function (card, direction, index, eventObject){
+      arbitriumCtrl.story.reverse();
+      console.log(index);
+      if($scope.cards[index].reponseD.jumpTo && $scope.cards[index].reponseG.jumpTo){
+        if(direction == "gauche"){
+          var nextQuestionID = $scope.cards[index].reponseD.jumpTo;
+        }else {
+          var nextQuestionID = $scope.cards[index].reponseG.jumpTo;
+        }
+      }else{
+        $location.path('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
+      }
+      var nextQuestion = eventObject.target.parentElement.children[index-1];
+
+      console.log(nextQuestion);
+      console.log(eventObject);
+
+      angular.forEach(arbitriumCtrl.story, function(question, key){
+        if(nextQuestionID == question.idCarte){
+          nextQuestion.children["0"].childNodes[1].innerHTML = question.titre;
+          nextQuestion.children["0"].children[1].src = "http://hexagon-api-dev.comem.ch/"+question.picture;
+          nextQuestion.children["0"].attributes[1].value = question.reponseD.titre;
+          nextQuestion.children["0"].attributes[2].value = question.reponseG.titre;
+          nextQuestion.attributes[9].value = nextQuestionID;
+          $scope.cards[index-1] = question;
+        }
+      });
+      console.log($scope.cards[index-1]);
+      $scope.card = card;
+      $scope.$apply();
+    }
+
+
+
 
     arbitriumCtrl.goToSpiderProfile = function(){
       $location.path('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
-      //console.log('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
     }
 
-    arbitriumCtrl.remove = function (index, eventObject) {
+    arbitriumCtrl.remove = function (eventObject) {
       //Supprime la carte après l'avoir lancé sur un côté
-      var idCarte = arbitriumCtrl.cards[index].idCarte;
-
       var htmlDeletedCard = eventObject.target;
       eventObject.target.remove();
-
-
-      //Supprime la carte vide qui suit la carte qui vient d'être détruite
-      var htmlBlankCard = angular.element(document.querySelector( '.b'+idCarte ));
-      htmlBlankCard.remove();
     }
 
     arbitriumCtrl.throwout = function (index, eventObject) {
-        arbitriumCtrl.remove(index,eventObject);
-        console.log(arbitriumCtrl);
-        console.log($scope);
-        if(angular.element(document.querySelector(".stack"))[0].children.length == 0){
-          $scope.finished = true;
-          $scope.$apply();
-        }
     };
 
     arbitriumCtrl.throwoutleft = function (index, eventObject) {
 
-      var carte = arbitriumCtrl.cards[index];
-      arbitriumCtrl.business += carte.reponseG.business;
-      arbitriumCtrl.communication += carte.reponseG.communication;
-      arbitriumCtrl.management += carte.reponseG.management;
-      arbitriumCtrl.marketing += carte.reponseG.marketing;
-      arbitriumCtrl.multimedia += carte.reponseG.multimedia;
-      arbitriumCtrl.programmation += carte.reponseG.programmation;
-      arbitriumCtrl.coutArgent += carte.reponseG.coutArgent;
-      var coutArgentAfficher = arbitriumCtrl.coutArgent / 100;
-      arbitriumCtrl.coutTemps -= carte.reponseG.coutTemps;
-      var coutTempsAfficher = arbitriumCtrl.coutTemps * 2.5;
-
-      console.log(arbitriumCtrl);
-
-      angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
-      angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
-
-
-      if(arbitriumCtrl.cards[index].estMultiple && arbitriumCtrl.cards[index-5]){
-        var idCarteASupprimer = arbitriumCtrl.cards[index-4].idCarte;
-        var idCarteBlankASupprimer = arbitriumCtrl.cards[index-5].idCarte;
-
-        angular.element(document.querySelector("." + idCarteASupprimer)).remove();
-        angular.element(document.querySelector("." + idCarteBlankASupprimer)).remove();
-
-      }
-    };
-
-    arbitriumCtrl.throwoutright = function (index, eventObject) {
-      var carte = arbitriumCtrl.cards[index];
+      var carte = $scope.cards[index];
       arbitriumCtrl.business += carte.reponseD.business;
       arbitriumCtrl.communication += carte.reponseD.communication;
       arbitriumCtrl.management += carte.reponseD.management;
@@ -136,19 +155,51 @@ angular.module('arbitriumApp')
       arbitriumCtrl.coutTemps -= carte.reponseD.coutTemps;
       var coutTempsAfficher = arbitriumCtrl.coutTemps * 2.5;
 
+      console.log("business: " + arbitriumCtrl.business);
+      console.log("comm: " + arbitriumCtrl.communication);
+      console.log("management: " + arbitriumCtrl.management);
+      console.log("marketing: " + arbitriumCtrl.marketing);
+      console.log("media: " + arbitriumCtrl.multimedia);
+      console.log("programmation: " + arbitriumCtrl.programmation);
+      console.log("argent: " + arbitriumCtrl.coutArgent);
+      console.log("temps: " + arbitriumCtrl.coutTemps);
 
       angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
       angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
 
 
-      if(arbitriumCtrl.cards[index].estMultiple && arbitriumCtrl.cards[index-3]){
-        var idCarteASupprimer = arbitriumCtrl.cards[index-2].idCarte;
-        var idCarteBlankASupprimer = arbitriumCtrl.cards[index-3].idCarte;
+      arbitriumCtrl.addNextCard($scope.cards[index] ,"gauche", index, eventObject);
+      arbitriumCtrl.remove(eventObject);
+    };
 
-        angular.element(document.querySelector("." + idCarteASupprimer)).remove();
-        angular.element(document.querySelector("." + idCarteBlankASupprimer)).remove();
+    arbitriumCtrl.throwoutright = function (index, eventObject) {
+      var carte = $scope.cards[index];
+      arbitriumCtrl.business += carte.reponseG.business;
+      arbitriumCtrl.communication += carte.reponseG.communication;
+      arbitriumCtrl.management += carte.reponseG.management;
+      arbitriumCtrl.marketing += carte.reponseG.marketing;
+      arbitriumCtrl.multimedia += carte.reponseG.multimedia;
+      arbitriumCtrl.programmation += carte.reponseG.programmation;
+      arbitriumCtrl.coutArgent += carte.reponseG.coutArgent;
+      var coutArgentAfficher = arbitriumCtrl.coutArgent / 100;
+      arbitriumCtrl.coutTemps -= carte.reponseG.coutTemps;
+      var coutTempsAfficher = arbitriumCtrl.coutTemps * 2.5;
 
-      }
+      console.log("business: " + arbitriumCtrl.business);
+      console.log("comm: " + arbitriumCtrl.communication);
+      console.log("management: " + arbitriumCtrl.management);
+      console.log("marketing: " + arbitriumCtrl.marketing);
+      console.log("media: " + arbitriumCtrl.multimedia);
+      console.log("programmation: " + arbitriumCtrl.programmation);
+      console.log("argent: " + arbitriumCtrl.coutArgent);
+      console.log("temps: " + arbitriumCtrl.coutTemps);
+
+      angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
+      angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
+
+      arbitriumCtrl.addNextCard($scope.cards[index],"droite", index, eventObject);
+      arbitriumCtrl.remove(eventObject);
+
     };
 
     arbitriumCtrl.throwin = function (eventName, eventObject) {
@@ -162,15 +213,16 @@ angular.module('arbitriumApp')
 
     arbitriumCtrl.dragmove = function (eventName, eventObject) {
 
+      //Affiche sur la carte, lors du drag les réponses possibles
       var repGauche = eventObject.target.children[0].attributes[1].value;
       var repDroite = eventObject.target.children[0].attributes[2].value;
 
         if(eventObject.throwDirection <= -1 && eventObject.throwOutConfidence > 0){
-          eventObject.target.children[0].childNodes[9].innerHTML = repGauche;
+          eventObject.target.children[0].childNodes[5].innerHTML = repGauche;
 
         }
         else if (eventObject.throwDirection >= 1 && eventObject.throwOutConfidence > 0){
-          eventObject.target.children[0].childNodes[9].innerHTML = repDroite;
+          eventObject.target.children[0].childNodes[5].innerHTML = repDroite;
         }
     };
 

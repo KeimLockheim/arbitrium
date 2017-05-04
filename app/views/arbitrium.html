@@ -24,14 +24,14 @@
           swing-on-dragstart="arbitriumCtrl.dragstart(eventName, eventObject)"
           swing-on-dragmove="arbitriumCtrl.dragmove(eventName, eventObject)"
           swing-on-dragend="arbitriumCtrl.dragend(eventName, eventObject)"
-          ng-repeat="card in arbitriumCtrl.cards" class="{{card.idCarte}}">
+          ng-repeat="card in cards" class="{{card.idCarte}}">
           <div class="row" data-rDroite="{{card.reponseG.titre}}" data-rGauche="{{card.reponseD.titre}}">
             <p class="col-xs-12">{{card.titre}}</p>
-            <img ng-if='card.picture != ""' class="col-xs-12" src="http://localhost:3005/{{card.picture}}" alt=""/>
-            <div ng-if='card.picture == ""' class="col-xs-12"/>
+            <img class="col-xs-12" src="http://hexagon-api-dev.comem.ch/{{card.picture}}" alt=""/>
+
 
               <p class="swipe col-xs-12"></p>
-            </div>
+          </div>
 
       </li>
   </ul>
