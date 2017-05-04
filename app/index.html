@@ -10,6 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/dragular/dist/dragular.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -25,6 +26,7 @@
     <!-- Our CSS stylesheet file -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,8 +42,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 banniere">
-            <div class="row">
-              <a href="#" class="banPics col-lg-6 col-md-6 col-sm-6">
+            <div ng-controller=LogoutCtrl class="row">
+              <a href="#" id="logout" class="banPics col-lg-6 col-md-6 col-sm-6">
                 <img src="../images/index/user.png" alt="icone user">
               </a>
               <a href="/#!/arbitrium" class="banPics col-lg-6 col-md-6 col-sm-6">
@@ -73,8 +75,8 @@
             </a>
           </div>
           <div class="col-xs-12 banniere">
-            <div class="row">
-              <a href="#" class="banPics col-xs-6">
+            <div ng-controller=LogoutCtrl class="row">
+              <a href="/#!" id="logout">
                 <img src="../images/index/user.png" alt="icone user">
               </a>
               <a href="/#!/arbitrium" class="banPics col-xs-6">
@@ -85,6 +87,9 @@
         </div>
       </div>
     </header>
+
+
+
     <div class="container">
     <div ng-view=""></div>
     </div>
@@ -117,6 +122,7 @@
     <script src="bower_components/dragular/dist/dragular.min.js"></script>
     <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
     <script src="bower_components/chart.js/dist/Chart.js"></script>
+    <script src="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

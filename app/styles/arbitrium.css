@@ -1,10 +1,14 @@
+@font-face {
+    font-family: 'Brasilia-Short II';
+    src: url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.woff') format('woff'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.svg#Brasilia-Short') format('svg'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot'), url('fonts/Brasilia-Short-II/Brasilia-Short-II.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display:auto;
+}
+
 html, body, ul, li {
   margin: 0;
   padding: 0; }
-
-body {
-  /*background: #FCD424;*/
-  font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif; }
 
 button, input, code {
   display: inline-block;
@@ -22,23 +26,25 @@ input {
   width: 50px; }
 
 #viewport {
-  width: 75%;
-  max-width: 600px;
-  height: 600px;
+  width: 100%;
+  /*max-width: 100%;
+  height: 600px;*/
   /*background: #C7433E;*/
   /*border: 10px solid #ED5D52;*/
-  margin: 100px auto 0;
-  position: relative; }
+  margin: 0px auto 0;
+  position: relative;
+}
   #viewport .stack {
     width: 80%;
     max-width: 300px;
     height: 450px;
-    background: #ED5D52;
+    background: #33f0dd;
     position: absolute;
     top: 60px;
     left: 50%;
     margin-left: -150px;
-    border-radius: 10px; }
+    border-radius: 10px;
+  }
   #viewport li {
     width: 100%;
     max-width: 300px;
@@ -49,39 +55,47 @@ input {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.2);
     line-height: 30px;
     text-align: center;
     border: 10px solid #ECECEC;
     box-sizing: border-box;
-    cursor: default; }
+    cursor: default;
+    font-size: 13px;
+  }
 
     /*Text affichant la réponse sur la carte lorsqu'on la swipe*/
     #viewport li .swipe {
       color: red;
+      font-size: 25px;
       position: absolute;
       text-align: center;
-      padding-left: 50px;
-      }
+      padding-top: 375px;
+    }
+
     #viewport li img {
       user-drag: none;
       user-select: none;
       -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
-      -ms-user-select: none;  }
+      -ms-user-select: none;
+    }
 
     #viewport li p {
+        font-family: "Roboto";
         padding-top: 15px;
         color: #373737;
         line-height: 15px;
       }
     #viewport li.in-deck:nth-child(3) {
       top: 2px;
-      transform: translate(2px, 2px) rotate(0.4deg); }
+      transform: translate(2px, 2px) rotate(0.4deg);
+    }
     #viewport li.in-deck:nth-child(2) {
       top: 4px;
-      transform: translate(-4px, -2px) rotate(-1deg); }
+      transform: translate(-4px, -2px) rotate(-1deg);
+    }
 
     #viewport #control {
       position: absolute;
@@ -95,7 +109,6 @@ input {
       color: #373737;
       font-weight: bold;
       border: none;
-      font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
       margin: 0 5px;
       padding: 10px 15px;
       cursor: pointer;
@@ -124,20 +137,26 @@ input {
   margin-top: 2%;
 }
 
+#cardsDisplay img {
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  border-radius:15%;
+}
+
 #timeJauge, #moneyJauge{
   text-align: center;
 }
 
 #time, #money{
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .vertical {
   display: inline-block;
   width: 7%;
   height: 10px;
-  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 .vertical {
