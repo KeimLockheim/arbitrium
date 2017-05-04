@@ -62,10 +62,11 @@ angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $r
   var LogoutCtrl = this;
 
   $("#logout").click(function(){
+
     //console.log(AuthService.userInf);
     //console.log(AuthService.authToken);
     AuthService.unsetAuthToken();
-    console.log("delog");
+    //console.log("delog");
     AuthService.unsetUserId();
     //console.log(AuthService.userInf);
     //console.log(AuthService.authToken);

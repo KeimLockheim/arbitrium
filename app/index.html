@@ -42,8 +42,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 banniere">
-            <div class="row">
-              <a href="#" class="banPics col-lg-6 col-md-6 col-sm-6">
+            <div ng-controller=LogoutCtrl class="row">
+              <a href="#" id="logout" class="banPics col-lg-6 col-md-6 col-sm-6">
                 <img src="../images/index/user.png" alt="icone user">
               </a>
               <a href="/#!/arbitrium" class="banPics col-lg-6 col-md-6 col-sm-6">
@@ -75,8 +75,8 @@
             </a>
           </div>
           <div class="col-xs-12 banniere">
-            <div class="row">
-              <a href="#" id="logout" class="banPics col-xs-6">
+            <div ng-controller=LogoutCtrl class="row">
+              <a href="/#!" id="logout">
                 <img src="../images/index/user.png" alt="icone user">
               </a>
               <a href="/#!/arbitrium" class="banPics col-xs-6">
@@ -87,6 +87,9 @@
         </div>
       </div>
     </header>
+
+
+
     <div class="container">
     <div ng-view=""></div>
     </div>

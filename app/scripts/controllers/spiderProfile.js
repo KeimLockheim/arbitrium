@@ -10,6 +10,16 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
       var multimedia = $routeParams.multimedia;
       var management = $routeParams.management;
 
+
+      // Post des données sur profils afin de pouvoir créer des stats sur les types de users et de profils qui sont les plus getté
+      $http({
+              method: 'POST',
+              url: 'http://localhost:3005/profils/',
+              data: '{"business": ' + business + ', "marketing": ' + marketing + ', "communication": ' + communication + ', "programmation": ' + programmation + ',"multimedia": ' + multimedia + ', "management": ' + management + ' }'
+            }).then(function(resp) {
+              console.log('Post OK');
+            })
+
       // Sélection de l'élément graphique
       var ctx = document.getElementById("spiderChart");
 
@@ -85,8 +95,10 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
             }).then(function(resp) {
 
               // Déconnexion de l'utilisateur
+
               AuthService.unsetAuthToken();
               AuthService.unsetUserId();
+              console.log('Logout OK');
               $location.path('/');
             })
           }
