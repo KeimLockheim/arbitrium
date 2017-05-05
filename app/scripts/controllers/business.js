@@ -98,42 +98,25 @@ angular.module('arbitriumApp')
     // Termine le quiz
     $scope.endQuizz = function() {
 
+      // Récupération de l'utilisateur actuel
       var actualUserId = AuthService.userInf.id;
 
-        // Make the request to retrieve or create the user.
-        $http({
-          method: 'PATCH',
-          url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
-          data: {"businessManagementDone" : "true"},
-          contentType: 'application/json'
-        }).then(function(res) {
+      // Patch l'utilisateur (on met l'entrainement businessManagement à true)
+      $http({
+        method: 'PATCH',
+        url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+        data: {"businessManagementDone" : "true"},
+        contentType: 'application/json'
+      }).then(function(res) {
 
-          console.log("Patch OK");
+          $http({
+            method: 'GET',
+            url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
+          }).then(function(res) {
 
-            $http({
-              method: 'GET',
-              url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,
-            }).then(function(res) {
-
-              if(res.data.codingDone && res.data.marketingComDone && res.data.businessManagementDone && res.data.multimediaDone){
-                console.log("Bravo, tu as fait les 5 epreuves d'entrainements !");
-                $location.path('arbitrium');
-              }else{
-                console.log("Il te manque encore des entrainements");
-                $location.path('training');
-
-              }
-          });
-
-          
-
-        }).catch(function(res) {
-          console.log("Ca marche pas ton patch de business");
-          console.log(res);
-          // If an error occurs, hide the loading message and show an error message.
-          //MarketingCtrl.error = "Problème avec le post marketing done";
+            // Retour à la page training
+            $location.path('training');
         });
-
+      });
     }
-
   });

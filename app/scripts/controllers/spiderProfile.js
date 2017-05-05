@@ -10,15 +10,12 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
       var multimedia = $routeParams.multimedia;
       var management = $routeParams.management;
 
-
-      // Post des données sur profils afin de pouvoir créer des stats sur les types de users et de profils qui sont les plus getté
+      // Post des données sur profils afin de pouvoir créer des stats
       $http({
-              method: 'POST',
-              url: 'http://hexagon-api-dev.comem.ch/profils/',
-              data: '{"business": ' + business + ', "marketing": ' + marketing + ', "communication": ' + communication + ', "programmation": ' + programmation + ',"multimedia": ' + multimedia + ', "management": ' + management + ' }'
-            }).then(function(resp) {
-              console.log('Post OK');
-            })
+        method: 'POST',
+        url: 'http://hexagon-api-dev.comem.ch/profils/',
+        data: '{"business": ' + business + ', "marketing": ' + marketing + ', "communication": ' + communication + ', "programmation": ' + programmation + ',"multimedia": ' + multimedia + ', "management": ' + management + ' }'
+      });
 
       // Sélection de l'élément graphique
       var ctx = document.getElementById("spiderChart");
@@ -69,10 +66,12 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
 
     // Lorsque l'utilisateur clique sur terminer
     $scope.theEnd = function() {
+      // Ferme le modal bootstrap
       $('#ratingModal').modal('hide');
       $('body').removeClass('modal-open');
       $('.modal-backdrop').remove();
 
+      // Récupération de la note finale
       var finalRate = $scope.rating;
 
       // Ajout du rating dans la db
@@ -95,15 +94,12 @@ angular.module('arbitriumApp').controller('SpiderprofileCtrl', function($scope, 
             }).then(function(resp) {
 
               // Déconnexion de l'utilisateur
-
               AuthService.unsetAuthToken();
               AuthService.unsetUserId();
-              console.log('Logout OK');
               $location.path('/');
-            })
+            });
           }
         });
-
       });
     }
 

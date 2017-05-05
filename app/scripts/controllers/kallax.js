@@ -7,7 +7,6 @@ angular.module('arbitriumApp').controller('KallaxCtrl', function($scope, AuthSer
   $scope.imageHexagon = 'jauge.png';
   $scope.hrefHexagonImg = '';
   var nbMissionsSucceeded = 0;
-
   $scope.showBasic = true;
   $scope.showOne = false;
   $scope.showTwo = false;
@@ -61,7 +60,5 @@ angular.module('arbitriumApp').controller('KallaxCtrl', function($scope, AuthSer
         break;
       default:
     }
-
   });
-
 });

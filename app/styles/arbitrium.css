@@ -8,7 +8,8 @@
 
 html, body, ul, li {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 button, input, code {
   display: inline-block;
@@ -16,112 +17,120 @@ button, input, code {
   font: inherit;
   border: none;
   background: #FDE991;
-  padding: 0; }
+  padding: 0;
+}
 
 button {
   color: #C7433E;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 input {
-  width: 50px; }
+  width: 50px;
+}
 
 #viewport {
   width: 100%;
-  /*max-width: 100%;
-  height: 600px;*/
-  /*background: #C7433E;*/
-  /*border: 10px solid #ED5D52;*/
   margin: 0px auto 0;
   position: relative;
 }
-  #viewport .stack {
-    width: 80%;
-    max-width: 300px;
-    height: 450px;
-    background: #33f0dd;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    margin-left: -150px;
-    border-radius: 10px;
-  }
-  #viewport li {
-    width: 100%;
-    max-width: 300px;
-    height: 450px;
-    list-style: none;
-    background: #257791;
-    border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.2);
-    line-height: 30px;
-    text-align: center;
-    border: 10px solid #113050;
-    box-sizing: border-box;
-    cursor: default;
-    font-size: 13px;
-  }
 
-    /*Text affichant la réponse sur la carte lorsqu'on la swipe*/
-    #viewport li .swipe {
-      color: #fff;
-      font-size: 24px;
-      position: absolute;
-      text-align: center;
-      padding-top: 355px;
-      padding-left: 50px;
-      line-height: 23px;
-    }
+#viewport .stack {
+  width: 80%;
+  max-width: 300px;
+  height: 450px;
+  background: #33f0dd;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -150px;
+  border-radius: 10px;
+}
 
-    #viewport li img {
-      user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-    }
+#viewport li {
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
+  list-style: none;
+  background: #257791;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.2);
+  line-height: 30px;
+  text-align: center;
+  border: 10px solid #113050;
+  box-sizing: border-box;
+  cursor: default;
+  font-size: 13px;
+}
 
-    #viewport li p {
-        font-family: "Roboto";
-        padding-top: 15px;
-        color: #fff;
-        line-height: 15px;
-      }
-    #viewport li.in-deck:nth-child(3) {
-      top: 2px;
-      transform: translate(2px, 2px) rotate(0.4deg);
-    }
-    #viewport li.in-deck:nth-child(2) {
-      top: 4px;
-      transform: translate(-4px, -2px) rotate(-1deg);
-    }
+/*Texte affichant la réponse sur la carte lorsqu'on la swipe*/
+#viewport li .swipe {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  padding-top: 355px;
+  padding-left: 50px;
+  line-height: 23px;
+}
 
-    #viewport #control {
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 0; }
-    #viewport #control button {
-      background: #FFFFFF;
-      color: #373737;
-      font-weight: bold;
-      border: none;
-      margin: 0 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      box-shadow: 0 2px 0 #63211F;
-      outline: none;
-      position: relative; }
-      #viewport #control button:active {
-        background: #63211F;
-        color: #FFFFFF;
-        bottom: -2px;
-        box-shadow: none; }
+#viewport li img {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#viewport li p {
+  font-family: "Roboto";
+  padding-top: 15px;
+  color: #fff;
+  line-height: 15px;
+}
+
+#viewport li.in-deck:nth-child(3) {
+  top: 2px;
+  transform: translate(2px, 2px) rotate(0.4deg);
+}
+
+#viewport li.in-deck:nth-child(2) {
+  top: 4px;
+  transform: translate(-4px, -2px) rotate(-1deg);
+}
+
+#viewport #control {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0;
+}
+
+#viewport #control button {
+  background: #FFFFFF;
+  color: #373737;
+  font-weight: bold;
+  border: none;
+  margin: 0 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #63211F;
+  outline: none;
+  position: relative;
+}
+
+#viewport #control button:active {
+  background: #63211F;
+  color: #FFFFFF;
+  bottom: -2px;
+  box-shadow: none;
+}
 
 #source {
   width: 500px;
@@ -130,7 +139,6 @@ input {
     color: #C7433E; }
 
 /* Jauges */
-
 #jauges, #iconeJauges{
   text-align: center;
 }
