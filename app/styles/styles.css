@@ -141,14 +141,6 @@ div {
 	display: inline-block;
 }
 
-/*#contenu {
-	display: inline;
-	margin: 5px auto;
-	text-align: center;
-	position:absolute;
-	height:43%;
-}*/
-
 .titre {
 	margin-bottom: 20px;
 	font-family: 'Roboto';
@@ -434,16 +426,6 @@ div {
 /*----------------------------
 	Quizz Multimédia
 -----------------------------*/
-
-/*#introMultimedia p {
-	font-size: 17px;
-}
-
-#introMultimedia h2 {
-	font-size: 30px;
-	text-align: center;
-}*/
-
 #vignettesVideo {
 	margin: 30px;
 }
@@ -468,36 +450,6 @@ div {
 	color: black;
 	font-size: 15px;
 }
-
-/*.boutonMulti {
-	font-size: 18px;
-	color: black;
-	text-align: center;
-	margin-top: 20px;
-}
-
-.boutonMulti a {
-	color: black;
-}
-
-.boutonQuizzMultimedia {
-	color: black;
-	margin-top: 20px;
-}
-
-.contentMultimedia {
-	text-align: center;
-}
-
-.titreQuestion {
-	text-align: center;
-}
-
-.questionMultimedia {
-	text-align: center;
-	font-size: 18px;
-	margin-top: 20px;
-}*/
 
 .questionMultimedia {
 	text-align: left;
@@ -524,18 +476,6 @@ div {
 .reponseMultimedia p {
 	font-size: 17px;
 }
-
-/*.reponseMultimedia button {
-	color: black;
-	font-size: 15px;
-}*/
-
-
-/*----------------------------
-	The Footer
------------------------------*/
-
-
 
 /*----------------------------
 	MediaQueries
@@ -897,7 +837,6 @@ div {
 		font-size: 10px;
 	}
 
-
   /*----------------------------
     Business
   —---------------------------*/
@@ -908,5 +847,4 @@ div {
 	.formulaireBusiness h4 {
 		font-size: 11px;
 	}
-
 }
