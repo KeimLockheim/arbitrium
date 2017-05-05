@@ -41,7 +41,7 @@ angular.module('arbitriumApp')
     ];
 
     var arbitriumCtrl = this;
-    $scope.finished = false;
+    //Initialise les statistiques avec une valeur de base
     arbitriumCtrl.business = 50;
     arbitriumCtrl.communication = 50;
     arbitriumCtrl.management = 50;
@@ -52,12 +52,17 @@ angular.module('arbitriumApp')
     arbitriumCtrl.coutArgent = 8000;
     arbitriumCtrl.coutTemps = 35;
 
+    //Récupère toutes les stories stockées dans la BD
     ArbitriumService.getStories().then(function(stories){
 
+      //On utilise que la première story
       arbitriumCtrl.story = stories[0].questions;
 
-      $scope.cards = []
+
+      $scope.cards = [];
+      //Ajoute la première question depuis la story
       $scope.cards.push(stories[0].questions[0]);
+      //Génère plus de cartes vides que de questions totales et les place à la suite du tas de carte
       for (var i = 1; i < arbitriumCtrl.story.length + 10; i++) {
         $scope.cards.push({
         "titre": "",
@@ -88,14 +93,16 @@ angular.module('arbitriumApp')
         "estMultiple": false
       });
       }
-
+      //Renverse le tas de carte puisque angulr-swing affiche en premier la fin du tableau
       $scope.cards.reverse();
     });
 
-
+    //Permet d'afficher les informations de la prochaine carte sur la carte vide qui suit la carte swipée
     arbitriumCtrl.addNextCard = function (card, direction, index, eventObject){
       arbitriumCtrl.story.reverse();
       console.log(index);
+      //Condition qiu test si la carte actuelle possède des jumpTo sur la carte suivante
+      //Permet de déterminer si on arrive à la de la story puisque seule la dernière question n'a pas de jumpTo
       if($scope.cards[index].reponseD.jumpTo && $scope.cards[index].reponseG.jumpTo){
         if(direction == "gauche"){
           var nextQuestionID = $scope.cards[index].reponseD.jumpTo;
@@ -125,13 +132,7 @@ angular.module('arbitriumApp')
       $scope.$apply();
     }
 
-
-
-
-    arbitriumCtrl.goToSpiderProfile = function(){
-      $location.path('spiderProfile/'+arbitriumCtrl.communication+'/'+arbitriumCtrl.marketing+'/'+arbitriumCtrl.business+'/'+arbitriumCtrl.programmation+'/'+arbitriumCtrl.multimedia+'/'+arbitriumCtrl.management);
-    }
-
+    //Supprime la carte qui déclanche l'évenement
     arbitriumCtrl.remove = function (eventObject) {
       //Supprime la carte après l'avoir lancé sur un côté
       var htmlDeletedCard = eventObject.target;
@@ -141,8 +142,10 @@ angular.module('arbitriumApp')
     arbitriumCtrl.throwout = function (index, eventObject) {
     };
 
+    //Se déclanche lorsqu'une carte est swipée à gauche
     arbitriumCtrl.throwoutleft = function (index, eventObject) {
 
+      //ajoute les statistiques de chaque cartes aux compteurs de statistiques de l'utilisateur
       var carte = $scope.cards[index];
       arbitriumCtrl.business += carte.reponseD.business;
       arbitriumCtrl.communication += carte.reponseD.communication;
@@ -164,6 +167,7 @@ angular.module('arbitriumApp')
       console.log("argent: " + arbitriumCtrl.coutArgent);
       console.log("temps: " + arbitriumCtrl.coutTemps);
 
+      //Met à jour l'affichage des jauges
       angular.element(document.querySelector(".time"))[0].style.width = coutTempsAfficher + "%";
       angular.element(document.querySelector(".money"))[0].style.width = coutArgentAfficher + "%";
 
@@ -172,6 +176,7 @@ angular.module('arbitriumApp')
       arbitriumCtrl.remove(eventObject);
     };
 
+    //Se déclanche lorsqu'une carte est swipée à gauche
     arbitriumCtrl.throwoutright = function (index, eventObject) {
       var carte = $scope.cards[index];
       arbitriumCtrl.business += carte.reponseG.business;
@@ -211,12 +216,14 @@ angular.module('arbitriumApp')
         description = eventObject.target.innerHTML;
     };
 
+    //Se déclanche lorsqu'une carte est en train d'être déplacée
     arbitriumCtrl.dragmove = function (eventName, eventObject) {
 
       //Affiche sur la carte, lors du drag les réponses possibles
       var repGauche = eventObject.target.children[0].attributes[1].value;
       var repDroite = eventObject.target.children[0].attributes[2].value;
 
+        //Si la carte va en direction de la gauche, alors on affiche la réponse gauche, sinon on affiche la réponse droite
         if(eventObject.throwDirection <= -1 && eventObject.throwOutConfidence > 0){
           eventObject.target.children[0].childNodes[5].innerHTML = repGauche;
 
