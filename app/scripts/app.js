@@ -43,12 +43,10 @@ angular.module('arbitriumApp', [
         controllerAs: 'coding'
       }).when('/quizzBusiness1', {
         templateUrl: 'views/quizzBusiness1.html',
-        controller: 'BusinessCtrl',
-        controllerAs: 'business'
+        controller: 'BusinessCtrl'
       }).when('/quizzBusiness2', {
         templateUrl: 'views/quizzBusiness2.html',
-        controller: 'BusinessCtrl',
-        controllerAs: 'business'
+        controller: 'BusinessCtrl'
       }).when('/marketing/', {
         templateUrl: 'views/marketing.html'
       }).when('/marketing/quizz/:category', {

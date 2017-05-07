@@ -100,7 +100,7 @@ angular.module('arbitriumApp')
 
       var actualUserId = AuthService.userInf.id;
 
-        // Patch de l'user dans la bd afin de dire qu'il a fait l'épreuve business
+        // Make the request to retrieve or create the user.
         $http({
           method: 'PATCH',
           url: 'http://hexagon-api-dev.comem.ch/users/'+ actualUserId,

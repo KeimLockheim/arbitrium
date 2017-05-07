@@ -1,4 +1,18 @@
+
 // Services permettant de garder la persitence des données de l'utilisateur tout au long de sa connexion
+
+/**
+ * @ngdoc function
+ * @name arbitriumApp.controller:LoginCtrl
+ @name arbitriumApp.controller:LogoutCtrl
+ * @description Controller de login et de logout
+ * # LoginCtrl & LogoutCtrl
+ * Controller of the arbitriumApp
+ */
+
+
+//Service d'authentification
+
 angular.module('arbitriumApp').factory('AuthService', function(store) {
   var service = {
 
@@ -37,10 +51,12 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
   $scope.userSchema = {};
   $(".error").hide();
 
+  //Lors du clique sur le bouton de login lance la fonction
   $("#login").click(function(){
+    //Récupération des valeurs
     $scope.userSchema.mail = $("#emailLogin").val();
     $scope.userSchema.password = $("#pwdLogin").val();
-
+    //Envoie des valeurs par post
     $http({
       method: 'POST',
       url: 'http://hexagon-api-dev.comem.ch/auth',
@@ -50,7 +66,7 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
       AuthService.setAuthToken(res.data.token);
       AuthService.setUserId(res.data.user);
       console.log("Login OK");
-
+      // Redirection sur la page kallax
       $location.path('/kallax');
 
     }).catch(function() {
@@ -64,6 +80,7 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
 angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location, $scope) {
   var LogoutCtrl = this;
 
+  //Lors du clique sur le bouton logout, delogue l'utilisateur
   $("#logout").click(function(){
 
     //console.log(AuthService.userInf);

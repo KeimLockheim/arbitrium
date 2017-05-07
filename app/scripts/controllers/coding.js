@@ -18,6 +18,10 @@ angular.module('arbitriumApp')
 
     var codingCtrl = this;
 
+    //Cette page est uniquement en place pour que l'utilisateur vienne valider de lui-même qu'il a réalisé l'activité qui ne se trouve pas dans l'application.
+    //La demande de validation de l'activité lui est faite à plusieurs reprises pour le sensibiliser un minimum à ne pas mentir.
+  
+    // Initialisation de la page avec les différents modes d'affichage selon le degré de demande de validation. 
     codingCtrl.start = function() {
     	console.log("start");
 		  $scope.activityOver = false;
@@ -26,21 +30,29 @@ angular.module('arbitriumApp')
 		  $scope.activityOver3 = false;
     };
 
+    //Validation à la première question
+    //Celle-ci disparaît et la deuxième question apparaît
     $scope.firstValidation = function() {
     	console.log("firstValidation");
 		$scope.activityOver = true;
     	$scope.activityOver1 = true;
     };
+    
+    //Validation à la deuxième question
+    //Celle-ci disparaît et la troisième question apparaît
      $scope.secondValidation = function() {
     	$scope.activityOver1 = false;
     	$scope.activityOver2 = true;
     };
-
+    
+    //Validation à la troisième question
+    //Celle-ci disparaît et le message de félicitations et confirmation apparaît
     $scope.lastValidation = function() {
     	$scope.activityOver1 = false;
     	$scope.activityOver2 = false;
     	$scope.activityOver3 = true;
     };
+  
     codingCtrl.start();
 
     // Le code pour le patch commence ICI
