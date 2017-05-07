@@ -8,6 +8,8 @@ version 0.16.0.
 Résoudre les dépendances avec les commandes `npm install` et `bower install`.
 Install grunt package `npm install grunt-cli` si pas déjà installé.
 
+L'app est configurée pour runner sur le port 3006.
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
