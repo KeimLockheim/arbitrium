@@ -284,7 +284,7 @@ angular.module('arbitriumApp')
 
 
 
-
+    // Patch de l'user dans la bd afin de dire qu'il a fait l'épreuve marketing
     marketingCtrl.patch = function() {
       var actualUserId = AuthService.userInf.id;
       //$scope.userSchema.marketingComDone = true;

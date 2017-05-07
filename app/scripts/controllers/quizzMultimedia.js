@@ -86,6 +86,7 @@ angular.module('arbitriumApp')
 
 	};
 
+	// Patch de l'user dans la bd afin de dire qu'il a fait l'épreuve multimedia
 	$scope.terminerMission = function (){
 
 		var actualUserId = AuthService.userInf.id;

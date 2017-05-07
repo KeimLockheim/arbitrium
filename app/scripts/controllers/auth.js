@@ -1,3 +1,4 @@
+// Services permettant de garder la persitence des données de l'utilisateur tout au long de sa connexion
 angular.module('arbitriumApp').factory('AuthService', function(store) {
   var service = {
 
@@ -30,6 +31,7 @@ angular.module('arbitriumApp').factory('AuthService', function(store) {
   return service;
 });
 
+// Controller permettant de gérer le login
 angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $location, $http, $scope, $route) {
   var LoginCtrl = this;
   $scope.userSchema = {};
@@ -58,6 +60,7 @@ angular.module('arbitriumApp').controller('LoginCtrl' ,function(AuthService, $lo
   });
 });
 
+// Controller permettant de gérer la déconnexion 
 angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $route, $location, $scope) {
   var LogoutCtrl = this;
 
@@ -75,6 +78,7 @@ angular.module('arbitriumApp').controller('LogoutCtrl', function(AuthService, $r
   });
 });
 
+// Controller permettant de gérer l'obtention du token d'identification
 angular.module('arbitriumApp').factory('AuthInterceptor', function(AuthService) {
   return {
 

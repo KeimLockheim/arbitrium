@@ -47,7 +47,7 @@ angular.module('arbitriumApp')
 
     // Pour tester le patch, décommentez la ligne ci-dessous
     //$scope.activityOver3 = true;
-
+    // Patch de l'user dans la bd afin de dire qu'il a fait l'épreuve coding
     $scope.patch = function() {
     	console.log("test");
       var actualUserId = AuthService.userInf.id;
