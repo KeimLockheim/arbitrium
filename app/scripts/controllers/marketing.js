@@ -3,7 +3,7 @@
 angular.module('arbitriumApp').factory('MarketingService', function() {
 
   var service = {};
-
+  //Les questions ont été enregistrée ci-dessous. Celles-ci appartiennent à l'une des six catégories.
   var questions = {
 
     sport: [
@@ -210,7 +210,8 @@ angular.module('arbitriumApp')
     ];
 
     var marketingCtrl = this;
-
+  
+    //Lancement du Quizz à l'initialisation de la page.
     marketingCtrl.start = function() {
       marketingCtrl.id = 0;
       marketingCtrl.questionNo = 1;
@@ -222,14 +223,15 @@ angular.module('arbitriumApp')
       marketingCtrl.getQuestion();
     };
 
+    //Fonction de reset du Quizz. Pas utilisé, mais déjà partiellement mise en place pour l'ajout éventuel de cette fonction dans l'application.
     marketingCtrl.reset = function() {
       marketingCtrl.inProgress = false;
       marketingCtrl.score = 0;
     }
-
+    
+    // Fonction permettant de récupérer les questions selon la catégorie choisie
     marketingCtrl.getQuestion = function() {
       if ($routeParams.category) {
-
         var q = MarketingService.getQuestion($routeParams.category, marketingCtrl.id);
         if(q) {
           marketingCtrl.question = q.question;
@@ -241,16 +243,20 @@ angular.module('arbitriumApp')
             marketingCtrl.image = q.image;
             $('img').addClass('imageQuizz');
           } else {
+            //Clear.gif est une image d'un pixel transparent pour les questions qui n'ont pas d'images
+            //Permet d'éviter que l'image d'une question ne persiste sur les questions suivantes
             marketingCtrl.image = 'images/Clear.gif';
             $('img').removeClass('imageQuizz');
           }
-          //marketingCtrl.image = (q.image || 'images/Clear.gif');
         } else {
           marketingCtrl.quizzOver = true;
         }
       }
     };
 
+    //Fonction de contrôle si la question est correcte ou fausse
+    //Le choix de l'utilisateur devient rouge s'il s'agit de la mauvaise réponse. La bonne réponse est mise en
+    //évidence en vert dans tous les cas
     marketingCtrl.checkAnswer = function() {
       if(!$('input[name=answer]:checked').length) return;
       var ans = $('input[name=answer]:checked').val();
@@ -262,16 +268,16 @@ angular.module('arbitriumApp')
         marketingCtrl.correctAns = false;
         // parent.parent is ugly but since the selector does not work, we cannot change this (https://api.jquery.com/parent/)
         $('input[name=answer]:checked').parent().parent().addClass('wrong');
-
       }
       $('#options li:nth-child(' +  (marketingCtrl.answer+1) + ')').addClass('correct');
-
       marketingCtrl.answerMode = false;
     };
 
+    //Fonction pour afficher la question suivante.
     marketingCtrl.nextQuestion = function() {
       marketingCtrl.id++;
       marketingCtrl.questionNo++;
+      //Mise à zéro de l'image pour éviter que l'image précédente (s'il y en avait une) ne persiste sur la question suivante
       marketingCtrl.image = null;
       marketingCtrl.getQuestion();
     };
